@@ -100,3 +100,6 @@
 [submodule "bundle/vim-align"]
 	path = bundle/vim-align
 	url = https://github.com/pix/vim-align.git
+[submodule "bundle/twitvim"]
+	path = bundle/twitvim
+	url = https://github.com/vim-scripts/TwitVim.git
