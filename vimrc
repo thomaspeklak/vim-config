@@ -1,5 +1,5 @@
 if has("gui_running")
-filetype off 
+filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 filetype on
@@ -9,20 +9,19 @@ endif
 let mapleader = ","
 
 if has("gui_running")
-if has("autocmd")
-  " Drupal *.module and *.install files.
-  augroup module
-	autocmd BufRead,BufNewFile *.module set filetype=php
-	autocmd BufRead,BufNewFile *.phtml set filetype=php
-	autocmd BufRead,BufNewFile *.install set filetype=php
-	autocmd BufRead,BufNewFile *.test set filetype=php
-	autocmd BufRead,BufNewFile *.tmpl set filetype=html
-	autocmd BufRead,BufNewFile *.less set filetype=css
-	autocmd BufRead,BufNewFile *.spec set filetype=ruby
-  augroup END
-endif
+  if has("autocmd")
+    " Drupal *.module and *.install files.
+    augroup module
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.phtml set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd BufRead,BufNewFile *.tmpl set filetype=html
+    autocmd BufRead,BufNewFile *.less set filetype=css
+    autocmd BufRead,BufNewFile *.spec set filetype=ruby
+    augroup END
+  endif
 
-  filetype on
   set nocompatible
   set viminfo^=!
 
@@ -30,7 +29,7 @@ endif
   let g:miniBufExplMapWindowNavArrows = 1
   let g:miniBufExplMapCTabSwitchBufs = 1
   let g:miniBufExplModSelTarget = 1
-    
+
   syntax enable
 
   set modelines=0
@@ -46,20 +45,18 @@ endif
   set laststatus=2
   set relativenumber
   set guioptions-=T  "remove toolbar
-  
+
   set showmatch                                                      " Show matching brackets.
   set mat=5                                                          " Bracket blinking.
   set history=10000                                                  " large history
   set undolevels=10000                                               " use many undos
-  
+
   set nobackup                                                       " no backup file
   set noswapfile                                                     " no swap file
-  
+
   vmap Q gq                                                          " us Q to format current paragraph
   nmap Q gqap
-  
-  nmap <silent> ,/ :nohlsearch<CR>                                   " clear highlights of search
-  
+
   function! Tabstyle_tabs()
     " Using 2 column tabs
     set softtabstop=2
@@ -79,10 +76,6 @@ endif
     set tabstop=2
     set expandtab
   endfunction
-  
-  "map copy and paste in gui mode
-  vmap <leader>y "+y
-  nmap <leader>p "+gP
 
   call Tabstyle_spaces()
 
@@ -93,28 +86,28 @@ endif
   " Searching *******************************************************************
   set hlsearch  " highlight search
   set incsearch  " Incremental search, search as you type
-  set ignorecase " Ignore case when searching 
+  set ignorecase " Ignore case when searching
   set smartcase " Ignore case when searching lowercase
   set incsearch
   set showmatch
 
   " Colors **********************************************************************
   "set t_Co=256 " 256 colors
-  set background=dark 
+  set background=dark
   syntax on " syntax highlighting
   colorscheme blackboard
 
 
   " Shortcut to rapidly toggle `set list`
   nmap <leader>l :set list!<CR>
-  
+
   set list
-  
+
   " Use the same symbols as TextMate for tabstops and EOLs
   set listchars=tab:>\ ,eol:$
   set guifont=Mensch\ 9
-  
-    " Tabmovement like in FF
+
+  " Tabmovement like in FF
   map <C-1> 1gt
   map <C-2> 2gt
   map <C-3> 3gt
@@ -124,18 +117,12 @@ endif
   map <C-7> 7gt
   map <C-8> 8gt
   map <C-9> 9gt
-  map <C-0> :tablast<CR> 
-  
+  map <C-0> :tablast<CR>
+
 end
 
-if has("gui_running")
-  " GUI is running or is about to start.
-  " Maximize gvim window.
-  " set lines=60 columns=120
-endif
 
-" allow vim to create hidden buffers
-set hidden
+set hidden                                                           " allow vim to create hidden buffers
 
 set backspace=indent,eol,start                                       " allow backspacing over everything in insert mode
 
@@ -152,10 +139,9 @@ function! Preserve(command)
   call cursor(l, c)
 endfunction
 
-" remove trailing white space
-nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
-" indent lines
-nmap _= :call Preserve("normal gg=G")<CR>
+nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>                    " remove trailing white space
+
+nmap <leader>= :call Preserve("normal gg=G")<CR>                      " indent lines
 nmap <leader>0 gg=G
 
 "automatically remove trailing whitespace
@@ -260,4 +246,5 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <S-INSERT> "+gP
 imap <S-INSERT> <ESC>"+gPi
 vmap <C-C> "+y
-
+vmap <leader>y "+y
+nmap <leader>p "+gP
