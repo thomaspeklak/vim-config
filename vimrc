@@ -43,9 +43,9 @@ if has("gui_running")
   set ttyfast
   set ruler
   set laststatus=2
+  set statusline=%f%m%r%h%w\ [%{&ff}]\ %y\ [\%03.3b]%=%{fugitive#statusline()}\ %-14.(%l,%c%V%)\ %P\ %L
   set relativenumber
   set guioptions-=T  "remove toolbar
-
   set showmatch                                                      " Show matching brackets.
   set mat=5                                                          " Bracket blinking.
   set history=10000                                                  " large history
@@ -105,7 +105,7 @@ if has("gui_running")
 
   " Use the same symbols as TextMate for tabstops and EOLs
   set listchars=tab:>\ ,eol:$
-  set guifont=Mensch\ 9
+  set guifont=Mensch:h12
 
   " Tabmovement like in FF
   map <C-1> 1gt
