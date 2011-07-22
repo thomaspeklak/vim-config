@@ -105,7 +105,14 @@ if has("gui_running")
 
   " Use the same symbols as TextMate for tabstops and EOLs
   set listchars=tab:>\ ,eol:$
-  set guifont=Mensch:h12
+
+  " As Linux and Mac have different declarations for guifont we need to
+  " differentiate between the two
+  if has('unix')
+    set guifont=Mensch\ 8
+  elseif has("mac")
+    set guifont=Mensch:h11
+  endif
 
   " Tabmovement like in FF
   map <C-1> 1gt
