@@ -32,7 +32,8 @@ if has("gui_running")
 
   syntax enable
 
-  set modelines=0
+  set modeline
+  set modelines=5
   set scrolloff=4
   set showmode
   set showcmd
@@ -50,6 +51,8 @@ if has("gui_running")
   set mat=5                                                          " Bracket blinking.
   set history=10000                                                  " large history
   set undolevels=10000                                               " use many undos
+  set pastetoggle=<F2>                                               " enable/disable autoformatting on right mouse paste
+  
 
   set nobackup                                                       " no backup file
   set noswapfile                                                     " no swap file
@@ -108,10 +111,10 @@ if has("gui_running")
 
   " As Linux and Mac have different declarations for guifont we need to
   " differentiate between the two
-  if has('unix')
-    set guifont=Mensch\ 8
-  elseif has("mac")
+  if has('mac')
     set guifont=Mensch:h11
+  elseif has("unix")
+    set guifont=Mensch \8
   endif
 
   " Tabmovement like in FF
@@ -206,7 +209,6 @@ vnoremap <F1> <ESC>
 au FocusLost * :wa                                                   " write file on focus lost
 
 nnoremap <leader>ft Vatzf                                            " fold tag
-nnoremap <leader>s ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>           " sort properties in css
 
 
 " map esc to jj in insert mode to provide a way around photoshop bug blocking esc key
@@ -255,3 +257,11 @@ imap <S-INSERT> <ESC>"+gPi
 vmap <C-C> "+y
 vmap <leader>y "+y
 nmap <leader>p "+gP
+
+" if you forgot to open a file with sudo you can write it with w!!
+cmap w!! w !sudo tee % >/dev/null
+
+"store and restore session
+nnoremap <leader>s :mksession! ~/.vim_default_session<CR>
+nnoremap <leader>S :so ~/.vim_default_session<CR>
+
