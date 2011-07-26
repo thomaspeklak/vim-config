@@ -112,9 +112,9 @@ if has("gui_running")
   " As Linux and Mac have different declarations for guifont we need to
   " differentiate between the two
   if has('mac')
-    set guifont=Mensch:h11
+    set guifont=Mensch:h9
   elseif has("unix")
-    set guifont=Mensch \8
+    set guifont=Mensch\ 8
   endif
 
   " Tabmovement like in FF
