@@ -16,10 +16,22 @@ if has("gui_running")
     autocmd BufRead,BufNewFile *.phtml set filetype=php
     autocmd BufRead,BufNewFile *.install set filetype=php
     autocmd BufRead,BufNewFile *.test set filetype=php
+    augroup END
+
     autocmd BufRead,BufNewFile *.tmpl set filetype=html
     autocmd BufRead,BufNewFile *.less set filetype=css
     autocmd BufRead,BufNewFile *.spec set filetype=ruby
-    augroup END
+
+    "highlight JSON files as javascript
+    autocmd BufRead,BufNewFile *.json set filetype=javascript
+    "highlight jasmine_fixture files as HTML
+    autocmd BufRead,BufNewFile *.jasmine_fixture set filetype=html
+    au BufRead,BufNewFile Gemfile* set filetype=ruby 
+
+    " set question mark to be part of a VIM word. in Ruby it is!
+    autocmd FileType ruby set iskeyword=@,48-57,_,?,!,192-255
+    autocmd FileType scss set iskeyword=@,48-57,_,-,?,!,192-255
+    
   endif
 
   set nocompatible
@@ -52,10 +64,14 @@ if has("gui_running")
   set history=10000                                                  " large history
   set undolevels=10000                                               " use many undos
   set pastetoggle=<F2>                                               " enable/disable autoformatting on right mouse paste
+  set autoread                                                       " Autoload files that are modified outside vim
   
 
   set nobackup                                                       " no backup file
   set noswapfile                                                     " no swap file
+
+  set splitbelow splitright                                          " Add new windows towards the right and bottom.
+  
 
   vmap Q gq                                                          " us Q to format current paragraph
   nmap Q gqap
@@ -153,6 +169,8 @@ nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>                    " remove t
 
 nmap <leader>= :call Preserve("normal gg=G")<CR>                      " indent lines
 nmap <leader>0 gg=G
+" F7 reformats the whole file and leaves you where you were (unlike gg)
+map <silent> <F7> mzgg=G'z :delmarks z<CR>:echo "Reformatted."<CR>
 
 "automatically remove trailing whitespace
 autocmd FocusLost *.py,*.js,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp :call Preserve("%s/\\s\\+$//e")
@@ -224,6 +242,19 @@ nmap <leader>, :b#<CR>
 " map show next match (vimgrep)
 nmap <leader>n :cn<CR>
 
+"prev/next in quickfix file listing (e.g. search results)
+map <C-M-Down> :cn<CR>
+map <C-M-Up> :cp<CR>
+
+"opt-cmd-arrows [next & previous open files]
+map <D-M-Left> :bp<CR>
+map <D-M-Right> :bn<CR>
+
+"indent/unindent visual mode selection with tab/shift+tab
+vmap <tab> >gv
+vmap <s-tab> <gv
+
+
 " tag mappings
 nnoremap ü <C-]>
 nnoremap Ü <C-O>
@@ -264,4 +295,7 @@ cmap w!! w !sudo tee % >/dev/null
 "store and restore session
 nnoremap <leader>s :mksession! ~/.vim_default_session<CR>
 nnoremap <leader>S :so ~/.vim_default_session<CR>
+
+" Comment/uncomment lines.
+map <leader>/ <plug>NERDCommenterToggle
 
