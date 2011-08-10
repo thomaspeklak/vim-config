@@ -155,8 +155,8 @@ nmap <leader>= :call Preserve("normal gg=G")<CR>                      " indent l
 nmap <leader>0 gg=G
 
 "automatically remove trailing whitespace
-autocmd FocusLost *.py,*.js,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp :call Preserve("%s/\\s\\+$//e")
-autocmd BufWritePre *.py,*.js,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp :call Preserve("%s/\\s\\+$//e")
+autocmd FocusLost *.py,*.js,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
+autocmd BufWritePre *.py,*.js,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
 
 "set encoding
 if has("multi_byte")
