@@ -112,3 +112,9 @@
 [submodule "bundle/cascade"]
 	path = bundle/cascade
 	url = https://github.com/c9s/cascading.vim.git
+[submodule "bundle/vim-rake"]
+	path = bundle/vim-rake
+	url = https://github.com/tpope/vim-rake.git
+[submodule "bundle/taglist-plus"]
+	path = bundle/taglist-plus
+	url = https://github.com/int3/vim-taglist-plus.git
