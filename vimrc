@@ -128,7 +128,7 @@ if has("gui_running")
   " As Linux and Mac have different declarations for guifont we need to
   " differentiate between the two
   if has('mac')
-    set guifont=Mensch:h9
+    set guifont=Mensch:h10
   elseif has("unix")
     set guifont=Mensch\ 8
   endif
@@ -295,6 +295,9 @@ cmap w!! w !sudo tee % >/dev/null
 "store and restore session
 nnoremap <leader>s :mksession! ~/.vim_default_session<CR>
 nnoremap <leader>S :so ~/.vim_default_session<CR>
+
+nnoremap <C-S> :mksession ./.vim_session<CR>
+nnoremap <C-L> :so ./.vim_session<CR>
 
 " Comment/uncomment lines.
 map <leader>/ <plug>NERDCommenterToggle
