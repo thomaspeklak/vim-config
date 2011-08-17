@@ -302,3 +302,4 @@ nnoremap <C-L> :so ./.vim_session<CR>
 " Comment/uncomment lines.
 map <leader>/ <plug>NERDCommenterToggle
 
+source ~/.vim/vimrc_local
