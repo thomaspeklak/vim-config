@@ -303,3 +303,7 @@ nnoremap <C-L> :so ./.vim_session<CR>
 map <leader>/ <plug>NERDCommenterToggle
 
 source ~/.vim/vimrc_local
+
+if filereadable('./.vim_session')
+  execute "source ./.vim_session"
+endif
