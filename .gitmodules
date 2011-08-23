@@ -118,3 +118,15 @@
 [submodule "bundle/taglist-plus"]
 	path = bundle/taglist-plus
 	url = https://github.com/int3/vim-taglist-plus.git
+[submodule "bundle/delmitmate"]
+	path = bundle/delmitmate
+	url = git://github.com/Raimondi/delimitMate.git
+[submodule "bundle/closetag"]
+	path = bundle/closetag
+	url = git://github.com/docunext/closetag.vim.git
+[submodule "bundle/css_color"]
+	path = bundle/css_color
+	url = https://github.com/vim-scripts/css_color.vim.git
+[submodule "bundle/better_css_syntax"]
+	path = bundle/better_css_syntax
+	url = https://github.com/vim-scripts/Better-CSS-Syntax-for-Vim.git

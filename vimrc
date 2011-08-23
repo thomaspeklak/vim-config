@@ -31,7 +31,9 @@ if has("gui_running")
     " set question mark to be part of a VIM word. in Ruby it is!
     autocmd FileType ruby set iskeyword=@,48-57,_,?,!,192-255
     autocmd FileType scss set iskeyword=@,48-57,_,-,?,!,192-255
-    
+
+    autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+    autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim 
   endif
 
   set nocompatible
