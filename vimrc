@@ -296,8 +296,8 @@ cmap w!! w !sudo tee % >/dev/null
 nnoremap <leader>s :mksession! ~/.vim_default_session<CR>
 nnoremap <leader>S :so ~/.vim_default_session<CR>
 
-nnoremap <C-S> :mksession ./.vim_session<CR>
-nnoremap <C-L> :so ./.vim_session<CR>
+nnoremap <C-S> :mksession! ./.vim_session<CR>
+nnoremap <C-M-L> :so ./.vim_session<CR>
 
 " Comment/uncomment lines.
 map <leader>/ <plug>NERDCommenterToggle
