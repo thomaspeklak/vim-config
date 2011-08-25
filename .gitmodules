@@ -130,3 +130,6 @@
 [submodule "bundle/better_css_syntax"]
 	path = bundle/better_css_syntax
 	url = https://github.com/vim-scripts/Better-CSS-Syntax-for-Vim.git
+[submodule "rename"]
+	path = rename
+	url = https://github.com/vim-scripts/Rename
