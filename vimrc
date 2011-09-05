@@ -298,14 +298,15 @@ cmap w!! w !sudo tee % >/dev/null
 nnoremap <leader>s :mksession! ~/.vim_default_session<CR>
 nnoremap <leader>S :so ~/.vim_default_session<CR>
 
-nnoremap <C-S> :mksession! ./.vim_session<CR>
-nnoremap <C-M-L> :so ./.vim_session<CR>
+nnoremap <C-S> :mksession! <CR>
+nnoremap <C-M-L> :so ./Session.vim<CR>
 
 " Comment/uncomment lines.
 map <leader>/ <plug>NERDCommenterToggle
 
 source ~/.vim/vimrc_local
 
-if filereadable('./.vim_session')
-  execute "source ./.vim_session"
+set sessionoptions="blank,buffers,curdir,folds,resize,tabpages,winpos,winsize"
+if filereadable('./Session.vim')
+  execute "source ./Session.vim"
 endif
