@@ -121,9 +121,6 @@
 [submodule "bundle/delmitmate"]
 	path = bundle/delmitmate
 	url = git://github.com/Raimondi/delimitMate.git
-[submodule "bundle/closetag"]
-	path = bundle/closetag
-	url = git://github.com/docunext/closetag.vim.git
 [submodule "bundle/css_color"]
 	path = bundle/css_color
 	url = https://github.com/vim-scripts/css_color.vim.git
