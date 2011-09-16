@@ -130,3 +130,6 @@
 [submodule "rename"]
 	path = rename
 	url = https://github.com/vim-scripts/Rename
+[submodule "bundle/sparkup"]
+	path = bundle/sparkup
+	url = https://github.com/rstacruz/sparkup.git
