@@ -1,9 +1,10 @@
 if has("gui_running")
-filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-filetype on
-runtime macros/matchit.vim
+  filetype off
+  call pathogen#helptags()
+  call pathogen#runtime_append_all_bundles()
+  call pathogen#infect()
+  filetype on
+  runtime macros/matchit.vim
 endif
 
 let mapleader = ","
@@ -30,10 +31,15 @@ if has("gui_running")
 
     " set question mark to be part of a VIM word. in Ruby it is!
     autocmd FileType ruby set iskeyword=@,48-57,_,?,!,192-255
-    autocmd FileType scss set iskeyword=@,48-57,_,-,?,!,192-255
+    autocmd FileType css,scss set iskeyword=@,48-57,_,-,?,!,192-255
 
     autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
     autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim 
+
+    autocmd FileType css,scss setlocal ts=4 sts=4 sw=4 noet
+    autocmd FileType coffee setlocal ts=2 sts=2 sw=2 et
+    autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
+    autocmd FileType php setlocal ts=2 sts=2 sw=2 noet
   endif
 
   set nocompatible
