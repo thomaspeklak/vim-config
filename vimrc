@@ -1,3 +1,6 @@
+if filereadable('./Session.vim')
+  execute "source ./Session.vim"
+endif
 if has("gui_running")
   filetype off
   call pathogen#helptags()
@@ -50,6 +53,8 @@ if has("gui_running")
   let g:miniBufExplMapWindowNavArrows = 1
   let g:miniBufExplMapCTabSwitchBufs = 1
   let g:miniBufExplModSelTarget = 1
+  " Use Node.js for JavaScript interpretation
+  let $JS_CMD='node'
 
   syntax enable
 
@@ -507,12 +512,7 @@ nnoremap <C-M-L> :so ./Session.vim<CR>
 " Comment/uncomment lines.
 map <leader>/ <plug>NERDCommenterToggle
 
-source ~/.vim/vimrc_local
-
 set sessionoptions="blank,buffers,curdir,folds,resize,tabpages,winpos,winsize"
-if filereadable('./Session.vim')
-  execute "source ./Session.vim"
-endif
 
 "{{{ Rainbox Parentheses
 if has("gui_running")
@@ -600,4 +600,6 @@ let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: li
 let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
 
 " }}}
+
+source ~/.vim/vimrc_local
 
