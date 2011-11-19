@@ -5,6 +5,7 @@ if has("gui_running")
   call pathogen#infect()
   filetype on
   runtime macros/matchit.vim
+  map <tab> %
 endif
 
 let mapleader = ","
@@ -57,30 +58,227 @@ if has("gui_running")
   set scrolloff=4
   set showmode
   set showcmd
-  set wildmenu
-  set wildmode=list:longest
   set visualbell
   set cursorline
   set ttyfast
   set ruler
   set laststatus=2
-  set statusline=%f%m%r%h%w\ [%{&ff}]\ %y\ [\%03.3b]%=%{fugitive#statusline()}\ %-14.(%l,%c%V%)\ %P\ %L
-  set relativenumber
+  set norelativenumber
+  set nonumber
   set guioptions-=T  "remove toolbar
   set showmatch                                                      " Show matching brackets.
   set mat=5                                                          " Bracket blinking.
-  set history=10000                                                  " large history
-  set undolevels=10000                                               " use many undos
+  set history=1000                                                  " large history
+  set undofile
+  set undolevels=1000                                               " use many undos
   set pastetoggle=<F2>                                               " enable/disable autoformatting on right mouse paste
+  set shiftround
   set autoread                                                       " Autoload files that are modified outside vim
-  
+  set autowrite 
 
-  set nobackup                                                       " no backup file
-  set noswapfile                                                     " no swap file
+"  set nobackup                                                       " no backup file
+"  set noswapfile                                                     " no swap file
 
   set splitbelow splitright                                          " Add new windows towards the right and bottom.
-  
 
+"Resize splits when the window is resized
+  au VimResized * exe "normal! \<c-w>="
+
+" Statusline {{{
+
+  set statusline=%f
+  set statusline+=%m
+  set statusline+=%r
+  set statusline+=%h
+  set statusline+=%w
+
+  set statusline+=\ 
+
+  set statusline+=[%{&ff}]
+  
+  set statusline+=\  
+
+  set statusline+=%y
+  
+  set statusline+=\ 
+  
+  set statusline+=[\%03.3b]
+  
+  set statusline+=\ 
+  
+  set statusline+=%#redbar#                " Highlight the following as a warning.
+  set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
+  set statusline+=%*                           " Reset highlighting.
+
+  set statusline+=%=
+  
+  set statusline+=%{fugitive#statusline()}
+  
+  set statusline+=\ 
+  
+  set statusline+=%-14.(%l,%c%V%)
+  
+  set statusline+=\ 
+  
+  set statusline+=%P
+
+  set statusline+=\ 
+  
+  set statusline+=%L
+  set statusline+=
+  set statusline+=
+" }}}
+
+" Wildmenu completion {{{
+
+  set wildmenu
+  set wildmode=list:longest
+
+  set wildignore+=.hg,.git,.svn                    " Version control
+  set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+  set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+  set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+  set wildignore+=*.spl                            " compiled spelling word lists
+  set wildignore+=*.sw?                            " Vim swap files
+  set wildignore+=*.DS_Store                       " OSX bullshit
+
+  set wildignore+=*.luac                           " Lua byte code
+
+  set wildignore+=migrations                       " Django migrations
+  set wildignore+=*.pyc                            " Python byte code
+
+  " Clojure/Leiningen
+  set wildignore+=classes
+  set wildignore+=lib
+
+" }}}
+" Backups {{{
+
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+set backup                        " enable backups
+
+" }}}
+" Folding ----------------------------------------------------------------- {{{
+
+set foldlevelstart=0
+
+" Space to toggle folds.
+nnoremap <Space> za
+vnoremap <Space> za
+
+" Make zO recursively open whatever top level fold we're in, no matter where the
+" cursor happens to be.
+nnoremap zO zCzO
+
+" Use ,z to "focus" the current fold.
+nnoremap <leader>z zMzvzz
+
+function! MyFoldText() " {{{
+    let line = getline(v:foldstart)
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 3
+    let foldedlinecount = v:foldend - v:foldstart
+
+    " expand tabs into spaces
+    let onetab = strpart('          ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+endfunction " }}}
+set foldtext=MyFoldText()
+
+" }}}
+" CSS, SCSS and LessCSS {{{
+
+augroup ft_css
+    au!
+
+    au BufNewFile,BufRead *.less setlocal filetype=less
+
+    au Filetype scss,less,css setlocal foldmethod=marker
+    au Filetype scss,less,css setlocal foldmarker={,}
+    au Filetype scss,less,css setlocal omnifunc=csscomplete#CompleteCSS
+    au Filetype scss,less,css setlocal iskeyword+=-
+
+    " Use <leader>S to sort properties.  Turns this:
+    "
+    "     p {
+    "         width: 200px;
+    "         height: 100px;
+    "         background: red;
+    "
+    "         ...
+    "     }
+    "
+    " into this:
+
+    "     p {
+    "         background: red;
+    "         height: 100px;
+    "         width: 200px;
+    "
+    "         ...
+    "     }
+    au BufNewFile,BufRead *.less,*.css,*.scss nnoremap <buffer> <localleader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
+
+    " Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
+    " positioned inside of them AND the following code doesn't get unfolded.
+    au BufNewFile,BufRead *.less,*.css,*.scss inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
+augroup END
+
+" }}}
+" Javascript {{{
+
+augroup ft_javascript
+    au!
+
+    au FileType javascript setlocal foldmethod=marker
+    au FileType javascript setlocal foldmarker={,}
+augroup END
+
+" }}}
+" Ruby {{{
+
+augroup ft_ruby
+    au!
+    au Filetype ruby setlocal foldmethod=syntax
+augroup END
+
+" }}}
+" Vim {{{
+
+augroup ft_vim
+    au!
+
+    au FileType vim setlocal foldmethod=marker
+    au FileType help setlocal textwidth=78
+    au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
+augroup END
+
+" }}}
+" Convenience mappings ---------------------------------------------------- {{{
+
+" Substitute
+nnoremap <leader>s :%s//<left>
+
+" Preview Files
+nnoremap <F6> :w<cr>:Hammer<cr>
+
+" HTML tag closing
+inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
+
+" Better Completion
+set completeopt=longest,menuone,preview
+" inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <C-p> pumvisible() ? '<C-n>'  : '<C-n><C-r>=pumvisible() ? "\<lt>up>" : ""<CR>'
+" inoremap <expr> <C-n> pumvisible() ? '<C-n>'  : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+"}}}"
   vmap Q gq                                                          " us Q to format current paragraph
   nmap Q gqap
 
@@ -122,7 +320,7 @@ if has("gui_running")
   "set t_Co=256 " 256 colors
   set background=dark
   syntax on " syntax highlighting
-  colorscheme blackboard
+  colorscheme molokai
 
 
   " Shortcut to rapidly toggle `set list`
@@ -288,7 +486,6 @@ nmap <leader>t :CommandT<CR>
 nmap <leader>b :CommandTBuffer<CR>
 let g:CommandTMaxFiles=15000
 
-nnoremap <leader>u :GundoToggle<CR>
 
 "provide mappings to use clipboard
 nnoremap <S-INSERT> "+gP
@@ -316,3 +513,91 @@ set sessionoptions="blank,buffers,curdir,folds,resize,tabpages,winpos,winsize"
 if filereadable('./Session.vim')
   execute "source ./Session.vim"
 endif
+
+"{{{ Rainbox Parentheses
+if has("gui_running")
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+endif
+"}}}
+
+" Fugitive {{{
+
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>ga :Gadd<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gco :Gcheckout<cr>
+nnoremap <leader>gci :Gcommit<cr>
+nnoremap <leader>gm :Gmove<cr>
+nnoremap <leader>gr :Gremove<cr>
+nnoremap <leader>gl :Shell git gl -18<cr>:wincmd \|<cr>
+
+augroup ft_fugitive
+    au!
+
+    au BufNewFile,BufRead .git/index setlocal nolist
+augroup END
+
+" }}}
+" Gundo {{{
+
+nnoremap <F5> :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
+let g:gundo_debug = 1
+let g:gundo_preview_bottom = 1
+
+" }}}
+" HTML5 {{{
+
+let g:event_handler_attributes_complete = 0
+let g:rdfa_attributes_complete = 0
+let g:microdata_attributes_complete = 0
+let g:atia_attributes_complete = 0
+
+" }}}
+" Rainbox Parentheses {{{
+
+nnoremap <leader>rb :RainbowParenthesesToggle<cr>
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+let g:rbpt_max = 16
+
+
+" }}}
+" Supertab {{{
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabLongestHighlight = 1
+
+"}}}
+" Syntastic {{{
+
+let g:syntastic_enable_signs = 1
+let g:syntastic_disabled_filetypes = ['html']
+let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: line %fw}]'
+let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
+
+" }}}
+
