@@ -162,7 +162,7 @@ set backup                        " enable backups
 " }}}
 " Folding ----------------------------------------------------------------- {{{
 
-set foldlevelstart=0
+set foldlevelstart=99999
 
 " Space to toggle folds.
 nnoremap <Space> za
