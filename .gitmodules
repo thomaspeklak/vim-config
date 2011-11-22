@@ -3,7 +3,7 @@
 	url = git://git.wincent.com/command-t.git
 [submodule "bundle/autotag"]
 	path = bundle/autotag
-	url = https://github.com/marcus/autotag.vim.git
+	url = https://github.com/vim-scripts/AutoTag.git
 [submodule "bundle/eco"]
 	path = bundle/eco
 	url = https://github.com/jayferd/eco.vim.git
