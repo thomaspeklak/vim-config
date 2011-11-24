@@ -17,10 +17,10 @@ if has("gui_running")
   if has("autocmd")
     " Drupal *.module and *.install files.
     augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.phtml set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
+      autocmd BufRead,BufNewFile *.module set filetype=php
+      autocmd BufRead,BufNewFile *.phtml set filetype=php
+      autocmd BufRead,BufNewFile *.install set filetype=php
+      autocmd BufRead,BufNewFile *.test set filetype=php
     augroup END
 
     autocmd BufRead,BufNewFile *.tmpl set filetype=html
@@ -43,7 +43,9 @@ if has("gui_running")
     autocmd FileType css,scss setlocal ts=4 sts=4 sw=4 noet
     autocmd FileType coffee setlocal ts=2 sts=2 sw=2 et
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
-    autocmd FileType php setlocal ts=2 sts=2 sw=2 noet
+    autocmd FileType php setlocal ts=2 sts=2 sw=2 et
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 et
+    autocmd FileType xml setlocal ts=4 sts=4 sw=4 noet
   endif
 
   set nocompatible
@@ -79,17 +81,17 @@ if has("gui_running")
   set pastetoggle=<F2>                                               " enable/disable autoformatting on right mouse paste
   set shiftround
   set autoread                                                       " Autoload files that are modified outside vim
-  set autowrite 
+  set autowriteall 
 
-"  set nobackup                                                       " no backup file
-"  set noswapfile                                                     " no swap file
+  "  set nobackup                                                       " no backup file
+  "  set noswapfile                                                     " no swap file
 
   set splitbelow splitright                                          " Add new windows towards the right and bottom.
 
-"Resize splits when the window is resized
+  "Resize splits when the window is resized
   au VimResized * exe "normal! \<c-w>="
 
-" Statusline {{{
+  " Statusline {{{
 
   set statusline=%f
   set statusline+=%m
@@ -100,41 +102,41 @@ if has("gui_running")
   set statusline+=\ 
 
   set statusline+=[%{&ff}]
-  
+
   set statusline+=\  
 
   set statusline+=%y
-  
+
   set statusline+=\ 
-  
+
   set statusline+=[\%03.3b]
-  
+
   set statusline+=\ 
-  
+
   set statusline+=%#redbar#                " Highlight the following as a warning.
   set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
   set statusline+=%*                           " Reset highlighting.
 
   set statusline+=%=
-  
+
   set statusline+=%{fugitive#statusline()}
-  
+
   set statusline+=\ 
-  
+
   set statusline+=%-14.(%l,%c%V%)
-  
+
   set statusline+=\ 
-  
+
   set statusline+=%P
 
   set statusline+=\ 
-  
+
   set statusline+=%L
   set statusline+=
   set statusline+=
-" }}}
+  " }}}
 
-" Wildmenu completion {{{
+  " Wildmenu completion {{{
 
   set wildmenu
   set wildmode=list:longest
@@ -156,31 +158,31 @@ if has("gui_running")
   set wildignore+=classes
   set wildignore+=lib
 
-" }}}
-" Backups {{{
+  " }}}
+  " Backups {{{
 
-set undodir=~/.vim/tmp/undo//     " undo files
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap//   " swap files
-set backup                        " enable backups
+  set undodir=~/.vim/tmp/undo//     " undo files
+  set backupdir=~/.vim/tmp/backup// " backups
+  set directory=~/.vim/tmp/swap//   " swap files
+  set backup                        " enable backups
 
-" }}}
-" Folding ----------------------------------------------------------------- {{{
+  " }}}
+  " Folding ----------------------------------------------------------------- {{{
 
-set foldlevelstart=99999
+  set foldlevelstart=99999
 
-" Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
+  " Space to toggle folds.
+  nnoremap <Space> za
+  vnoremap <Space> za
 
-" Make zO recursively open whatever top level fold we're in, no matter where the
-" cursor happens to be.
-nnoremap zO zCzO
+  " Make zO recursively open whatever top level fold we're in, no matter where the
+  " cursor happens to be.
+  nnoremap zO zCzO
 
-" Use ,z to "focus" the current fold.
-nnoremap <leader>z zMzvzz
+  " Use ,z to "focus" the current fold.
+  nnoremap <leader>z zMzvzz
 
-function! MyFoldText() " {{{
+  function! MyFoldText() " {{{
     let line = getline(v:foldstart)
 
     let nucolwidth = &fdc + &number * &numberwidth
@@ -194,13 +196,13 @@ function! MyFoldText() " {{{
     let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
     let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
     return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
-endfunction " }}}
-set foldtext=MyFoldText()
+  endfunction " }}}
+  set foldtext=MyFoldText()
 
-" }}}
-" CSS, SCSS and LessCSS {{{
+  " }}}
+  " CSS, SCSS and LessCSS {{{
 
-augroup ft_css
+  augroup ft_css
     au!
 
     au BufNewFile,BufRead *.less setlocal filetype=less
@@ -234,56 +236,56 @@ augroup ft_css
     " Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
     " positioned inside of them AND the following code doesn't get unfolded.
     au BufNewFile,BufRead *.less,*.css,*.scss inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
-augroup END
+  augroup END
 
-" }}}
-" Javascript {{{
+  " }}}
+  " Javascript {{{
 
-augroup ft_javascript
+  augroup ft_javascript
     au!
 
     au FileType javascript setlocal foldmethod=marker
     au FileType javascript setlocal foldmarker={,}
-augroup END
+  augroup END
 
-" }}}
-" Ruby {{{
+  " }}}
+  " Ruby {{{
 
-augroup ft_ruby
+  augroup ft_ruby
     au!
     au Filetype ruby setlocal foldmethod=syntax
-augroup END
+  augroup END
 
-" }}}
-" Vim {{{
+  " }}}
+  " Vim {{{
 
-augroup ft_vim
+  augroup ft_vim
     au!
 
     au FileType vim setlocal foldmethod=marker
     au FileType help setlocal textwidth=78
     au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
-augroup END
+  augroup END
 
-" }}}
-" Convenience mappings ---------------------------------------------------- {{{
+  " }}}
+  " Convenience mappings ---------------------------------------------------- {{{
 
-" Substitute
-nnoremap <leader>s :%s//<left>
+  " Substitute
+  nnoremap <leader>s :%s//<left>
 
-" Preview Files
-nnoremap <F6> :w<cr>:Hammer<cr>
+  " Preview Files
+  nnoremap <F6> :w<cr>:Hammer<cr>
 
-" HTML tag closing
-inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
+  " HTML tag closing
+  inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
 
-" Better Completion
-set completeopt=longest,menuone,preview
-" inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" inoremap <expr> <C-p> pumvisible() ? '<C-n>'  : '<C-n><C-r>=pumvisible() ? "\<lt>up>" : ""<CR>'
-" inoremap <expr> <C-n> pumvisible() ? '<C-n>'  : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+  " Better Completion
+  set completeopt=longest,menuone,preview
+  " inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  " inoremap <expr> <C-p> pumvisible() ? '<C-n>'  : '<C-n><C-r>=pumvisible() ? "\<lt>up>" : ""<CR>'
+  " inoremap <expr> <C-n> pumvisible() ? '<C-n>'  : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
-"}}}"
+  "}}}"
   vmap Q gq                                                          " us Q to format current paragraph
   nmap Q gqap
 
@@ -477,6 +479,7 @@ nmap <leader>( ysiw(
 nmap <leader>[ ysiw[
 nmap <leader>{ ysiw{
 nmap <leader>< ysiw<
+nmap <leader>| ysiw|
 vmap <leader>" ys"
 vmap <leader>' ys'
 vmap <leader>( ys(
@@ -496,16 +499,11 @@ let g:CommandTMaxFiles=15000
 nnoremap <S-INSERT> "+gP
 imap <S-INSERT> <ESC>"+gPi
 vmap <C-C> "+y
-vmap <leader>y "+y
-nmap <leader>p "+gP
 
 " if you forgot to open a file with sudo you can write it with w!!
 cmap w!! w !sudo tee % >/dev/null
 
 "store and restore session
-nnoremap <leader>s :mksession! ~/.vim_default_session<CR>
-nnoremap <leader>S :so ~/.vim_default_session<CR>
-
 nnoremap <C-S> :mksession! <CR>
 nnoremap <C-M-L> :so ./Session.vim<CR>
 
@@ -513,18 +511,6 @@ nnoremap <C-M-L> :so ./Session.vim<CR>
 map <leader>/ <plug>NERDCommenterToggle
 
 set sessionoptions="blank,buffers,curdir,folds,resize,tabpages,winpos,winsize"
-
-"{{{ Rainbox Parentheses
-if has("gui_running")
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-endif
-"}}}
-
 " Fugitive {{{
 
 nnoremap <leader>gd :Gdiff<cr>
@@ -539,9 +525,9 @@ nnoremap <leader>gr :Gremove<cr>
 nnoremap <leader>gl :Shell git gl -18<cr>:wincmd \|<cr>
 
 augroup ft_fugitive
-    au!
+  au!
 
-    au BufNewFile,BufRead .git/index setlocal nolist
+  au BufNewFile,BufRead .git/index setlocal nolist
 augroup END
 
 " }}}
@@ -562,26 +548,34 @@ let g:atia_attributes_complete = 0
 
 " }}}
 " Rainbox Parentheses {{{
+if has("gui_running")
+
+  au VimEnter * RainbowParenthesesToggle
+  au Syntax * RainbowParenthesesLoadRound
+  au Syntax * RainbowParenthesesLoadSquare
+  au Syntax * RainbowParenthesesLoadBraces
+
+endif
 
 nnoremap <leader>rb :RainbowParenthesesToggle<cr>
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+      \ ['brown',       'RoyalBlue3'],
+      \ ['Darkblue',    'SeaGreen3'],
+      \ ['darkgray',    'DarkOrchid3'],
+      \ ['darkgreen',   'firebrick3'],
+      \ ['darkcyan',    'RoyalBlue3'],
+      \ ['darkred',     'SeaGreen3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['brown',       'firebrick3'],
+      \ ['gray',        'RoyalBlue3'],
+      \ ['black',       'SeaGreen3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['Darkblue',    'firebrick3'],
+      \ ['darkgreen',   'RoyalBlue3'],
+      \ ['darkcyan',    'SeaGreen3'],
+      \ ['darkred',     'DarkOrchid3'],
+      \ ['red',         'firebrick3'],
+      \ ]
 let g:rbpt_max = 16
 
 
