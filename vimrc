@@ -479,7 +479,6 @@ nmap <leader>( ysiw(
 nmap <leader>[ ysiw[
 nmap <leader>{ ysiw{
 nmap <leader>< ysiw<
-nmap <leader>| ysiw|
 vmap <leader>" ys"
 vmap <leader>' ys'
 vmap <leader>( ys(
