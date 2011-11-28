@@ -555,8 +555,6 @@ if has("gui_running")
   au Syntax * RainbowParenthesesLoadSquare
   au Syntax * RainbowParenthesesLoadBraces
 
-endif
-
 nnoremap <leader>rb :RainbowParenthesesToggle<cr>
 let g:rbpt_colorpairs = [
       \ ['brown',       'RoyalBlue3'],
