@@ -37,13 +37,13 @@ if has("gui_running")
     autocmd FileType ruby set iskeyword=@,48-57,_,?,!,192-255
     autocmd FileType css,scss set iskeyword=@,48-57,_,-,?,!,192-255
 
-    autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
-    autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim 
+    autocmd FileType html,htmldjango,jinjahtml,eruby,mako,ctp let b:closetag_html_style=1
+    autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,ctp source ~/.vim/bundle/closetag/plugin/closetag.vim 
 
     autocmd FileType css,scss setlocal ts=4 sts=4 sw=4 noet
     autocmd FileType coffee setlocal ts=2 sts=2 sw=2 et
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
-    autocmd FileType php setlocal ts=2 sts=2 sw=2 noet
+    autocmd FileType php setlocal ts=2 sts=2 sw=2 et
   endif
 
   set nocompatible
@@ -81,8 +81,8 @@ if has("gui_running")
   set autoread                                                       " Autoload files that are modified outside vim
   set autowrite 
 
-"  set nobackup                                                       " no backup file
-"  set noswapfile                                                     " no swap file
+  set nobackup                                                       " no backup file
+  set noswapfile                                                     " no swap file
 
   set splitbelow splitright                                          " Add new windows towards the right and bottom.
 
@@ -273,6 +273,8 @@ nnoremap <leader>s :%s//<left>
 
 " Preview Files
 nnoremap <F6> :w<cr>:Hammer<cr>
+
+nnoremap <F4> :TlistToggle<cr>
 
 " HTML tag closing
 inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
@@ -484,7 +486,7 @@ vmap <leader>[ ys[
 vmap <leader>{ ys{
 vmap <leader>< ys<
 
-so ~/.vim/bundle/autotag/autotag.vim
+so ~/.vim/bundle/autotag/plugin/autotag.vim
 
 nmap <leader>r :CommandTFlush<CR>
 nmap <leader>t :CommandT<CR>
@@ -536,7 +538,6 @@ nnoremap <leader>gco :Gcheckout<cr>
 nnoremap <leader>gci :Gcommit<cr>
 nnoremap <leader>gm :Gmove<cr>
 nnoremap <leader>gr :Gremove<cr>
-nnoremap <leader>gl :Shell git gl -18<cr>:wincmd \|<cr>
 
 augroup ft_fugitive
     au!
@@ -562,6 +563,7 @@ let g:atia_attributes_complete = 0
 
 " }}}
 " Rainbox Parentheses {{{
+if has("gui_running")
 
 nnoremap <leader>rb :RainbowParenthesesToggle<cr>
 let g:rbpt_colorpairs = [
@@ -584,6 +586,7 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 
+endif
 
 " }}}
 " Supertab {{{
