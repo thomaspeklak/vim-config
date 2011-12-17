@@ -490,9 +490,15 @@ vmap <leader>< ys<
 
 so ~/.vim/bundle/autotag/plugin/autotag.vim
 
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
 nmap <leader>r :CommandTFlush<CR>
 nmap <leader>t :CommandT<CR>
+nmap <leader>T :CommandT %%<CR>
 nmap <leader>b :CommandTBuffer<CR>
+nmap <leader>B :CommandTJump<CR>
 let g:CommandTMaxFiles=15000
 
 
