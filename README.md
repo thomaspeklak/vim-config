@@ -5,6 +5,7 @@
     git clone --recursive https://github.com/thomaspeklak/vim-config.git ~/.vim
     cd ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
+    vim +BundleInstall +qall
     cd bundle/command-t
     rvm use 1.8.7     # use the ruby version vim was compiled against
     rake make
@@ -16,4 +17,4 @@ Use the vimrc_local file to override any settings or to configure private inform
 
 ##Updating bundles
 
-Go to <https://github.com/thomaspeklak/VIM-Bundles-Update/blob/master/vim_bundles_update> and run the script.
+Use `:BundleInstall!` to update your bundles. Vundle itself is used as a submodule and cannot be updated with this process. To update vundle go into bundle/vundle and enter `git pull origin master`

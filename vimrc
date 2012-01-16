@@ -2,10 +2,80 @@ if filereadable('./Session.vim')
   execute "source ./Session.vim"
 endif
 if has("gui_running")
-  filetype off
-  call pathogen#helptags()
-  call pathogen#runtime_append_all_bundles()
-  call pathogen#infect()
+  set nocompatible               " be iMproved
+  filetype off                   " required!
+
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+
+  " let Vundle manage Vundle
+  " required! 
+  " Bundle 'gmarik/vundle' "This does not work yet with submodules
+
+
+  " original repos on github
+  Bundle 'AutoTag'
+  Bundle 'Better-CSS-Syntax-for-Vim'
+  Bundle 'L9'
+  Bundle 'Lokaltog/vim-easymotion'
+  Bundle 'Lokaltog/vim-powerline'
+  Bundle 'Rename'
+  Bundle 'Tabular'
+  Bundle 'The-NERD-tree'
+  Bundle 'TwitVim'
+  Bundle 'adamnbowen/scss-syntax.vim'
+  Bundle 'c9s/cascading.vim'
+  Bundle 'chrismetcalf/vim-yankring'
+  Bundle 'clones/vim-autocomplpop'
+  Bundle 'closetag.vim'
+  Bundle 'comment.vim'
+  Bundle 'css_color.vim'
+  Bundle 'ervandew/snipmate.vim'
+  Bundle 'ervandew/supertab'
+  Bundle 'hallettj/jslint.vim'
+  Bundle 'imathis/vim-colors-solarized'
+  Bundle 'int3/vim-taglist-plus'
+  Bundle 'itspriddle/vim-jquery'
+  Bundle 'jayferd/eco.vim'
+  Bundle 'juvenn/mustache.vim'
+  Bundle 'kana/vim-textobj-user'
+  Bundle 'kien/rainbow_parentheses.vim'
+  Bundle 'leshill/vim-json'
+  Bundle 'michaeljsmith/vim-indent-object'
+  Bundle 'molokai'
+  Bundle 'nelstrom/vim-textobj-rubyblock'
+  Bundle 'othree/html5.vim'
+  Bundle 'pangloss/vim-javascript'
+  Bundle 'pix/vim-align'
+  Bundle 'robgleeson/hammer.vim'
+  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+  Bundle 'scrooloose/nerdcommenter'
+  Bundle 'scrooloose/syntastic'
+  Bundle 'sdiehl/vim-coffee-script'
+  Bundle 'sickill/vim-pasta'
+  Bundle 'sjl/gundo.vim'
+  Bundle 'tpope/vim-abolish'
+  Bundle 'tpope/vim-cucumber'
+  Bundle 'tpope/vim-endwise'
+  Bundle 'tpope/vim-fugitive'
+  Bundle 'tpope/vim-git'
+  Bundle 'tpope/vim-haml'
+  Bundle 'tpope/vim-markdown'
+  Bundle 'tpope/vim-pathogen'
+  Bundle 'tpope/vim-rails'
+  Bundle 'tpope/vim-rails.git'
+  Bundle 'tpope/vim-rake'
+  Bundle 'tpope/vim-repeat'
+  Bundle 'tpope/vim-speeddating'
+  Bundle 'tpope/vim-surround'
+  Bundle 'tpope/vim-unimpaired'
+  Bundle 'vim-stylus'
+  Bundle 'vlmonk/vim-rspec'
+  Bundle 'wzzrd/vim-matchit'
+
+  " non github repos
+  Bundle 'git://git.wincent.com/command-t.git'
+
   filetype on
   runtime macros/matchit.vim
   map <tab> %
