@@ -226,9 +226,6 @@ if has("gui_running")
   set wildignore+=migrations                       " Django migrations
   set wildignore+=*.pyc                            " Python byte code
 
-  " Clojure/Leiningen
-  set wildignore+=classes
-  set wildignore+=lib
 
   " }}}
   " Backups {{{
@@ -678,9 +675,13 @@ let g:Powerline_symbols = 'fancy'
 " }}}
 
 " CTRLP {{{
-  let g:ctrlp_map = '<C-T>' 
+  let g:ctrlp_map = '<C-G>' 
+  map <leader>rr :ClearCtrlPCache<CR>
   map <C-B> :CtrlPBuffer<CR>
   imap <C-B> <ESC>:CtrlPBuffer<CR>
+
+  let g:ctrlp_working_path_mode = 0
+
 " }}}
 
 source ~/.vim/vimrc_local
