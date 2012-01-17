@@ -404,7 +404,7 @@ inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
   " Shortcut to rapidly toggle `set list`
   nmap <leader>l :set list!<CR>
 
-  set list
+  set nolist
 
   " Use the same symbols as TextMate for tabstops and EOLs
   set listchars=tab:>\ ,eol:$
