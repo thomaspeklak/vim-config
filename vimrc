@@ -72,6 +72,7 @@ if has("gui_running")
   Bundle 'vim-stylus'
   Bundle 'vlmonk/vim-rspec'
   Bundle 'wzzrd/vim-matchit'
+  Bundle 'kien/ctrlp.vim'
 
   " non github repos
   Bundle 'git://git.wincent.com/command-t.git'
@@ -674,6 +675,12 @@ let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
 " POWERLINE {{{
 let g:Powerline_symbols = 'fancy'
 
+" }}}
+
+" CTRLP {{{
+  let g:ctrlp_map = '<C-T>' 
+  map <C-B> :CtrlPBuffer<CR>
+  imap <C-B> <ESC>:CtrlPBuffer<CR>
 " }}}
 
 source ~/.vim/vimrc_local
