@@ -65,7 +65,7 @@ Bundle 'wzzrd/vim-matchit'
 Bundle 'manalang/jshint.vim'
 Bundle 'jamescarr/snipmate-nodejs'
 Bundle 'guileen/vim-node'
-
+Bundle 'vim-octopress'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 
