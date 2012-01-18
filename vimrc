@@ -12,6 +12,7 @@ if has("gui_running")
   " required! 
   " Bundle 'gmarik/vundle' "This does not work yet with submodules
 
+  Bundle 'gmarik/vundle'
 
   " original repos on github
   Bundle 'AutoTag'
@@ -31,7 +32,6 @@ if has("gui_running")
   Bundle 'comment.vim'
   Bundle 'css_color.vim'
   Bundle 'ervandew/snipmate.vim'
-  Bundle 'ervandew/supertab'
   Bundle 'hallettj/jslint.vim'
   Bundle 'imathis/vim-colors-solarized'
   Bundle 'int3/vim-taglist-plus'
@@ -69,13 +69,17 @@ if has("gui_running")
   Bundle 'tpope/vim-speeddating'
   Bundle 'tpope/vim-surround'
   Bundle 'tpope/vim-unimpaired'
-  Bundle 'vim-stylus'
   Bundle 'vlmonk/vim-rspec'
   Bundle 'wzzrd/vim-matchit'
   Bundle 'kien/ctrlp.vim'
 
   " non github repos
   Bundle 'git://git.wincent.com/command-t.git'
+
+" BUNDLES ARCHIVE {{{
+"  Bundle 'ervandew/supertab'
+"  Bundle 'vim-stylus'
+" }}}
 
   filetype on
   runtime macros/matchit.vim
