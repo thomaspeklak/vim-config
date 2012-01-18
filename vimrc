@@ -39,6 +39,7 @@ if has("gui_running")
   Bundle 'jayferd/eco.vim'
   Bundle 'juvenn/mustache.vim'
   Bundle 'kana/vim-textobj-user'
+  Bundle 'kien/ctrlp.vim'
   Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'leshill/vim-json'
   Bundle 'michaeljsmith/vim-indent-object'
@@ -71,7 +72,9 @@ if has("gui_running")
   Bundle 'tpope/vim-unimpaired'
   Bundle 'vlmonk/vim-rspec'
   Bundle 'wzzrd/vim-matchit'
-  Bundle 'kien/ctrlp.vim'
+  Bundle 'manalang/jshint.vim'
+  Bundle 'jamescarr/snipmate-nodejs'
+  Bundle 'guileen/vim-node'
 
   " non github repos
   Bundle 'git://git.wincent.com/command-t.git'
