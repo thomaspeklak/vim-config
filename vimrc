@@ -53,7 +53,6 @@ if has("gui_running")
     autocmd FileType xml setlocal ts=4 sts=4 sw=4 noet
   endif
 
-  set nocompatible
   set viminfo^=!
 
   let g:miniBufExplMapWindowNavVim = 1
@@ -351,16 +350,16 @@ inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
   endif
 
   " Tabmovement like in FF
-  map <C-1> 1gt
-  map <C-2> 2gt
-  map <C-3> 3gt
-  map <C-4> 4gt
-  map <C-5> 5gt
-  map <C-6> 6gt
-  map <C-7> 7gt
-  map <C-8> 8gt
-  map <C-9> 9gt
-  map <C-0> :tablast<CR>
+  "map <C-1> 1gt
+  "map <C-2> 2gt
+  "map <C-3> 3gt
+  "map <C-4> 4gt
+  "map <C-5> 5gt
+  "map <C-6> 6gt
+  "map <C-7> 7gt
+  "map <C-8> 8gt
+  "map <C-9> 9gt
+  "map <C-0> :tablast<CR>
 
 end
 
@@ -433,8 +432,6 @@ nnoremap <leader>d yypVr
 nnoremap / /\v
 vnoremap / /\v
 nnoremap <leader><space> :noh<cr>
-nnoremap <tab> %
-vnoremap <tab> %
 nnoremap j gj
 nnoremap k gk
 nnoremap <F1> <ESC>
