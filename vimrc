@@ -269,6 +269,17 @@ if has("gui_running")
   augroup END
 
   " }}}
+" OMNICOMPLETE {{{
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+" }}}
+
+
   " Convenience mappings ---------------------------------------------------- {{{
 
   " Substitute
@@ -414,6 +425,8 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
+  filetype plugin on
+  set ofu=syntaxcomplete#Complete
 endif
 
 "Quickly edit and reload vimrc
@@ -613,6 +626,11 @@ let g:Powerline_symbols = 'fancy'
   let g:ctrlp_working_path_mode = 0
 
 " }}}
+
+" PIV {{{
+let g:DisableAutoPHPFolding = 1 
+"}}}
+
 
 source ~/.vim/vimrc_local
 
