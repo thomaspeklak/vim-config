@@ -2,7 +2,8 @@
 
 ##Installation
 
-    git clone --recursive https://github.com/thomaspeklak/vim-config.git ~/.vim
+    git clone https://github.com/thomaspeklak/vim-config.git ~/.vim
+    git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle
     cd ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
     vim +BundleInstall +qall
