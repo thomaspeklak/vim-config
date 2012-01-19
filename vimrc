@@ -8,7 +8,7 @@ if has("gui_running")
   set rtp+=~/.vim/bundle/vundle/
   call vundle#rc()
 
-  source bundles.vim
+  source ~/.vim/bundles.vim
 
   filetype on
   runtime macros/matchit.vim
