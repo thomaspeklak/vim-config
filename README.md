@@ -23,19 +23,19 @@ Use `:BundleInstall!` to update your bundles. Vundle itself is used as a submodu
 
 ##FAQ
 
-Possible errors:
+__Ctags is missing__  
+You need exuberant-ctags installed, otherwise there will be an error. You
+can do this with `sudo apt-get install exuberant-ctags`or `brew install
+ctags`
 
-- You need exuberant-ctags installed, otherwise there will be an error. You
-  can do this with `sudo apt-get install exuberant-ctags`or `brew install
-  ctags`
+__Rake is missing__  
+rake is not installed. Install rake with `sudo gem install rake`
 
-- rake is not installed. Install rake with `sudo gem install rake`
+__256 colors in terminal__  
+For terminal usage, turn on 256 colors with the following code in ~/.profile
 
-- For terminal usage, turn on 256 colors with the following code in ~/.profile
-
-    if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-      export TERM='xterm-256color'
-    else
-      export TERM='xterm-color'
-    fi
-
+    if [ -e /usr/share/terminfo/x/xterm-256color ]; then  
+      export TERM='xterm-256color'  
+    else  
+      export TERM='xterm-color'  
+    fi  
