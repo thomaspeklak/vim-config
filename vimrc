@@ -207,6 +207,10 @@ endfunction " }}}
 set foldtext=MyFoldText()
 
 " }}}
+" TEXTWRAPPING {{{
+command! -nargs=* Wrapmode set tw=60 formatoptions+=ta               " autowrap text on insert @ 60 chars
+command! -nargs=* Nowrapmode set tw=0 formatoptions-=ta              " restore to previouse state
+"}}} 
 " AUTOCOMMANDS AND FILETYPE ASSOCIATIONS {{{
 if has("autocmd")
   " Drupal *.module and *.install files.
