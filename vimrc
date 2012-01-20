@@ -159,6 +159,8 @@ if has("gui_running")
   set wildignore+=migrations                       " Django migrations
   set wildignore+=*.pyc                            " Python byte code
 
+  set wildignore+=*.sass-cache                     " SASS
+
 
   " }}}
   " Backups {{{
