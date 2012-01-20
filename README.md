@@ -38,3 +38,4 @@ Possible errors:
     else
       export TERM='xterm-color'
     fi
+
