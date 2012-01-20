@@ -30,3 +30,11 @@ Possible errors:
   ctags`
 
 - rake is not installed. Install rake with `sudo gem install rake`
+
+- For terminal usage, turn on 256 colors with the following code in ~/.profile
+
+    if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+      export TERM='xterm-256color'
+    else
+      export TERM='xterm-color'
+    fi
