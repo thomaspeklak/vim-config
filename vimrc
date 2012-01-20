@@ -53,7 +53,6 @@ if has("gui_running")
     autocmd FileType xml setlocal ts=4 sts=4 sw=4 noet
   endif
 
-  set nocompatible
   set viminfo^=!
 
   let g:miniBufExplMapWindowNavVim = 1
@@ -272,6 +271,17 @@ if has("gui_running")
   augroup END
 
   " }}}
+" OMNICOMPLETE {{{
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+" }}}
+
+
   " Convenience mappings ---------------------------------------------------- {{{
 
   " Substitute
@@ -353,16 +363,16 @@ inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
   endif
 
   " Tabmovement like in FF
-  map <C-1> 1gt
-  map <C-2> 2gt
-  map <C-3> 3gt
-  map <C-4> 4gt
-  map <C-5> 5gt
-  map <C-6> 6gt
-  map <C-7> 7gt
-  map <C-8> 8gt
-  map <C-9> 9gt
-  map <C-0> :tablast<CR>
+  "map <C-1> 1gt
+  "map <C-2> 2gt
+  "map <C-3> 3gt
+  "map <C-4> 4gt
+  "map <C-5> 5gt
+  "map <C-6> 6gt
+  "map <C-7> 7gt
+  "map <C-8> 8gt
+  "map <C-9> 9gt
+  "map <C-0> :tablast<CR>
 
 end
 
@@ -417,6 +427,8 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
+  filetype plugin on
+  set ofu=syntaxcomplete#Complete
 endif
 
 "Quickly edit and reload vimrc
@@ -435,8 +447,6 @@ nnoremap <leader>d yypVr
 nnoremap / /\v
 vnoremap / /\v
 nnoremap <leader><space> :noh<cr>
-nnoremap <tab> %
-vnoremap <tab> %
 nnoremap j gj
 nnoremap k gk
 nnoremap <F1> <ESC>
@@ -618,6 +628,11 @@ let g:Powerline_symbols = 'fancy'
   let g:ctrlp_working_path_mode = 0
 
 " }}}
+
+" PIV {{{
+let g:DisableAutoPHPFolding = 1 
+"}}}
+
 
 source ~/.vim/vimrc_local
 

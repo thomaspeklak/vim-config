@@ -66,6 +66,8 @@ Bundle 'manalang/jshint.vim'
 Bundle 'jamescarr/snipmate-nodejs'
 Bundle 'guileen/vim-node'
 Bundle 'vim-octopress'
+Bundle 'spf13/PIV'
+Bundle 'ervandew/supertab'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 
