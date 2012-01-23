@@ -620,7 +620,7 @@ let g:Powerline_symbols = 'fancy'
 let g:DisableAutoPHPFolding = 1 
 "}}}
 " AUTOTAG {{{
-so ~/.vim/bundle/autotag/plugin/AutoTag.vim
+so ~/.vim/bundle/autotag/plugin/autotag.vim
 " }}}
 
 source ~/.vim/vimrc_local
