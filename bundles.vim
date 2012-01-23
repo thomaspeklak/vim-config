@@ -38,7 +38,6 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'pix/vim-align'
-Bundle 'robgleeson/hammer.vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
@@ -69,7 +68,11 @@ Bundle 'vim-octopress'
 Bundle 'spf13/PIV'
 Bundle 'ervandew/supertab'
 " non github repos
-Bundle 'git://git.wincent.com/command-t.git'
+
+if has("gui_running")
+  Bundle 'robgleeson/hammer.vim'
+  Bundle 'git://git.wincent.com/command-t.git'
+endif
 
 " BUNDLES ARCHIVE {{{
 "  Bundle 'ervandew/supertab'
