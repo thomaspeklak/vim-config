@@ -435,8 +435,8 @@ nnoremap <leader>d yypVr
 nnoremap / /\v
 vnoremap / /\v
 nnoremap <leader><space> :noh<cr>                                    " clear search highlights
-nnoremap j gj                                                        " go down instead of jump per line
-nnoremap k gk                                                        " go up
+"nnoremap j gj                                                        " go down instead of jump per line
+"nnoremap k gk                                                        " go up
 nnoremap <F1> <ESC>
 inoremap <F1> <ESC>
 vnoremap <F1> <ESC>
