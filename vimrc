@@ -92,7 +92,7 @@ elseif has("unix")
   set guifont=Mensch\ 8
 endif
 "}}}
-" SET ENCODING {{{
+" SET ENCODING {{{"{{{
 if has("multi_byte")
   if &termencoding == ""
     let &termencoding = &encoding
@@ -101,7 +101,7 @@ if has("multi_byte")
   setglobal fileencoding=utf-8 nobomb
   set fileencodings=ucs-bom,utf-8,latin1
 endif
-" }}}
+" }}}"}}}
 " STATUSLINE {{{
 
 set statusline=%f
@@ -147,6 +147,8 @@ set statusline+=
 set statusline+=
 " }}}
 " WILDMENU COMPLETION {{{
+
+set wildignore+=*.sass-cache                     " SASS
 
 set wildmenu
 set wildmode=list:longest
@@ -435,8 +437,9 @@ nnoremap <leader>d yypVr
 nnoremap / /\v
 vnoremap / /\v
 nnoremap <leader><space> :noh<cr>                                    " clear search highlights
-"nnoremap j gj                                                        " go down instead of jump per line
-"nnoremap k gk                                                        " go up
+nmap j gj                                                        " go down instead of jump per line
+nnoremap j gj                                                        " go down instead of jump per line
+nnoremap k gk                                                        " go up
 nnoremap <F1> <ESC>
 inoremap <F1> <ESC>
 vnoremap <F1> <ESC>
@@ -488,6 +491,10 @@ vmap <C-C> "+y
 
 " if you forgot to open a file with sudo you can write it with w!!
 cmap w!! w !sudo tee % >/dev/null
+
+"generate rails ctags
+map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
+
 
 "}}}
 " STORE AND RESTORE SESSION {{{
@@ -618,7 +625,7 @@ let g:Powerline_symbols = 'fancy'
 let g:DisableAutoPHPFolding = 1 
 "}}}
 " AUTOTAG {{{
-so ~/.vim/bundle/autotag/plugin/AutoTag.vim
+so ~/.vim/bundle/autotag/plugin/autotag.vim
 " }}}
 
 source ~/.vim/vimrc_local
