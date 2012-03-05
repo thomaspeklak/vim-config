@@ -20,7 +20,6 @@ Bundle 'chrismetcalf/vim-yankring'
 Bundle 'clones/vim-autocomplpop'
 Bundle 'closetag.vim'
 Bundle 'comment.vim'
-Bundle 'css_color.vim'
 Bundle 'ervandew/snipmate.vim'
 Bundle 'hallettj/jslint.vim'
 Bundle 'imathis/vim-colors-solarized'
@@ -71,11 +70,12 @@ Bundle 'ervandew/supertab'
 
 if has("gui_running")
   Bundle 'robgleeson/hammer.vim'
-  Bundle 'git://git.wincent.com/command-t.git'
 endif
 
 " BUNDLES ARCHIVE {{{
 "  Bundle 'ervandew/supertab'
 "  Bundle 'vim-stylus'
+"  Bundle 'css_color.vim'
+"  Bundle 'git://git.wincent.com/command-t.git'
 " }}}
 

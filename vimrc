@@ -437,9 +437,9 @@ nnoremap <leader>d yypVr
 nnoremap / /\v
 vnoremap / /\v
 nnoremap <leader><space> :noh<cr>                                    " clear search highlights
-nmap j gj                                                        " go down instead of jump per line
-nnoremap j gj                                                        " go down instead of jump per line
-nnoremap k gk                                                        " go up
+"nmap j gj                                                        " go down instead of jump per line
+"nnoremap j gj                                                        " go down instead of jump per line
+"nnoremap k gk                                                        " go up
 nnoremap <F1> <ESC>
 inoremap <F1> <ESC>
 vnoremap <F1> <ESC>
@@ -615,8 +615,8 @@ let g:Powerline_symbols = 'fancy'
 " CTRLP {{{
   let g:ctrlp_map = '<C-G>' 
   map <leader>rr :ClearCtrlPCache<CR>
-  map <C-B> :CtrlPBuffer<CR>
-  imap <C-B> <ESC>:CtrlPBuffer<CR>
+  map <leader>t :CtrlPBuffer<CR>
+  map <lieader>b :CtrlPBuffer<CR>
 
   let g:ctrlp_working_path_mode = 0
 
