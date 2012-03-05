@@ -28,6 +28,7 @@ let $JS_CMD='node'
 
 syntax enable
 
+set mouse=a                                                       "enable mouse support in all modes
 set modeline
 set modelines=5
 set scrolloff=4
