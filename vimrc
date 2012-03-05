@@ -1,4 +1,5 @@
 if filereadable('./Session.vim')                                     "load session if existent
+
   execute "source ./Session.vim"
 endif
 
@@ -334,7 +335,9 @@ augroup END
 
 augroup ft_ruby
   au!
-  au Filetype ruby setlocal foldmethod=syntax
+  " FOldmethod switched to manual, because of plugin problems (slow response
+  " times)
+  au Filetype ruby setlocal foldmethod=manual
 augroup END
 
 " }}}
@@ -435,6 +438,7 @@ nnoremap <leader>1 yypVr=
 nnoremap <leader>2 yypVr-
 nnoremap <leader>d yypVr
 nnoremap / /\v
+
 vnoremap / /\v
 nnoremap <leader><space> :noh<cr>                                    " clear search highlights
 "nmap j gj                                                        " go down instead of jump per line
@@ -615,8 +619,9 @@ let g:Powerline_symbols = 'fancy'
 " CTRLP {{{
   let g:ctrlp_map = '<C-G>' 
   map <leader>rr :ClearCtrlPCache<CR>
-  map <leader>t :CtrlPBuffer<CR>
-  map <lieader>b :CtrlPBuffer<CR>
+  map <C-d> :CtrlPBuffer<CR>
+  map <leader>t :CtrlP<CR>
+  map <leader>b :CtrlPBuffer<CR>
 
   let g:ctrlp_working_path_mode = 0
 
