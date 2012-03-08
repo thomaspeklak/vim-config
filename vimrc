@@ -276,6 +276,8 @@ if has("autocmd")
   "Resize splits when the window is resized
   au VimResized * exe "normal! \<c-w>="
 
+  "Spellcheck commit messages
+  autocmd BufRead COMMIT_EDITMSG setlocal spell!
 endif
 
 " }}}
