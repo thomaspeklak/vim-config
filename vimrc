@@ -1,5 +1,4 @@
 if filereadable('./Session.vim')                                     "load session if existent
-
   execute "source ./Session.vim"
 endif
 
@@ -403,6 +402,7 @@ nnoremap <F4> :TlistToggle<cr>
 " HTML tag closing
 inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
 
+map <ESC><ESC> :wa<CR>
 
 vmap Q gq                                                          " us Q to format current paragraph
 nmap Q gqap
