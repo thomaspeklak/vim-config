@@ -504,6 +504,9 @@ map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`
 vnoremap < <gv
 vnoremap > >gv
 
+"yank to the reset of the line
+map Y y$
+
 "}}}
 " STORE AND RESTORE SESSION {{{
 nnoremap <C-S> :mksession! <CR>
