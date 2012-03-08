@@ -500,6 +500,9 @@ cmap w!! w !sudo tee % >/dev/null
 "generate rails ctags
 map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
 
+"reselect visual selection after indent /  outdent
+vnoremap < <gv
+vnoremap > >gv
 
 "}}}
 " STORE AND RESTORE SESSION {{{
