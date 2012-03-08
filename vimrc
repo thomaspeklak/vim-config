@@ -507,6 +507,9 @@ vnoremap > >gv
 "yank to the reset of the line
 map Y y$
 
+"find merge conflicts
+nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
 "}}}
 " STORE AND RESTORE SESSION {{{
 nnoremap <C-S> :mksession! <CR>
