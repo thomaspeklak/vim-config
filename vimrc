@@ -13,7 +13,6 @@ source ~/.vim/bundles.vim                                            " load exte
 filetype on
 " SETTINGS {{{
 set t_Co=256          "set 256 terminal colors
-
 let mapleader = ","
 
 set viminfo^=!
@@ -73,7 +72,6 @@ set incsearch
 set showmatch
 
 " Colors **********************************************************************
-"set t_Co=256 " 256 colors
 set background=dark
 syntax on " syntax highlighting
 colorscheme molokai
