@@ -13,7 +13,6 @@ source ~/.vim/bundles.vim                                            " load exte
 filetype on
 " SETTINGS {{{
 set t_Co=256          "set 256 terminal colors
-
 let mapleader = ","
 
 set viminfo^=!
@@ -73,7 +72,6 @@ set incsearch
 set showmatch
 
 " Colors **********************************************************************
-"set t_Co=256 " 256 colors
 set background=dark
 syntax on " syntax highlighting
 colorscheme molokai
@@ -166,6 +164,7 @@ set wildignore+=*.luac                           " Lua byte code
 
 set wildignore+=migrations                       " Django migrations
 set wildignore+=*.pyc                            " Python byte code
+set wildignore+=tmp 
 
 
 " }}}
@@ -239,7 +238,7 @@ if has("autocmd")
   autocmd FileType css,scss set iskeyword=@,48-57,_,-,?,!,192-255
 
   autocmd FileType html,htmldjango,jinjahtml,eruby,mako,ctp let b:closetag_html_style=1
-  autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,ctp source ~/.vim/bundle/closetag/plugin/closetag.vim 
+  autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,ctp source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
 
   autocmd FileType css,scss setlocal ts=4 sts=4 sw=4 noet
   autocmd FileType coffee setlocal ts=2 sts=2 sw=2 et
@@ -501,10 +500,6 @@ cmap w!! w !sudo tee % >/dev/null
 
 "generate rails ctags
 map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
-
-"reselect visual selection after indent /  outdent
-vnoremap < <gv
-vnoremap > >gv
 
 "yank to the reset of the line
 map Y y$
