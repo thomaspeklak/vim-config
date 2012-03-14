@@ -66,6 +66,8 @@ Bundle 'guileen/vim-node'
 Bundle 'vim-octopress'
 Bundle 'spf13/PIV'
 Bundle 'ervandew/supertab'
+Bundle 'groenewege/vim-less'
+
 " non github repos
 
 if has("gui_running")
