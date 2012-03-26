@@ -456,6 +456,7 @@ nnoremap <leader>ft Vatzf                                            " fold tag
 
 " map esc to jj in insert mode to provide a way around photoshop bug blocking esc key
 imap jj <ESC>
+imap jjj <ESC>:wa<CR>
 
 " map autocompletion to control-space
 imap <C-space> <C-P>
