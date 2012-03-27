@@ -68,6 +68,9 @@ Bundle 'spf13/PIV'
 Bundle 'ervandew/supertab'
 Bundle 'groenewege/vim-less'
 Bundle 'skammer/vim-css-color'
+Bundle "jgdavey/tslime.vim"
+Bundle "jgdavey/vim-turbux"
+
 " non github repos
 
 if has("gui_running")

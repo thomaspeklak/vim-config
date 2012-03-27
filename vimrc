@@ -628,7 +628,7 @@ let g:Powerline_symbols = 'fancy'
   let g:ctrlp_map = '<C-G>' 
   map <leader>rr :ClearCtrlPCache<CR>
   map <C-d> :CtrlPBuffer<CR>
-  map <leader>t :CtrlP<CR>
+  map <leader>p :CtrlP<CR>
   map <leader>b :CtrlPBuffer<CR>
 
   let g:ctrlp_working_path_mode = 0
@@ -639,6 +639,10 @@ let g:DisableAutoPHPFolding = 1
 "}}}
 " AUTOTAG {{{
 so ~/.vim/bundle/autotag/plugin/autotag.vim
+" }}}
+
+" TURBUX {{{
+
 " }}}
 
 source ~/.vim/vimrc_local
