@@ -456,6 +456,7 @@ nnoremap <leader>ft Vatzf                                            " fold tag
 
 " map esc to jj in insert mode to provide a way around photoshop bug blocking esc key
 imap jj <ESC>
+imap jjj <ESC>:wa<CR>
 
 " map autocompletion to control-space
 imap <C-space> <C-P>
@@ -627,7 +628,7 @@ let g:Powerline_symbols = 'fancy'
   let g:ctrlp_map = '<C-G>' 
   map <leader>rr :ClearCtrlPCache<CR>
   map <C-d> :CtrlPBuffer<CR>
-  map <leader>t :CtrlP<CR>
+  map <leader>p :CtrlP<CR>
   map <leader>b :CtrlPBuffer<CR>
 
   let g:ctrlp_working_path_mode = 0
@@ -638,6 +639,10 @@ let g:DisableAutoPHPFolding = 1
 "}}}
 " AUTOTAG {{{
 so ~/.vim/bundle/AutoTag/plugin/autotag.vim
+" }}}
+
+" TURBUX {{{
+
 " }}}
 
 source ~/.vim/vimrc_local
