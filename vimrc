@@ -315,10 +315,6 @@ augroup ft_css
   "         ...
   "     }
   au BufNewFile,BufRead *.less,*.css,*.scss nnoremap <buffer> <localleader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
-
-  " Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
-  " positioned inside of them AND the following code doesn't get unfolded.
-  au BufNewFile,BufRead *.less,*.css,*.scss inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
 augroup END
 
 " }}}
@@ -404,6 +400,7 @@ nnoremap <F4> :TlistToggle<cr>
 inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
 
 map <ESC><ESC> :wa<CR>
+nnoremap <F3> :NERDTreeToggle<cr>
 
 vmap Q gq                                                          " us Q to format current paragraph
 nmap Q gqap
@@ -446,9 +443,9 @@ nnoremap <leader><space> :noh<cr>                                    " clear sea
 "nmap j gj                                                        " go down instead of jump per line
 "nnoremap j gj                                                        " go down instead of jump per line
 "nnoremap k gk                                                        " go up
-nnoremap <F1> <ESC>
-inoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+vnoremap <F1> <ESC>:wa<cr>
+map <F1> :wa<CR>
+imap <F1> <Esc>:wa<CR>
 
 
 nnoremap <leader>ft Vatzf                                            " fold tag
@@ -510,7 +507,7 @@ nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 "}}}
 " STORE AND RESTORE SESSION {{{
-nnoremap <C-S> :mksession! <CR>
+nnoremap <C-F2> :mksession! <CR>
 nnoremap <C-M-L> :so ./Session.vim<CR>
 "}}}
 " SURROUND MAPPINGS {{{
@@ -647,3 +644,6 @@ so ~/.vim/bundle/autotag/plugin/autotag.vim
 
 source ~/.vim/vimrc_local
 
+if filereadable('./.vimrc.project')                                     "load session if existent
+  execute "source ./.vimrc.project"
+endif
