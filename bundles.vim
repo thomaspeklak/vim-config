@@ -70,6 +70,11 @@ Bundle 'skammer/vim-css-color'
 Bundle "jgdavey/tslime.vim"
 Bundle "jgdavey/vim-turbux"
 
+Bundle "panozzaj/vim-autocorrect"
+
+"Experimental
+Bundle "ecomba/vim-ruby-refactoring"
+
 " non github repos
 
 if has("gui_running")

@@ -34,6 +34,7 @@ set showmode
 set showcmd
 set visualbell
 set cursorline
+set cursorcolumn
 set ttyfast
 set ruler
 set laststatus=2
