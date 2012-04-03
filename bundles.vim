@@ -21,7 +21,6 @@ Bundle 'clones/vim-autocomplpop'
 Bundle 'closetag.vim'
 Bundle 'comment.vim'
 Bundle 'ervandew/snipmate.vim'
-Bundle 'hallettj/jslint.vim'
 Bundle 'imathis/vim-colors-solarized'
 Bundle 'int3/vim-taglist-plus'
 Bundle 'itspriddle/vim-jquery'
@@ -82,5 +81,6 @@ endif
 "  Bundle 'vim-stylus'
 "  Bundle 'css_color.vim'
 "  Bundle 'git://git.wincent.com/command-t.git'
+"  Bundle 'hallettj/jslint.vim'
 " }}}
 

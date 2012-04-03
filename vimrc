@@ -635,7 +635,7 @@ let g:Powerline_symbols = 'fancy'
 let g:DisableAutoPHPFolding = 1 
 "}}}
 " AUTOTAG {{{
-so ~/.vim/bundle/autotag/plugin/autotag.vim
+so ~/.vim/bundle/AutoTag/plugin/autotag.vim
 " }}}
 
 " TURBUX {{{
