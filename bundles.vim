@@ -69,6 +69,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'skammer/vim-css-color'
 Bundle "jgdavey/tslime.vim"
 Bundle "jgdavey/vim-turbux"
+Bundle "kana/vim-smartinput"
 
 Bundle "panozzaj/vim-autocorrect"
 
