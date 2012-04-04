@@ -70,6 +70,11 @@ Bundle 'skammer/vim-css-color'
 Bundle "jgdavey/tslime.vim"
 Bundle "jgdavey/vim-turbux"
 Bundle "kana/vim-smartinput"
+Bundle "kongo2002/vim-space"
+Bundle "kana/vim-textobj-entire"
+Bundle "kana/vim-textobj-line"
+Bundle "tpope/vim-ragtag"
+Bundle "nelstrom/vim-visual-star-search"
 
 Bundle "panozzaj/vim-autocorrect"
 
