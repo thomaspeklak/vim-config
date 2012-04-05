@@ -440,7 +440,6 @@ nnoremap <leader>d yypVr
 nnoremap / /\v
 
 vnoremap / /\v
-nnoremap <leader><space> :noh<cr>                                    " clear search highlights
 "nmap j gj                                                        " go down instead of jump per line
 "nnoremap j gj                                                        " go down instead of jump per line
 "nnoremap k gk                                                        " go up
@@ -449,6 +448,8 @@ map <F1> :wa<CR>
 imap <F1> <Esc>:wa<CR>
 
 
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 nnoremap <leader>ft Vatzf                                            " fold tag
 
 
