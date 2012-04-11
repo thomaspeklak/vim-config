@@ -75,7 +75,7 @@ set showmatch
 " Colors **********************************************************************
 set background=dark
 syntax on " syntax highlighting
-colorscheme molokai
+colorscheme skittles_berry
 
 set nolist        " do not show hidden characters
 set sessionoptions="blank,buffers,curdir,folds,resize,tabpages,winpos,winsize"

@@ -21,7 +21,6 @@ Bundle 'clones/vim-autocomplpop'
 Bundle 'closetag.vim'
 Bundle 'comment.vim'
 Bundle 'ervandew/snipmate.vim'
-Bundle 'imathis/vim-colors-solarized'
 Bundle 'int3/vim-taglist-plus'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'jayferd/eco.vim'
@@ -31,7 +30,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'leshill/vim-json'
 Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'molokai'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
@@ -66,7 +64,7 @@ Bundle 'vim-octopress'
 Bundle 'spf13/PIV'
 Bundle 'ervandew/supertab'
 Bundle 'groenewege/vim-less'
-Bundle 'skammer/vim-css-color'
+"Bundle 'skammer/vim-css-color'
 Bundle "jgdavey/tslime.vim"
 Bundle "jgdavey/vim-turbux"
 Bundle "kana/vim-smartinput"
@@ -75,6 +73,11 @@ Bundle "kana/vim-textobj-entire"
 Bundle "kana/vim-textobj-line"
 Bundle "tpope/vim-ragtag"
 Bundle "nelstrom/vim-visual-star-search"
+
+"COLORSCHEMES
+Bundle 'imathis/vim-colors-solarized'
+Bundle "shawncplus/skittles_berry"
+Bundle 'molokai'
 
 Bundle "panozzaj/vim-autocorrect"
 
