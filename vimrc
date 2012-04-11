@@ -449,7 +449,7 @@ imap <F1> <Esc>:wa<CR>
 
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+nnoremap <silent> <leader>ö :nohl<CR>
 nnoremap <leader>ft Vatzf                                            " fold tag
 
 
