@@ -249,6 +249,7 @@ if has("autocmd")
   autocmd FileType xml setlocal ts=4 sts=4 sw=4 noet
 
   " OMNICOMPLETE {{{
+  set ofu=syntaxcomplete#Complete
   autocmd FileType python set omnifunc=pythoncomplete#Complete
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -336,6 +337,9 @@ augroup ft_ruby
   " FOldmethod switched to manual, because of plugin problems (slow response
   " times)
   au Filetype ruby setlocal foldmethod=manual
+  let g:rubycomplete_buffer_loading = 1
+  let g:rubycomplete_classes_in_global = 1
+  let g:rubycomplete_rails = 1
 augroup END
 
 " }}}
