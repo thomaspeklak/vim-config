@@ -64,7 +64,7 @@ Bundle 'vim-octopress'
 Bundle 'spf13/PIV'
 Bundle 'ervandew/supertab'
 Bundle 'groenewege/vim-less'
-"Bundle 'skammer/vim-css-color'
+"Bundle 'skammer/vim-css-color' "Console vim does not like this
 Bundle "jgdavey/tslime.vim"
 Bundle "jgdavey/vim-turbux"
 Bundle "kana/vim-smartinput"
@@ -73,6 +73,10 @@ Bundle "kana/vim-textobj-entire"
 Bundle "kana/vim-textobj-line"
 Bundle "tpope/vim-ragtag"
 Bundle "nelstrom/vim-visual-star-search"
+Bundle "ZoomWin"
+Bundle "Gist.vim"
+Bundle "sjl/threesome.vim"
+
 
 "COLORSCHEMES
 Bundle 'imathis/vim-colors-solarized'
