@@ -264,6 +264,7 @@ if has("autocmd")
   autocmd BufWritePre *.py,*.js,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
 
   au FocusLost * :wa                                                   " write file on focus lost
+  au CursorHold * :wa                                                 " write all files when cursor does not move
 
 
   " Enable file type detection.

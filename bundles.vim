@@ -76,7 +76,7 @@ Bundle "nelstrom/vim-visual-star-search"
 Bundle "ZoomWin"
 Bundle "Gist.vim"
 Bundle "sjl/threesome.vim"
-
+Bundle "sjl/vitality.vim"
 
 "COLORSCHEMES
 Bundle 'imathis/vim-colors-solarized'
