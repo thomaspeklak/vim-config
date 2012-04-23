@@ -77,6 +77,7 @@ Bundle "ZoomWin"
 Bundle "Gist.vim"
 Bundle "sjl/threesome.vim"
 Bundle "sjl/vitality.vim"
+Bundle "LanguageTool"
 
 "COLORSCHEMES
 Bundle 'imathis/vim-colors-solarized'
