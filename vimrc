@@ -34,7 +34,7 @@ set showmode
 set showcmd
 set visualbell
 set cursorline
-set cursorcolumn
+" set cursorcolumn                 " currently disabled due to performance impacts
 set ttyfast
 set ruler
 set laststatus=2
@@ -265,9 +265,6 @@ if has("autocmd")
 
   au FocusLost * :wa                                                   " write file on focus lost
   au CursorHold * :wa                                                 " write all files when cursor does not move
-
-  autocmd BufWritePost *.py,*.js,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.ctp silent !curl localhost:17001                 " invoke reloader
-  autocmd BufWritePost *.css,*.less,*.scss,*.coffee silent !curl localhost:17001/delayed                 " invoke reloader with delay
 
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
