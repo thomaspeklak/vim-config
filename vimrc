@@ -73,9 +73,11 @@ set incsearch
 set showmatch
 
 " Colors **********************************************************************
+syntax enable " syntax highlighting
 set background=dark
-syntax on " syntax highlighting
-colorscheme skittles_berry
+colorscheme solarized
+set background=dark       "solarized needs background dark after coloscheme change, who knows why?
+call togglebg#map("<F8>")
 
 set nolist        " do not show hidden characters
 set sessionoptions="blank,buffers,curdir,folds,resize,tabpages,winpos,winsize"

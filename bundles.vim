@@ -80,7 +80,7 @@ Bundle "sjl/vitality.vim"
 Bundle "LanguageTool"
 
 "COLORSCHEMES
-Bundle 'imathis/vim-colors-solarized'
+Bundle 'altercation/vim-colors-solarized'
 Bundle "shawncplus/skittles_berry"
 Bundle 'molokai'
 
