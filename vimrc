@@ -649,6 +649,12 @@ so ~/.vim/bundle/AutoTag/plugin/autotag.vim
 " TURBUX {{{
 
 " }}}
+" XDEBUG Client{{{
+"enable debug client in gvim
+if has("gui_running")
+  let g:debuggerMapDefaultKeys = 7
+endif
+" }}}
 
 source ~/.vim/vimrc_local
 

@@ -93,6 +93,7 @@ Bundle "ecomba/vim-ruby-refactoring"
 
 if has("gui_running")
   Bundle 'robgleeson/hammer.vim'
+  Bundle "XDebug-DBGp-client-for-PHP"
 endif
 
 " BUNDLES ARCHIVE {{{
