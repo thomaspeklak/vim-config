@@ -505,7 +505,10 @@ vmap <C-C> "+y
 cmap w!! w !sudo tee % >/dev/null
 
 "generate rails ctags
-map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
+map <Leader>cr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
+map <Leader>cp :!ctags --extra=+f --exclude=.git --exclude=log --langmap=php:.php.module.inc --php-kinds=cdfi --languages=php --recurse * <CR><CR>
+map <Leader>cj :!jsctags .<CR><CR>
+map <Leader>ct :!ctags --extra=+f --exclude=.git --exclude=log -R * <CR><CR>
 
 "yank to the reset of the line
 map Y y$
