@@ -20,7 +20,6 @@ Bundle 'chrismetcalf/vim-yankring'
 Bundle 'clones/vim-autocomplpop'
 Bundle 'closetag.vim'
 Bundle 'comment.vim'
-Bundle 'ervandew/snipmate.vim'
 Bundle 'int3/vim-taglist-plus'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'jayferd/eco.vim'
@@ -57,7 +56,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vlmonk/vim-rspec'
 Bundle 'wzzrd/vim-matchit'
-Bundle 'manalang/jshint.vim'
 Bundle 'jamescarr/snipmate-nodejs'
 Bundle 'guileen/vim-node'
 Bundle 'vim-octopress'
@@ -68,7 +66,6 @@ Bundle 'groenewege/vim-less'
 Bundle "jgdavey/tslime.vim"
 Bundle "jgdavey/vim-turbux"
 Bundle "kana/vim-smartinput"
-Bundle "kongo2002/vim-space"
 Bundle "kana/vim-textobj-entire"
 Bundle "kana/vim-textobj-line"
 Bundle "tpope/vim-ragtag"
@@ -78,6 +75,7 @@ Bundle "Gist.vim"
 Bundle "sjl/threesome.vim"
 Bundle "sjl/vitality.vim"
 Bundle "LanguageTool"
+Bundle "SirVer/ultisnips"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
@@ -97,10 +95,12 @@ if has("gui_running")
 endif
 
 " BUNDLES ARCHIVE {{{
+"  Bundle 'ervandew/snipmate.vim'
 "  Bundle 'ervandew/supertab'
 "  Bundle 'vim-stylus'
 "  Bundle 'css_color.vim'
 "  Bundle 'git://git.wincent.com/command-t.git'
 "  Bundle 'hallettj/jslint.vim'
+"  Bundle 'manalang/jshint.vim'
 " }}}
 
