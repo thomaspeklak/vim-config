@@ -168,6 +168,7 @@ set wildignore+=*.luac                           " Lua byte code
 set wildignore+=migrations                       " Django migrations
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=tmp 
+set wildignore+=class                            " Java class files"
 
 
 " }}}
