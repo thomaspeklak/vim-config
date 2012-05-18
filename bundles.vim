@@ -65,7 +65,6 @@ Bundle 'groenewege/vim-less'
 "Bundle 'skammer/vim-css-color' "Console vim does not like this
 Bundle "jgdavey/tslime.vim"
 Bundle "jgdavey/vim-turbux"
-Bundle "kana/vim-smartinput"
 Bundle "kana/vim-textobj-entire"
 Bundle "kana/vim-textobj-line"
 Bundle "tpope/vim-ragtag"
@@ -75,7 +74,7 @@ Bundle "Gist.vim"
 Bundle "sjl/threesome.vim"
 Bundle "sjl/vitality.vim"
 Bundle "LanguageTool"
-Bundle "SirVer/ultisnips"
+Bundle "VimClojure"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
@@ -95,6 +94,7 @@ if has("gui_running")
 endif
 
 " BUNDLES ARCHIVE {{{
+"  Bundle "kana/vim-smartinput"
 "  Bundle 'ervandew/snipmate.vim'
 "  Bundle 'ervandew/supertab'
 "  Bundle 'vim-stylus'

@@ -168,7 +168,8 @@ set wildignore+=*.luac                           " Lua byte code
 set wildignore+=migrations                       " Django migrations
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=tmp 
-set wildignore+=class                            " Java class files"
+set wildignore+=*.class                            " Java class files"
+set wildignore+=*.jar                            " Java jar files"
 
 
 " }}}
@@ -333,6 +334,13 @@ augroup ft_javascript
 augroup END
 
 " }}}
+" CLOJURE {{{
+augroup ft_clojure
+  au!
+  au BufRead,BufNewFile *.clj set filetype=clojure
+augroup END
+" }}}
+
 " RUBY {{{
 
 augroup ft_ruby
@@ -658,6 +666,10 @@ so ~/.vim/bundle/AutoTag/plugin/autotag.vim
 if has("gui_running")
   let g:debuggerMapDefaultKeys = 7
 endif
+" }}}
+" VIM CLOJURE{{{
+ let g:clj_highlight_builtins=1      " Highlight Clojure's builtins
+ let g:clj_paren_rainbow=1           " Rainbow parentheses'!
 " }}}
 
 source ~/.vim/vimrc_local
