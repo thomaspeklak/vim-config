@@ -241,6 +241,7 @@ if has("autocmd")
   " set question mark to be part of a VIM word. in Ruby it is!
   autocmd FileType ruby set iskeyword=@,48-57,_,?,!,192-255
   autocmd FileType css,scss set iskeyword=@,48-57,_,-,?,!,192-255
+  autocmd FileType clojure, clj set iskeyword=@,48-57,_,-,?,!,192-255
 
   autocmd FileType html,htmldjango,jinjahtml,eruby,mako,ctp let b:closetag_html_style=1
   autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,ctp source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
