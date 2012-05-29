@@ -73,7 +73,7 @@ set incsearch
 set showmatch
 
 " Colors **********************************************************************
-syntax enable " syntax highlighting
+syntax on " syntax highlighting
 set background=dark
 colorscheme solarized
 set background=dark       "solarized needs background dark after coloscheme change, who knows why?
@@ -275,8 +275,8 @@ if has("autocmd")
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
   filetype plugin on
+  filetype plugin indent on
   set ofu=syntaxcomplete#Complete
 
   "Resize splits when the window is resized
@@ -335,13 +335,6 @@ augroup ft_javascript
 augroup END
 
 " }}}
-" CLOJURE {{{
-augroup ft_clojure
-  au!
-  au BufRead,BufNewFile *.clj set filetype=clojure
-augroup END
-" }}}
-
 " RUBY {{{
 
 augroup ft_ruby
@@ -597,7 +590,8 @@ let g:atia_attributes_complete = 0
 " }}}
 " RAINBOX PARENTHESES {{{
 
-  au VimEnter * RainbowParenthesesToggle
+  "au VimEnter * RainbowParenthesesToggle  "has problems with vimclojure's
+  "indenting, @TODO needs fixing
   au Syntax * RainbowParenthesesLoadRound
   au Syntax * RainbowParenthesesLoadSquare
   au Syntax * RainbowParenthesesLoadBraces
@@ -668,6 +662,15 @@ if has("gui_running")
   let g:debuggerMapDefaultKeys = 7
 endif
 " }}}
+" CLOJURE {{{
+augroup ft_clojure
+  au!
+  au BufRead,BufNewFile *.clj set filetype=clojure
+  syntax on
+  set foldmethod=syntax
+augroup END
+" }}}
+
 " VIM CLOJURE{{{
 let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins
 let vimclojure#ParenRainbow = 1      " Rainbow parentheses'!
