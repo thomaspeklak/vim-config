@@ -409,7 +409,6 @@ nnoremap <F4> :TlistToggle<cr>
 " HTML tag closing
 inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
 
-map <ESC><ESC> :wa<CR>
 nnoremap <F3> :NERDTreeToggle<cr>
 
 vmap Q gq                                                          " us Q to format current paragraph
@@ -674,6 +673,21 @@ augroup END
 " VIM CLOJURE{{{
 let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins
 let vimclojure#ParenRainbow = 1      " Rainbow parentheses'!
+" }}}
+
+" CONVERT SECTION OF BOOKMARKS FILE TO LINKS
+" 
+" USAGE:
+"   if your folder has the name 'foo' then simply call
+"   :call BoomarksToMarkdownLinks("foo")<cr>
+" {{{
+function! BoomarksToMarkdownLinks(mark)
+  let save_search = @/
+  execute '1,/>' . a:mark . '</+1d'
+  /<\/DL>/,$ d
+  %s/\m.*HREF="\(.\{-}\)".*>\(.*\)<.*/- [\2](\1)/
+  let @/ = save_search
+endfunction
 " }}}
 
 source ~/.vim/vimrc_local
