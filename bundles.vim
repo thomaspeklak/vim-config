@@ -75,6 +75,7 @@ Bundle "sjl/threesome.vim"
 Bundle "sjl/vitality.vim"
 Bundle "LanguageTool"
 Bundle "VimClojure"
+Bundle "Shebang"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'

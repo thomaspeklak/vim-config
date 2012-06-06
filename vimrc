@@ -674,6 +674,10 @@ augroup END
 let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins
 let vimclojure#ParenRainbow = 1      " Rainbow parentheses'!
 " }}}
+" SHEBANG {{{
+map <leader>X :w<CR>:call SetExecutable()<CR>
+
+" }}}
 
 " CONVERT SECTION OF BOOKMARKS FILE TO LINKS
 " 
