@@ -426,12 +426,6 @@ nmap <leader>0 gg=G
 map <silent> <F7> mzgg=G'z :delmarks z<CR>:echo "Reformatted."<CR>
 
 
-"open files in current path
-map ,ew :e <C-R>=expand("%:p:h") . "/" <CR>
-map ,es :sp <C-R>=expand("%:p:h") . "/" <CR>
-map ,ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
-map ,et :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
 "Quickly edit and reload vimrc
 nmap <slient> <leader>eV :e $MYVIMRC<CR>
 nmap <slient> <leader>sV :so $MYVIMRC<CR>
@@ -462,14 +456,10 @@ nnoremap <leader>ft Vatzf                                            " fold tag
 
 
 " map esc to jj in insert mode to provide a way around photoshop bug blocking esc key
-imap jj <ESC>
-imap jjj <ESC>:wa<CR>
-
-" map autocompletion to control-space
-imap <C-space> <C-P>
+imap kj <ESC>
+imap KJ <ESC>:wa<CR>
 
 " map :b# to accessible combination on german keyboard
-nmap <C-tab> :b#<CR>
 nmap <leader>, :b#<CR>
 
 " map show next match (vimgrep)
@@ -518,10 +508,6 @@ map Y y$
 "find merge conflicts
 nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
-"}}}
-" STORE AND RESTORE SESSION {{{
-nnoremap <C-F2> :mksession! <CR>
-nnoremap <C-M-L> :so ./Session.vim<CR>
 "}}}
 " SURROUND MAPPINGS {{{
 " surround with char (needs surround plugin)
