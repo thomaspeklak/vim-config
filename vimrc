@@ -509,9 +509,9 @@ map Y y$
 nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 "insert current date
-nmap <leader>dd :r !date "+%Y-%m-%d"
-nmap <leader>dt :r !date "+%H:%M:%S"
-nmap <leader>df :r !date "+%Y-%m-%d %H:%M:%S"
+nmap <leader>df a<C-R>=strftime("%Y-%m-%d %I:%M")<CR><Esc>
+nmap <leader>dd a<C-R>=strftime("%Y-%m-%d")<CR><Esc>
+nmap <leader>dt a<C-R>=strftime("%I:%M")<CR><Esc>
 
 "}}}
 " SURROUND MAPPINGS {{{
