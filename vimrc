@@ -508,6 +508,11 @@ map Y y$
 "find merge conflicts
 nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
+"insert current date
+nmap <leader>dd :r !date "+%Y-%m-%d"
+nmap <leader>dt :r !date "+%H:%M:%S"
+nmap <leader>df :r !date "+%Y-%m-%d %H:%M:%S"
+
 "}}}
 " SURROUND MAPPINGS {{{
 " surround with char (needs surround plugin)
