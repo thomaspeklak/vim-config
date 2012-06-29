@@ -513,6 +513,14 @@ nmap <leader>df a<C-R>=strftime("%Y-%m-%d %I:%M")<CR><Esc>
 nmap <leader>dd a<C-R>=strftime("%Y-%m-%d")<CR><Esc>
 nmap <leader>dt a<C-R>=strftime("%I:%M")<CR><Esc>
 
+"insert brackets from home row
+inoremap <C-j> [
+inoremap <C-k> ]
+inoremap <C-d> (
+inoremap <C-f> )
+inoremap <C-o> {
+inoremap <C-l> }
+
 "}}}
 " SURROUND MAPPINGS {{{
 " surround with char (needs surround plugin)
