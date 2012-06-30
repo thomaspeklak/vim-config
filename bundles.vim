@@ -17,7 +17,7 @@ Bundle 'TwitVim'
 Bundle 'adamnbowen/scss-syntax.vim'
 Bundle 'c9s/cascading.vim'
 Bundle 'YankRing.vim'
-Bundle 'clones/vim-autocomplpop'
+"Bundle 'clones/vim-autocomplpop'
 Bundle 'closetag.vim'
 Bundle 'comment.vim'
 Bundle 'int3/vim-taglist-plus'
@@ -60,7 +60,6 @@ Bundle 'jamescarr/snipmate-nodejs'
 Bundle 'guileen/vim-node'
 Bundle 'vim-octopress'
 Bundle 'spf13/PIV'
-Bundle 'ervandew/supertab'
 Bundle 'groenewege/vim-less'
 "Bundle 'skammer/vim-css-color' "Console vim does not like this
 Bundle "jgdavey/tslime.vim"
@@ -86,15 +85,17 @@ Bundle "panozzaj/vim-autocorrect"
 
 "Experimental
 Bundle "ecomba/vim-ruby-refactoring"
+Bundle "Shougo/neocomplcache"
 
 " non github repos
 
 if has("gui_running")
-  Bundle 'robgleeson/hammer.vim'
+  Bundle "matthias-guenther/hammer.vim"
   Bundle "XDebug-DBGp-client-for-PHP"
 endif
 
 " BUNDLES ARCHIVE {{{
+"  Bundle 'ervandew/supertab'
 "  Bundle "kana/vim-smartinput"
 "  Bundle 'ervandew/snipmate.vim'
 "  Bundle 'ervandew/supertab'
