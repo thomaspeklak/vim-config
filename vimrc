@@ -519,8 +519,8 @@ inoremap <C-j> [
 inoremap <C-k> ]
 inoremap <C-d> (
 inoremap <C-f> )
-inoremap <C-o> {
-inoremap <C-l> }
+inoremap <C-n> {
+inoremap <C-m> }
 
 "}}}
 " SURROUND MAPPINGS {{{
