@@ -302,6 +302,7 @@ augroup ft_css
   au Filetype scss,less,css setlocal foldmarker={,}
   au Filetype scss,less,css setlocal omnifunc=csscomplete#CompleteCSS
   au Filetype scss,less,css setlocal iskeyword+=-
+  au BufRead,BufNewFile *.scss set filetype=scss
 
   " Use <leader>S to sort properties.  Turns this:
   "
@@ -731,6 +732,19 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 " AutoComplPop like behavior.
 let g:neocomplcache_enable_auto_select = 1
 
+" }}}
+
+" PHP CS FIXER
+let g:php_cs_fixer_level = "all"                " which level ?
+let g:php_cs_fixer_config = "default"           " configuration
+let g:php_cs_fixer_php_path = "php"             " Path to PHP
+let g:php_cs_fixer_fixers_list = ""             " List of fixers
+let g:php_cs_fixer_enable_default_mapping = 1   " Enable the mapping by default (<leader>pcd)
+let g:php_cs_fixer_dry_run = 0                  " Call command with dry-run option
+let g:php_cs_fixer_verbose = 0                  " Return the output of command if 1, else an inline information.
+
+nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 " }}}
 
 source ~/.vim/vimrc_local

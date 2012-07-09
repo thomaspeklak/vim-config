@@ -75,6 +75,7 @@ Bundle "sjl/vitality.vim"
 Bundle "LanguageTool"
 Bundle "VimClojure"
 Bundle "Shebang"
+Bundle 'stephpy/vim-php-cs-fixer'
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
