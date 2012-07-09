@@ -735,6 +735,7 @@ let g:neocomplcache_enable_auto_select = 1
 " }}}
 
 " PHP CS FIXER
+let g:php_cs_fixer_path = "php-cs-fixer"        " define the path to the php-cs-fixer.phar
 let g:php_cs_fixer_level = "all"                " which level ?
 let g:php_cs_fixer_config = "default"           " configuration
 let g:php_cs_fixer_php_path = "php"             " Path to PHP
