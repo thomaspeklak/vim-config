@@ -6,9 +6,6 @@
     git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     cd ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
-    cd bundle/command-t
-    (optional) rvm use 1.8.7     # use the ruby version vim was compiled against
-    rake make
     touch ~/.vim/vimrc_local
     (sudo) gem install github-markup RedCloth
     vim +BundleInstall +qall
