@@ -75,6 +75,7 @@ set showmatch
 " Colors **********************************************************************
 syntax on " syntax highlighting
 set background=dark
+let g:solarized_contrast="high"
 colorscheme solarized
 set background=dark       "solarized needs background dark after coloscheme change, who knows why?
 call togglebg#map("<F8>")
@@ -735,7 +736,7 @@ let g:neocomplcache_enable_auto_select = 1
 " }}}
 
 " PHP CS FIXER
-let g:php_cs_fixer_path = "php-cs-fixer"        " define the path to the php-cs-fixer.phar
+let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer"        " define the path to the php-cs-fixer.phar
 let g:php_cs_fixer_level = "all"                " which level ?
 let g:php_cs_fixer_config = "default"           " configuration
 let g:php_cs_fixer_php_path = "php"             " Path to PHP
