@@ -86,8 +86,10 @@ Bundle 'molokai'
 Bundle "panozzaj/vim-autocorrect"
 
 "Experimental
+Bundle "coderifous/textobj-word-column.vim.git"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "Shougo/neocomplcache"
+Bundle "Lokaltog/vim-easymotion"
 
 " non github repos
 
