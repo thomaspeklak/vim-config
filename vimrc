@@ -170,6 +170,7 @@ set wildignore+=*.pyc                            " Python byte code
 set wildignore+=tmp 
 set wildignore+=*.class                            " Java class files"
 set wildignore+=*.jar                            " Java jar files"
+set wildignore+=*node_modules                     " Node modules dir
 
 
 " }}}
