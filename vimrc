@@ -75,7 +75,7 @@ set showmatch
 " Colors **********************************************************************
 syntax on " syntax highlighting
 set background=dark
-colorscheme solarized
+colorscheme lucius
 set background=dark       "solarized needs background dark after coloscheme change, who knows why?
 call togglebg#map("<F8>")
 
@@ -216,8 +216,9 @@ set foldtext=MyFoldText()
 
 " }}}
 " TEXTWRAPPING {{{
-command! -nargs=* Wrapmode set tw=60 formatoptions+=ta               " autowrap text on insert @ 60 chars
-command! -nargs=* Nowrapmode set tw=0 formatoptions-=ta              " restore to previouse state
+"these lines seem to have some kind of side effects, needs investigation
+"command! -nargs=* Wrapmode set tw=60 formatoptions+=ta               " autowrap text on insert @ 60 chars
+"command! -nargs=* Nowrapmode set tw=0 formatoptions-=ta              " restore to previouse state
 "}}} 
 " AUTOCOMMANDS AND FILETYPE ASSOCIATIONS {{{
 if has("autocmd")
@@ -733,6 +734,9 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 " AutoComplPop like behavior.
 let g:neocomplcache_enable_auto_select = 1
 
+" }}}
+" Lucius {{{
+g:lucius_style dark
 " }}}
 
 " PHP CS FIXER

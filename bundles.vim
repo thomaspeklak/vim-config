@@ -81,6 +81,7 @@ Bundle 'stephpy/vim-php-cs-fixer'
 Bundle 'altercation/vim-colors-solarized'
 Bundle "shawncplus/skittles_berry"
 Bundle 'molokai'
+Bundle "Lucius"
 
 Bundle "panozzaj/vim-autocorrect"
 
