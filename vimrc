@@ -74,10 +74,9 @@ set showmatch
 
 " Colors **********************************************************************
 syntax on " syntax highlighting
-set background=dark
 colorscheme lucius
-set background=dark       "solarized needs background dark after coloscheme change, who knows why?
-call togglebg#map("<F8>")
+set background=dark
+"call togglebg#map("<F8>") "Toggle Solarized
 
 set nolist        " do not show hidden characters
 set sessionoptions="blank,buffers,curdir,folds,resize,tabpages,winpos,winsize"
@@ -736,7 +735,20 @@ let g:neocomplcache_enable_auto_select = 1
 
 " }}}
 " Lucius {{{
-g:lucius_style dark
+let g:lucius_style = "dark"
+
+function! ToggleLuciusStyle()
+  if g:lucius_style == "dark"
+    LuciusDarkDim
+  elseif g:lucius_style == "dark_dim"
+    LuciusLight
+  else
+    LuciusDark
+  endif
+endfunction
+
+command! -nargs=* ToggleLuciusStyle call ToggleLuciusStyle()
+nnoremap <F8> :ToggleLuciusStyle<cr>
 " }}}
 
 " PHP CS FIXER
