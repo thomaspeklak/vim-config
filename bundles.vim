@@ -91,6 +91,8 @@ Bundle "coderifous/textobj-word-column.vim.git"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "Shougo/neocomplcache"
 Bundle "Lokaltog/vim-easymotion"
+Bundle "vimwiki"
+Bundle "gregsexton/gitv"
 
 " non github repos
 
