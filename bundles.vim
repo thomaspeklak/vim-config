@@ -93,6 +93,7 @@ Bundle "Shougo/neocomplcache"
 Bundle "Lokaltog/vim-easymotion"
 Bundle "vimwiki"
 Bundle "gregsexton/gitv"
+Bundle "myhere/vim-nodejs-complete"
 
 " non github repos
 
