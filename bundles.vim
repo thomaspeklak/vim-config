@@ -13,16 +13,13 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Rename'
 Bundle 'Tabular'
 Bundle 'The-NERD-tree'
-Bundle 'TwitVim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'c9s/cascading.vim'
 Bundle 'YankRing.vim'
-"Bundle 'clones/vim-autocomplpop'
 Bundle 'closetag.vim'
 Bundle 'comment.vim'
 Bundle 'int3/vim-taglist-plus'
 Bundle 'itspriddle/vim-jquery'
-Bundle 'jayferd/eco.vim'
 Bundle 'juvenn/mustache.vim'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
@@ -61,7 +58,6 @@ Bundle 'guileen/vim-node'
 Bundle 'vim-octopress'
 Bundle 'spf13/PIV'
 Bundle 'groenewege/vim-less'
-"Bundle 'skammer/vim-css-color' "Console vim does not like this
 Bundle "jgdavey/tslime.vim"
 Bundle "jgdavey/vim-turbux"
 Bundle "kana/vim-textobj-entire"
@@ -80,7 +76,6 @@ Bundle "sudo.vim"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
-Bundle "shawncplus/skittles_berry"
 Bundle 'molokai'
 Bundle "Lucius"
 
@@ -90,7 +85,6 @@ Bundle "panozzaj/vim-autocorrect"
 Bundle "coderifous/textobj-word-column.vim.git"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "Shougo/neocomplcache"
-Bundle "Lokaltog/vim-easymotion"
 Bundle "vimwiki"
 Bundle "gregsexton/gitv"
 Bundle "myhere/vim-nodejs-complete"
