@@ -53,7 +53,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vlmonk/vim-rspec'
 Bundle 'wzzrd/vim-matchit'
-Bundle 'jamescarr/snipmate-nodejs'
 Bundle 'guileen/vim-node'
 Bundle 'vim-octopress'
 Bundle 'spf13/PIV'
@@ -89,6 +88,12 @@ Bundle "vimwiki"
 Bundle "gregsexton/gitv"
 Bundle "myhere/vim-nodejs-complete"
 Bundle "vim-ruby/vim-ruby"
+Bundle "garbas/vim-snipmate"
+Bundle "vim-scripts/Tag-Signature-Balloons"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle 'jamescarr/snipmate-nodejs'
 
 " non github repos
 
@@ -100,7 +105,6 @@ endif
 " BUNDLES ARCHIVE {{{
 "  Bundle 'ervandew/supertab'
 "  Bundle "kana/vim-smartinput"
-"  Bundle 'ervandew/snipmate.vim'
 "  Bundle 'ervandew/supertab'
 "  Bundle 'vim-stylus'
 "  Bundle 'css_color.vim'
