@@ -748,6 +748,9 @@ endfunction
 command! -nargs=* ToggleLuciusStyle call ToggleLuciusStyle()
 nnoremap <F8> :ToggleLuciusStyle<cr>
 " }}}
+"{{{ SNIP MATE
+let g:snips_trigger_key='<c-g>'
+"}}}
 
 " PHP CS FIXER
 let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer"        " define the path to the php-cs-fixer.phar
