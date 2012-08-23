@@ -748,6 +748,9 @@ endfunction
 command! -nargs=* ToggleLuciusStyle call ToggleLuciusStyle()
 nnoremap <F8> :ToggleLuciusStyle<cr>
 " }}}
+"{{{ NEOCOMPLETE SNIPPETS
+let g:neocomplcache_snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
+"}}}
 
 " PHP CS FIXER
 let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer"        " define the path to the php-cs-fixer.phar

@@ -88,10 +88,9 @@ Bundle "vimwiki"
 Bundle "gregsexton/gitv"
 Bundle "myhere/vim-nodejs-complete"
 Bundle "vim-ruby/vim-ruby"
-Bundle "garbas/vim-snipmate"
+"Bundle "garbas/vim-snipmate"
+Bundle "Shougo/neocomplcache-snippets-complete"
 Bundle "vim-scripts/Tag-Signature-Balloons"
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
 Bundle 'jamescarr/snipmate-nodejs'
 
