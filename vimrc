@@ -519,10 +519,8 @@ nmap <leader>dt a<C-R>=strftime("%I:%M")<CR><Esc>
 "insert brackets from home row
 inoremap <C-j> [
 inoremap <C-k> ]
-inoremap <C-d> (
-inoremap <C-f> )
-inoremap <C-n> {
-inoremap <C-m> }
+inoremap <C-d> {
+inoremap <C-f> }
 
 "}}}
 " SURROUND MAPPINGS {{{
@@ -725,7 +723,7 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
