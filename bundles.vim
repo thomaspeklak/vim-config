@@ -88,6 +88,7 @@ Bundle "Shougo/neocomplcache"
 Bundle "vimwiki"
 Bundle "gregsexton/gitv"
 Bundle "myhere/vim-nodejs-complete"
+Bundle "vim-ruby/vim-ruby"
 
 " non github repos
 
