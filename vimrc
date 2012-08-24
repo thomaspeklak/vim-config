@@ -748,6 +748,10 @@ endfunction
 command! -nargs=* ToggleLuciusStyle call ToggleLuciusStyle()
 nnoremap <F8> :ToggleLuciusStyle<cr>
 " }}}
+"{{{ SNIP MATE
+let g:snips_trigger_key='<c-g>'
+"}}}
+"
 "{{{ NEOCOMPLETE SNIPPETS
 let g:neocomplcache_snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
 imap <C-A> <Plug>(neocomplcache_snippets_expand)
