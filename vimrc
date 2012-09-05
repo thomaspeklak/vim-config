@@ -518,7 +518,7 @@ nmap <leader>dt a<C-R>=strftime("%I:%M")<CR><Esc>
 
 "insert brackets from home row
 inoremap <C-j> [
-inoremap <C-k> ]
+"inoremap <C-k> ]
 inoremap <C-d> {
 inoremap <C-f> }
 

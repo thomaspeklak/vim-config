@@ -77,6 +77,7 @@ Bundle "sudo.vim"
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'molokai'
 Bundle "Lucius"
+Bundle "chriskempson/base16-vim"
 
 Bundle "panozzaj/vim-autocorrect"
 
