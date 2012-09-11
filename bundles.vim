@@ -6,7 +6,6 @@ Bundle 'gmarik/vundle'
 
 " original repos on github
 Bundle 'AutoTag'
-Bundle 'Better-CSS-Syntax-for-Vim'
 Bundle 'L9'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
@@ -14,13 +13,10 @@ Bundle 'Rename'
 Bundle 'Tabular'
 Bundle 'The-NERD-tree'
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'c9s/cascading.vim'
 Bundle 'YankRing.vim'
 Bundle 'closetag.vim'
-Bundle 'comment.vim'
 Bundle 'int3/vim-taglist-plus'
 Bundle 'itspriddle/vim-jquery'
-Bundle 'juvenn/mustache.vim'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
@@ -45,7 +41,6 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-pathogen'
 Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-speeddating'
@@ -54,7 +49,6 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vlmonk/vim-rspec'
 Bundle 'wzzrd/vim-matchit'
 Bundle 'guileen/vim-node'
-Bundle 'vim-octopress'
 Bundle 'spf13/PIV'
 Bundle 'groenewege/vim-less'
 Bundle "jgdavey/tslime.vim"
@@ -69,9 +63,9 @@ Bundle "sjl/threesome.vim"
 Bundle "sjl/vitality.vim"
 Bundle "LanguageTool"
 Bundle "VimClojure"
-Bundle "Shebang"
 Bundle 'stephpy/vim-php-cs-fixer'
 Bundle "sudo.vim"
+Bundle "panozzaj/vim-autocorrect"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
@@ -79,21 +73,16 @@ Bundle 'molokai'
 Bundle "Lucius"
 Bundle "chriskempson/base16-vim"
 
-Bundle "panozzaj/vim-autocorrect"
 
 "Experimental
 Bundle "coderifous/textobj-word-column.vim.git"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "Shougo/neocomplcache"
 Bundle "vimwiki"
-Bundle "gregsexton/gitv"
 Bundle "myhere/vim-nodejs-complete"
 Bundle "vim-ruby/vim-ruby"
-"Bundle "garbas/vim-snipmate"
 Bundle "Shougo/neocomplcache-snippets-complete"
 Bundle "vim-scripts/Tag-Signature-Balloons"
-Bundle "honza/snipmate-snippets"
-Bundle 'jamescarr/snipmate-nodejs'
 
 " non github repos
 
@@ -111,5 +100,8 @@ endif
 "  Bundle 'git://git.wincent.com/command-t.git'
 "  Bundle 'hallettj/jslint.vim'
 "  Bundle 'manalang/jshint.vim'
+"  Bundle 'c9s/cascading.vim'
+"  Bundle 'juvenn/mustache.vim'
+"  Bundle 'comment.vim'
 " }}}
 
