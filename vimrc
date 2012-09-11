@@ -754,6 +754,8 @@ let g:snips_trigger_key='<c-g>'
 "
 "{{{ NEOCOMPLETE SNIPPETS
 let g:neocomplcache_snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
+imap <C-A> <Plug>(neocomplcache_snippets_expand)
+smap <C-A> <Plug>(neocomplcache_snippets_expand)
 "}}}
 
 " PHP CS FIXER
