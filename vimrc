@@ -213,6 +213,12 @@ function! MyFoldText() " {{{
 endfunction " }}}
 set foldtext=MyFoldText()
 
+" Don't screw up folds when inserting text that might affect them, until
+" leaving insert mode. Foldmethod is local to the window. Protect against
+" screwing up folding when switching between windows.
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+
 " }}}
 " TEXTWRAPPING {{{
 "these lines seem to have some kind of side effects, needs investigation
@@ -771,7 +777,7 @@ imap <C-A> <Plug>(neocomplcache_snippets_expand)
 smap <C-A> <Plug>(neocomplcache_snippets_expand)
 "}}}
 
-" PHP CS FIXER
+" PHP CS FIXER{{{
 let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer"        " define the path to the php-cs-fixer.phar
 let g:php_cs_fixer_level = "all"                " which level ?
 let g:php_cs_fixer_config = "default"           " configuration
@@ -784,6 +790,10 @@ let g:php_cs_fixer_verbose = 0                  " Return the output of command i
 nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 " }}}
+" SWITCH VIM {{{
+nnoremap - :Switch<cr>
+" }}}
+
 
 source ~/.vim/vimrc_local
 
