@@ -84,6 +84,7 @@ Bundle "vim-ruby/vim-ruby"
 Bundle "Shougo/neocomplcache-snippets-complete"
 Bundle "vim-scripts/Tag-Signature-Balloons"
 Bundle "AndrewRadev/switch.vim"
+Bundle "miripiruni/CSScomb-for-Vim"
 " non github repos
 
 if has("gui_running")
