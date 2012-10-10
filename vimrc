@@ -254,6 +254,7 @@ if has("autocmd")
   autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,ctp source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
 
   autocmd FileType css,scss setlocal ts=4 sts=4 sw=4 noet
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noet
   autocmd FileType coffee setlocal ts=2 sts=2 sw=2 et
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
   autocmd FileType php setlocal ts=2 sts=2 sw=2 et
@@ -802,6 +803,32 @@ nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 nnoremap - :Switch<cr>
 " }}}
 
+"{{{ wrap visual selection in tag
+
+vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
+function! VisualHTMLTagWrap()
+  let tag = input("Tag to wrap block: ")
+  if len(tag) > 0
+    normal `>
+    if &selection == 'exclusive'
+      exe "normal i</".tag.">"
+    else
+      exe "normal a</".tag.">"
+    endif
+    normal `<
+    exe "normal i<".tag.">"
+    normal `<
+  endif
+endfunction
+
+"}}}
+"{{{ js beautify
+autocmd FileType javascript noremap <buffer>  <leader>ff :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <leader>ff :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <leader>ff :call CSSBeautify()<cr>
+"}}}
 
 source ~/.vim/vimrc_local
 
