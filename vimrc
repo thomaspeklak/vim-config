@@ -52,6 +52,8 @@ set autoread                                                       " Autoload fi
 set autowriteall 
 set hidden                                                           " allow vim to create hidden buffers
 set backspace=indent,eol,start                                       " allow backspacing over everything in insert mode
+set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
+
 
 set completeopt=longest,menuone,preview                              " Better Completion
 
