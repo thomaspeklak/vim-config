@@ -255,13 +255,13 @@ if has("autocmd")
   autocmd FileType html,htmldjango,jinjahtml,eruby,mako,ctp let b:closetag_html_style=1
   autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,ctp source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
 
-  autocmd FileType css,scss setlocal ts=4 sts=4 sw=4 noet
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noet
+  autocmd FileType css,scss setlocal ts=4 sts=4 sw=4 et
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 et
   autocmd FileType coffee setlocal ts=2 sts=2 sw=2 et
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
-  autocmd FileType php setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType php setlocal ts=4 sts=4 sw=4 et
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 et
-  autocmd FileType xml setlocal ts=4 sts=4 sw=4 noet
+  autocmd FileType xml,html setlocal ts=4 sts=4 sw=4 et
 
   " OMNICOMPLETE {{{
   set ofu=syntaxcomplete#Complete
@@ -831,38 +831,36 @@ autocmd FileType html noremap <buffer> <leader>ff :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <leader>ff :call CSSBeautify()<cr>
 "}}}
-    " Tabularize {
-        if exists(":Tabularize")
-          nmap <Leader>a= :Tabularize /=<CR>
-          vmap <Leader>a= :Tabularize /=<CR>
-          nmap <Leader>a=> :Tabularize /=<CR>
-          vmap <Leader>a=> :Tabularize /=<CR>
-          nmap <Leader>a: :Tabularize /:<CR>
-          vmap <Leader>a: :Tabularize /:<CR>
-          nmap <Leader>a:: :Tabularize /:\zs<CR>
-          vmap <Leader>a:: :Tabularize /:\zs<CR>
-          nmap <Leader>a, :Tabularize /,<CR>
-          vmap <Leader>a, :Tabularize /,<CR>
-          nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-          vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+" Tabularize {
+nmap <Leader>x= :Tabularize /=<CR>
+vmap <Leader>x= :Tabularize /=<CR>
+nmap <Leader>x=> :Tabularize /=<CR>
+vmap <Leader>x=> :Tabularize /=<CR>
+nmap <Leader>x: :Tabularize /:<CR>
+vmap <Leader>x: :Tabularize /:<CR>
+nmap <Leader>x:: :Tabularize /:\zs<CR>
+vmap <Leader>x:: :Tabularize /:\zs<CR>
+nmap <Leader>x, :Tabularize /,<CR>
+vmap <Leader>x, :Tabularize /,<CR>
+nmap <Leader>x<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>x<Bar> :Tabularize /<Bar><CR>
 
-          " The following function automatically aligns when typing a
-          " supported character
-          inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+" The following function automatically aligns when typing a
+" supported character
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
-          function! s:align()
-              let p = '^\s*|\s.*\s|\s*$'
-              if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-                  let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-                  let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-                  Tabularize/|/l1
-                  normal! 0
-                  call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-              endif
-          endfunction
+function! s:align()
+    let p = '^\s*|\s.*\s|\s*$'
+    if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+        let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+        let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+        Tabularize/|/l1
+        normal! 0
+        call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+    endif
+endfunction
 
-        endif
-     " }
+" }
 source ~/.vim/vimrc_local
 
 if filereadable('./.vimrc.project')                                     "load session if existent
