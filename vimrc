@@ -763,15 +763,15 @@ let g:neocomplcache_enable_auto_select = 1
 
 " }}}
 " Lucius {{{
-let g:lucius_style = "dark"
+LuciusBlack
 
 function! ToggleLuciusStyle()
-  if g:lucius_style == "dark"
-    LuciusDarkDim
+  if g:lucius_style == "black"
+    LuciusDarkLowContrast
   elseif g:lucius_style == "dark_dim"
     LuciusLight
   else
-    LuciusDark
+    LuciusBlack
   endif
 endfunction
 
