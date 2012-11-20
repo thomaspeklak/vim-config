@@ -66,6 +66,7 @@ Bundle 'stephpy/vim-php-cs-fixer'
 Bundle "sudo.vim"
 Bundle "panozzaj/vim-autocorrect"
 Bundle "digitaltoad/vim-jade"
+Bundle "Shougo/neosnippet"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
@@ -81,7 +82,6 @@ Bundle "Shougo/neocomplcache"
 Bundle "vimwiki"
 Bundle "myhere/vim-nodejs-complete"
 Bundle "vim-ruby/vim-ruby"
-Bundle "Shougo/neocomplcache-snippets-complete"
 Bundle "vim-scripts/Tag-Signature-Balloons"
 Bundle "AndrewRadev/switch.vim"
 Bundle "miripiruni/CSScomb-for-Vim"
