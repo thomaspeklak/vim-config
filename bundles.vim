@@ -65,6 +65,7 @@ Bundle "VimClojure"
 Bundle 'stephpy/vim-php-cs-fixer'
 Bundle "sudo.vim"
 Bundle "panozzaj/vim-autocorrect"
+Bundle "digitaltoad/vim-jade"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
