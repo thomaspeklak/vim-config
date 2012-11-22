@@ -265,15 +265,18 @@ if has("autocmd")
   autocmd FileType xml,html setlocal ts=4 sts=4 sw=4 et
 
   " OMNICOMPLETE {{{
+  let g:jscomplete_use = ['dom', 'moz', 'es6th']
+  let g:node_usejscomplete = 1
   set ofu=syntaxcomplete#Complete
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
   autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
   autocmd FileType c setlocal omnifunc=ccomplete#Complete
   autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+  autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
   " }}}
 
   "automatically remove trailing whitespace
