@@ -67,6 +67,7 @@ Bundle "sudo.vim"
 Bundle "panozzaj/vim-autocorrect"
 Bundle "digitaltoad/vim-jade"
 Bundle "Shougo/neosnippet"
+Bundle "chreekat/vim-paren-crosshairs"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
@@ -87,6 +88,7 @@ Bundle "vim-scripts/Tag-Signature-Balloons"
 Bundle "AndrewRadev/switch.vim"
 Bundle "miripiruni/CSScomb-for-Vim"
 Bundle "maksimr/vim-jsbeautify"
+Bundle "benmills/vimux"
 " non github repos
 
 if has("gui_running")

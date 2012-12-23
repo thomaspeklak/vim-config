@@ -348,6 +348,7 @@ augroup ft_javascript
 
   au FileType javascript setlocal foldmethod=marker
   au FileType javascript setlocal foldmarker={,}
+  au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
 augroup END
 
 " }}}
@@ -844,6 +845,17 @@ autocmd FileType javascript noremap <buffer>  <leader>ff :call JsBeautify()<cr>
 autocmd FileType html noremap <buffer> <leader>ff :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <leader>ff :call CSSBeautify()<cr>
+"}}}
+"TSLIME {{{
+function! SelectionToTmux()
+  try
+    let a_save = @a
+    normal! gv"ay
+    call Send_to_Tmux(@a)
+  finally
+    let @a = a_save
+  endtry
+endfunction
 "}}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
