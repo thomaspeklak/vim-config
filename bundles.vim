@@ -68,6 +68,7 @@ Bundle "panozzaj/vim-autocorrect"
 Bundle "digitaltoad/vim-jade"
 Bundle "Shougo/neosnippet"
 Bundle "chreekat/vim-paren-crosshairs"
+Bundle "drslump/vim-syntax-js"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'

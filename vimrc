@@ -349,6 +349,9 @@ augroup ft_javascript
   au FileType javascript setlocal foldmethod=marker
   au FileType javascript setlocal foldmarker={,}
   au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
+  au FileType javascript setl foldmethod=syntax
+  au FileType javascript setl conceallevel=2 concelcursor=nc
+  let g:syntax_js=['function', 'return', "proto"]
 augroup END
 
 " }}}
