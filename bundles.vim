@@ -50,8 +50,6 @@ Bundle 'wzzrd/vim-matchit'
 Bundle 'guileen/vim-node'
 Bundle 'spf13/PIV'
 Bundle 'groenewege/vim-less'
-Bundle "jgdavey/tslime.vim"
-Bundle "jgdavey/vim-turbux"
 Bundle "kana/vim-textobj-entire"
 Bundle "kana/vim-textobj-line"
 Bundle "tpope/vim-ragtag"
@@ -69,6 +67,10 @@ Bundle "digitaltoad/vim-jade"
 Bundle "Shougo/neosnippet"
 Bundle "chreekat/vim-paren-crosshairs"
 Bundle "drslump/vim-syntax-js"
+Bundle "Shougo/neocomplcache"
+Bundle "myhere/vim-nodejs-complete"
+Bundle "teramako/jscomplete-vim"
+Bundle "maksimr/vim-jsbeautify"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
@@ -78,18 +80,11 @@ Bundle "chriskempson/base16-vim"
 
 
 "Experimental
-Bundle "coderifous/textobj-word-column.vim.git"
 Bundle "ecomba/vim-ruby-refactoring"
-Bundle "Shougo/neocomplcache"
-Bundle "vimwiki"
-Bundle "myhere/vim-nodejs-complete"
-Bundle "teramako/jscomplete-vim"
 Bundle "vim-ruby/vim-ruby"
 Bundle "vim-scripts/Tag-Signature-Balloons"
 Bundle "AndrewRadev/switch.vim"
 Bundle "miripiruni/CSScomb-for-Vim"
-Bundle "maksimr/vim-jsbeautify"
-Bundle "benmills/vimux"
 " non github repos
 
 if has("gui_running")

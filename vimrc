@@ -350,7 +350,9 @@ augroup ft_javascript
   au FileType javascript setlocal foldmarker={,}
   au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
   au FileType javascript setl foldmethod=syntax
-  au FileType javascript setl conceallevel=2 concelcursor=nc
+  set conceallevel=2
+  set concealcursor=nc  " don't reveal the conceals unless on insert or visual modes
+  au FileType javascript setl conceallevel=2 concealcursor=nc
   let g:syntax_js=['function', 'return', "proto"]
 augroup END
 
@@ -480,7 +482,7 @@ imap kj <ESC>
 imap KJ <ESC>:wa<CR>
 
 " map :b# to accessible combination on german keyboard
-nmap <leader>, :b#<CR>
+nmap <leader>. :b#<CR>
 
 " map show next match (vimgrep)
 nmap <leader>n :cn<CR>
