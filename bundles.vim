@@ -71,6 +71,7 @@ Bundle "Shougo/neocomplcache"
 Bundle "myhere/vim-nodejs-complete"
 Bundle "teramako/jscomplete-vim"
 Bundle "maksimr/vim-jsbeautify"
+Bundle "majutsushi/tagbar"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'

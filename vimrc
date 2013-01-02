@@ -426,7 +426,7 @@ nnoremap <leader>s :%s//<left>
 " Preview Files
 nnoremap <F6> :w<cr>:Hammer<cr>
 
-nnoremap <F4> :TlistToggle<cr>
+nnoremap <F4> :TagbarToggle<cr>
 
 " HTML tag closing
 inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
