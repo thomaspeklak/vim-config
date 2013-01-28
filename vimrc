@@ -862,6 +862,13 @@ function! SelectionToTmux()
   endtry
 endfunction
 "}}}
+" EASY MOTION {{{
+nmap <S-I> <Leader><Leader>F
+vmap <S-I> <Leader><Leader>F
+imap <C-i> <ESC><Leader><Leader>f
+nmap <C-i> <Leader><Leader>f
+vmap <C-i> <Leader><Leader>f
+" }}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
 vmap <Leader>x= :Tabularize /=<CR>
