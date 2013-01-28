@@ -863,9 +863,8 @@ function! SelectionToTmux()
 endfunction
 "}}}
 " EASY MOTION {{{
-nmap <S-I> <Leader><Leader>F
-vmap <S-I> <Leader><Leader>F
-imap <C-i> <ESC><Leader><Leader>f
+nmap <C-0> <Leader><Leader>F
+vmap <C-0> <Leader><Leader>F
 nmap <C-i> <Leader><Leader>f
 vmap <C-i> <Leader><Leader>f
 " }}}

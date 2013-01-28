@@ -72,7 +72,6 @@ Bundle "myhere/vim-nodejs-complete"
 Bundle "teramako/jscomplete-vim"
 Bundle "maksimr/vim-jsbeautify"
 Bundle "majutsushi/tagbar"
-Bundle "flomotlik/vim-livereload"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
