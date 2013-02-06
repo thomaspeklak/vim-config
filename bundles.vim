@@ -70,9 +70,9 @@ Bundle "drslump/vim-syntax-js"
 Bundle "Shougo/neocomplcache"
 Bundle "myhere/vim-nodejs-complete"
 Bundle "teramako/jscomplete-vim"
-Bundle "maksimr/vim-jsbeautify"
 Bundle "majutsushi/tagbar"
 Bundle 'manalang/jshint.vim'
+Bundle "Arkham/vim-web-indent"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'

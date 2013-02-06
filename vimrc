@@ -870,6 +870,7 @@ nmap <C-0> <Leader><Leader>F
 vmap <C-0> <Leader><Leader>F
 nmap <C-i> <Leader><Leader>f
 vmap <C-i> <Leader><Leader>f
+nmap <S-Tab> <leader><Leader>F
 " }}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
