@@ -192,8 +192,8 @@ set backup                        " enable backups
 set foldlevelstart=99999
 
 " Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
+"nnoremap <Space> za
+"vnoremap <Space> za
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
@@ -864,11 +864,11 @@ function! SelectionToTmux()
 endfunction
 "}}}
 " EASY MOTION {{{
-nmap <C-0> <Leader><Leader>F
-vmap <C-0> <Leader><Leader>F
-nmap <C-i> <Leader><Leader>f
-vmap <C-i> <Leader><Leader>f
-nmap <S-Tab> <leader><Leader>F
+nmap <C-0> <Space>F
+vmap <C-0> <Space>F
+nmap <C-i> <Space>f
+vmap <C-i> <Space>f
+nmap <S-Tab> <Space>F
 let g:EasyMotion_leader_key = '<Space>'
 let g:EasyMotion_mapping_w = '-'
 let g:EasyMotion_mapping_b = '_'
