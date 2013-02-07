@@ -55,6 +55,7 @@ set backspace=indent,eol,start                                       " allow bac
 set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
 
 
+
 set completeopt=longest,menuone,preview                              " Better Completion
 
 "  set nobackup                                                       " no backup file
@@ -78,6 +79,9 @@ set showmatch
 syntax on " syntax highlighting
 colorscheme lucius
 set background=dark
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 "call togglebg#map("<F8>") "Toggle Solarized
 
 set nolist        " do not show hidden characters
@@ -821,9 +825,6 @@ let g:php_cs_fixer_verbose = 0                  " Return the output of command i
 nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 " }}}
-" SWITCH VIM {{{
-nnoremap - :Switch<cr>
-" }}}
 
 "{{{ wrap visual selection in tag
 
@@ -868,6 +869,9 @@ vmap <C-0> <Leader><Leader>F
 nmap <C-i> <Leader><Leader>f
 vmap <C-i> <Leader><Leader>f
 nmap <S-Tab> <leader><Leader>F
+let g:EasyMotion_leader_key = '<Space>'
+let g:EasyMotion_mapping_w = '-'
+let g:EasyMotion_mapping_b = '_'
 " }}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
