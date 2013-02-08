@@ -55,6 +55,7 @@ set backspace=indent,eol,start                                       " allow bac
 set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
 
 
+
 set completeopt=longest,menuone,preview                              " Better Completion
 
 "  set nobackup                                                       " no backup file
@@ -78,6 +79,9 @@ set showmatch
 syntax on " syntax highlighting
 colorscheme lucius
 set background=dark
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 "call togglebg#map("<F8>") "Toggle Solarized
 
 set nolist        " do not show hidden characters
@@ -188,8 +192,8 @@ set backup                        " enable backups
 set foldlevelstart=99999
 
 " Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
+"nnoremap <Space> za
+"vnoremap <Space> za
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
@@ -824,9 +828,6 @@ let g:php_cs_fixer_verbose = 0                  " Return the output of command i
 nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 " }}}
-" SWITCH VIM {{{
-nnoremap - :Switch<cr>
-" }}}
 
 "{{{ wrap visual selection in tag
 
@@ -866,11 +867,14 @@ function! SelectionToTmux()
 endfunction
 "}}}
 " EASY MOTION {{{
-nmap <C-0> <Leader><Leader>F
-vmap <C-0> <Leader><Leader>F
-nmap <C-i> <Leader><Leader>f
-vmap <C-i> <Leader><Leader>f
-nmap <S-Tab> <leader><Leader>F
+nmap <C-0> <Space>F
+vmap <C-0> <Space>F
+nmap <C-i> <Space>f
+vmap <C-i> <Space>f
+nmap <S-Tab> <Space>F
+let g:EasyMotion_leader_key = '<Space>'
+let g:EasyMotion_mapping_w = '-'
+let g:EasyMotion_mapping_b = '_'
 " }}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
