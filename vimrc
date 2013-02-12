@@ -671,10 +671,12 @@ let g:Powerline_symbols = 'fancy'
   let g:ctrlp_map = '<C-G>' 
   map <leader>rr :ClearCtrlPCache<CR>
   map <C-d> :CtrlPBuffer<CR>
+  map <C-ö> :CtrlPMRU<CR>
+  map <C-A-g> :CtrlPMixed<CR>
   map <leader>p :CtrlP<CR>
   map <leader>b :CtrlPBuffer<CR>
 
-  let g:ctrlp_working_path_mode = 0
+  let g:ctrlp_working_path_mode = "ra"
 
 " }}}
 " PIV {{{
