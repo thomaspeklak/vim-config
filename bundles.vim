@@ -64,15 +64,17 @@ Bundle 'stephpy/vim-php-cs-fixer'
 Bundle "sudo.vim"
 Bundle "panozzaj/vim-autocorrect"
 Bundle "digitaltoad/vim-jade"
-Bundle "Shougo/neosnippet"
 Bundle "chreekat/vim-paren-crosshairs"
 Bundle "drslump/vim-syntax-js"
-Bundle "Shougo/neocomplcache"
 Bundle "myhere/vim-nodejs-complete"
 Bundle "teramako/jscomplete-vim"
 Bundle "majutsushi/tagbar"
-Bundle 'manalang/jshint.vim'
+Bundle 'wookiehangover/jshint.vim'
 Bundle "Arkham/vim-web-indent"
+
+Bundle "Valloric/YouCompleteMe"
+"Bundle "Shougo/neosnippet"
+"Bundle "Shougo/neocomplcache"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
