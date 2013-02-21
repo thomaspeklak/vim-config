@@ -55,7 +55,7 @@ set backspace=indent,eol,start                                       " allow bac
 set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
 set autochdir
 
-
+set suffixesadd=.js,.json,.jade,.coffee
 
 set completeopt=longest,menuone,preview                              " Better Completion
 
