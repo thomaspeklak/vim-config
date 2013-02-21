@@ -547,6 +547,9 @@ inoremap <C-j> [
 inoremap <C-d> {
 inoremap <C-f> }
 
+nmap ,m :next<cr>
+nmap ,,m :prev<cr>
+
 "}}}
 " SURROUND MAPPINGS {{{
 " surround with char (needs surround plugin)
