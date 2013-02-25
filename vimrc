@@ -886,6 +886,9 @@ let g:EasyMotion_leader_key = '<Space>'
 let g:EasyMotion_mapping_w = '-'
 let g:EasyMotion_mapping_b = '_'
 " }}}
+" JAVASCRIPT LIBRARIES {{{
+let g:used_javascript_libs = 'jquery,underscore,angularjs'
+" }}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
 vmap <Leader>x= :Tabularize /=<CR>

@@ -71,6 +71,7 @@ Bundle "teramako/jscomplete-vim"
 Bundle "majutsushi/tagbar"
 Bundle 'wookiehangover/jshint.vim'
 Bundle "Arkham/vim-web-indent"
+Bundle "othree/javascript-libraries-syntax.vim"
 
 Bundle "Valloric/YouCompleteMe"
 "Bundle "Shougo/neosnippet"
