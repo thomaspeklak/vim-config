@@ -28,7 +28,7 @@ Bundle 'pix/vim-align'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
-Bundle 'sdiehl/vim-coffee-script'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'sickill/vim-pasta'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
