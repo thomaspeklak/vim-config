@@ -451,7 +451,7 @@ nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>                    " remove t
 nmap <leader>= :call Preserve("normal gg=G")<CR>                      " indent lines
 nmap <leader>0 gg=G
 " F7 reformats the whole file and leaves you where you were (unlike gg)
-map <silent> <F7> mzgg=G'z :delmarks z<CR>:echo "Reformatted."<CR>
+"map <silent> <F7> mzgg=G'z :delmarks z<CR>:echo "Reformatted."<CR>
 
 
 "Quickly edit and reload vimrc
@@ -858,13 +858,6 @@ function! VisualHTMLTagWrap()
 endfunction
 
 "}}}
-"{{{ js beautify
-autocmd FileType javascript noremap <buffer>  <leader>ff :call JsBeautify()<cr>
-" for html
-autocmd FileType html noremap <buffer> <leader>ff :call HtmlBeautify()<cr>
-" for css or scss
-autocmd FileType css noremap <buffer> <leader>ff :call CSSBeautify()<cr>
-"}}}
 "TSLIME {{{
 function! SelectionToTmux()
   try
@@ -889,6 +882,10 @@ let g:EasyMotion_mapping_b = '_'
 " JAVASCRIPT LIBRARIES {{{
 let g:used_javascript_libs = 'jquery,underscore,angularjs'
 " }}}
+" JSBeautify {{{
+nnoremap <leader>ff :%!js-beautify -j -q -B -f -<CR>
+" }}}
+"
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
 vmap <Leader>x= :Tabularize /=<CR>
