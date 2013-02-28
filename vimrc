@@ -883,7 +883,7 @@ let g:EasyMotion_mapping_b = '_'
 let g:used_javascript_libs = 'jquery,underscore,angularjs'
 " }}}
 " JSBeautify {{{
-nnoremap <leader>ff :%!js-beautify -j -q -B -f -<CR>
+nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
 " }}}
 "
 " Tabularize {
