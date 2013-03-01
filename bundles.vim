@@ -71,11 +71,11 @@ Bundle "teramako/jscomplete-vim"
 Bundle "majutsushi/tagbar"
 Bundle 'wookiehangover/jshint.vim'
 Bundle "Arkham/vim-web-indent"
-Bundle "othree/javascript-libraries-syntax.vim"
+"Bundle "othree/javascript-libraries-syntax.vim"
 
-Bundle "Valloric/YouCompleteMe"
-"Bundle "Shougo/neosnippet"
-"Bundle "Shougo/neocomplcache"
+"Bundle "Valloric/YouCompleteMe"
+Bundle "Shougo/neosnippet"
+Bundle "Shougo/neocomplcache"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
