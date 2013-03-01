@@ -19,7 +19,6 @@ Bundle 'itspriddle/vim-jquery'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'leshill/vim-json'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'othree/html5.vim'
@@ -65,13 +64,14 @@ Bundle "sudo.vim"
 Bundle "panozzaj/vim-autocorrect"
 Bundle "digitaltoad/vim-jade"
 Bundle "chreekat/vim-paren-crosshairs"
+Bundle "majutsushi/tagbar"
+Bundle "Arkham/vim-web-indent"
+
+Bundle 'leshill/vim-json'
 Bundle "drslump/vim-syntax-js"
 Bundle "myhere/vim-nodejs-complete"
 Bundle "teramako/jscomplete-vim"
-Bundle "majutsushi/tagbar"
 Bundle 'wookiehangover/jshint.vim'
-Bundle "Arkham/vim-web-indent"
-Bundle "othree/javascript-libraries-syntax.vim"
 
 "Bundle "Valloric/YouCompleteMe"
 Bundle "Shougo/neosnippet"
