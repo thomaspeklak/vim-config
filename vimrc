@@ -349,17 +349,14 @@ augroup END
 " }}}
 " JAVASCRIPT {{{
 
+let g:syntax_js=['function', 'return', "proto"]
+
 augroup ft_javascript
   au!
-
   au FileType javascript setlocal foldmethod=marker
   au FileType javascript setlocal foldmarker={,}
-  au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
   au FileType javascript setl foldmethod=syntax
-  set conceallevel=2
-  set concealcursor=nc  " don't reveal the conceals unless on insert or visual modes
   au FileType javascript setl conceallevel=2 concealcursor=nc
-  let g:syntax_js=['function', 'return', "proto"]
 augroup END
 
 " }}}
