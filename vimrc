@@ -551,6 +551,14 @@ nmap ,,m :prev<cr>
 vnoremap < <gv
 vnoremap > >gv
 
+"Keep search pattern at the center of the screen.
+ nnoremap <silent> n nzz
+ nnoremap <silent> N Nzz
+ nnoremap <silent> * *zz
+ nnoremap <silent> # #zz
+ nnoremap <silent> g* g*zz
+
+
 "}}}
 " SURROUND MAPPINGS {{{
 " surround with char (needs surround plugin)
