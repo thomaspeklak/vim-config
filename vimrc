@@ -560,6 +560,10 @@ vnoremap > >gv
 
 
 "}}}
+" AUTO COMMANDS {{{
+" turn off paste on insert mode leave
+au InsertLeave * set nopaste
+" }}}
 " SURROUND MAPPINGS {{{
 " surround with char (needs surround plugin)
 nmap <leader>" ysiw"
