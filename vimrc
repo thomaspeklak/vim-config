@@ -547,6 +547,10 @@ inoremap <C-f> }
 nmap ,m :next<cr>
 nmap ,,m :prev<cr>
 
+"Reselect visual block after in/outdenting
+vnoremap < <gv
+vnoremap > >gv
+
 "}}}
 " SURROUND MAPPINGS {{{
 " surround with char (needs surround plugin)
