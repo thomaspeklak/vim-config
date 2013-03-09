@@ -305,6 +305,9 @@ if has("autocmd")
 
   "Spellcheck commit messages
   autocmd BufRead COMMIT_EDITMSG setlocal spell!
+
+  "Fix drawing issues
+  au BufWritePost * :silent! :syntax sync fromstart<cr>:redraw!<cr>
 endif
 
 " }}}
