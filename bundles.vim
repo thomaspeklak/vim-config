@@ -88,6 +88,7 @@ Bundle "chriskempson/base16-vim"
 
 
 "Experimental
+Bundle "airblade/vim-gitgutter"
 "
 "
 " non github repos

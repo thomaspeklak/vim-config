@@ -898,7 +898,9 @@ let g:used_javascript_libs = 'jquery,underscore,angularjs'
 " JSBeautify {{{
 nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
 " }}}
-"
+" GitGutter {{{
+nmap <Leader>gg :GitGutterToggle<CR>
+" }}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
 vmap <Leader>x= :Tabularize /=<CR>
