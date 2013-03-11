@@ -65,7 +65,8 @@ Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
 Bundle "myhere/vim-nodejs-complete"
 Bundle "teramako/jscomplete-vim"
-Bundle "sleistner/vim-jshint"
+Bundle "walm/jshint.vim"
+"Bundle "sleistner/vim-jshint"
 Bundle "drslump/vim-syntax-js"
 
 "AUTOCOMPLETE

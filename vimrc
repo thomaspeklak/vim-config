@@ -34,7 +34,7 @@ let $JS_CMD='node'
 
 syntax enable
 
-set mouse=a                                                       "enable mouse support in all modes
+set mouse=nicrh                                                       "enable mouse support in all modes
 set modeline
 set modelines=5
 set scrolloff=4
@@ -650,11 +650,11 @@ let g:atia_attributes_complete = 0
 " }}}
 " RAINBOX PARENTHESES {{{
 
-  "au VimEnter * RainbowParenthesesToggle  "has problems with vimclojure's
-  "indenting, @TODO needs fixing
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle  "has problems with vimclojure's
+"indenting, @TODO needs fixing
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 nnoremap <leader>rb :RainbowParenthesesToggle<cr>
 let g:rbpt_colorpairs = [
@@ -697,15 +697,15 @@ let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
 let g:Powerline_symbols = 'fancy'
 " }}}
 " CTRLP {{{
-  let g:ctrlp_map = '<C-G>' 
-  map <leader>rr :ClearCtrlPCache<CR>
-  map <C-d> :CtrlPBuffer<CR>
-  map <C-ö> :CtrlPMRU<CR>
-  map <C-A-g> :CtrlPMixed<CR>
-  map <leader>p :CtrlP<CR>
-  map <leader>b :CtrlPBuffer<CR>
+let g:ctrlp_map = '<C-G>' 
+map <leader>rr :ClearCtrlPCache<CR>
+map <C-d> :CtrlPBuffer<CR>
+map <C-ö> :CtrlPMRU<CR>
+map <C-A-g> :CtrlPMixed<CR>
+map <leader>p :CtrlP<CR>
+map <leader>b :CtrlPBuffer<CR>
 
-  let g:ctrlp_working_path_mode = "ra"
+let g:ctrlp_working_path_mode = "ra"
 
 " }}}
 " PIV {{{
@@ -824,6 +824,26 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 
 " }}}
+" MouseToggle{{{
+fun! s:ToggleMouse()
+    if !exists("s:old_mouse")
+        let s:old_mouse = "nirch"
+    endif
+
+    if &mouse == ""
+        let &mouse = s:old_mouse
+        echo "Mouse is for Vim (" . &mouse . ")"
+    else
+        let s:old_mouse = &mouse
+        let &mouse=""
+        echo "Mouse is for terminal"
+    endif
+endfunction
+
+nnoremap ;;m :call <SID>ToggleMouse()<cr>
+
+
+" }}}
 " Lucius {{{
 LuciusBlack
 
@@ -932,14 +952,14 @@ vmap <Leader>x<Bar> :Tabularize /<Bar><CR>
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 function! s:align()
-    let p = '^\s*|\s.*\s|\s*$'
-    if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-        let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-        let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-        Tabularize/|/l1
-        normal! 0
-        call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-    endif
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
 endfunction
 
 " }
@@ -948,3 +968,4 @@ source ~/.vim/vimrc_local
 if filereadable('./.vimrc.project')                                     "load session if existent
   execute "source ./.vimrc.project"
 endif
+
