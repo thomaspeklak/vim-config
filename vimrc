@@ -492,6 +492,7 @@ nmap <leader>. :b#<CR>
 
 " map show next match (vimgrep)
 nmap <leader>n :cn<CR>
+nmap ;n :cp<CR>
 
 "prev/next in quickfix file listing (e.g. search results)
 map <C-M-Down> :cn<CR>
