@@ -349,17 +349,14 @@ augroup END
 " }}}
 " JAVASCRIPT {{{
 
+let g:syntax_js=['function', 'return', "proto"]
+
 augroup ft_javascript
   au!
-
   au FileType javascript setlocal foldmethod=marker
   au FileType javascript setlocal foldmarker={,}
-  au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
   au FileType javascript setl foldmethod=syntax
-  set conceallevel=2
-  set concealcursor=nc  " don't reveal the conceals unless on insert or visual modes
   au FileType javascript setl conceallevel=2 concealcursor=nc
-  let g:syntax_js=['function', 'return', "proto"]
 augroup END
 
 " }}}
@@ -550,7 +547,23 @@ inoremap <C-f> }
 nmap ,m :next<cr>
 nmap ,,m :prev<cr>
 
+"Reselect visual block after in/outdenting
+vnoremap < <gv
+vnoremap > >gv
+
+"Keep search pattern at the center of the screen.
+ nnoremap <silent> n nzz
+ nnoremap <silent> N Nzz
+ nnoremap <silent> * *zz
+ nnoremap <silent> # #zz
+ nnoremap <silent> g* g*zz
+
+
 "}}}
+" AUTO COMMANDS {{{
+" turn off paste on insert mode leave
+au InsertLeave * set nopaste
+" }}}
 " SURROUND MAPPINGS {{{
 " surround with char (needs surround plugin)
 nmap <leader>" ysiw"
@@ -733,66 +746,66 @@ endfunction
 " }}}
 " neocomplcache {{{
 
-"" Launches neocomplcache automatically on vim startup.
-"let g:neocomplcache_enable_at_startup = 1
-"" Use smartcase.
-"let g:neocomplcache_enable_smart_case = 1
-"" Use camel case completion.
-"let g:neocomplcache_enable_camel_case_completion = 1
-"" Use underscore completion.
-"let g:neocomplcache_enable_underbar_completion = 1
-"" Sets minimum char length of syntax keyword.
-"let g:neocomplcache_min_syntax_length = 3
-"" buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder 
-"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-"
-"" Define file-type dependent dictionaries.
-"let g:neocomplcache_dictionary_filetype_lists = {
-"    \ 'default' : '',
-"    \ 'vimshell' : $HOME.'/.vimshell_hist',
-"    \ 'scheme' : $HOME.'/.gosh_completions'
-"    \ }
-"
-"" Define keyword, for minor languages
-""if !exists('g:neocomplcache_keyword_patterns')
-""  let g:neocomplcache_keyword_patterns = {}
-""endif
-""let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-"
-"" Plugin key-mappings.
-"imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-"smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-"inoremap <expr><C-g>     neocomplcache#undo_completion()
-"inoremap <expr><C-l>     neocomplcache#complete_common_string()
-"
-"" SuperTab like snippets behavior.
-""imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-"imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-"smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"
-"" Recommended key-mappings.
-"" <CR>: close popup and save indent.
-""inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-"" <TAB>: completion.
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"" <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><C-y>  neocomplcache#close_popup()
-"inoremap <expr><C-e>  neocomplcache#cancel_popup()
+" Launches neocomplcache automatically on vim startup.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underscore completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Sets minimum char length of syntax keyword.
+let g:neocomplcache_min_syntax_length = 3
+" buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder 
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
-"" AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
-"
-"" Enable heavy omni completion, which require computational power and may stall the vim. 
-"if !exists('g:neocomplcache_omni_patterns')
-"  let g:neocomplcache_omni_patterns = {}
-"endif
-"let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-""autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-"let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-"let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+" Define file-type dependent dictionaries.
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ }
+
+" Define keyword, for minor languages
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+" AutoComplPop like behavior.
+let g:neocomplcache_enable_auto_select = 1
+
+" Enable heavy omni completion, which require computational power and may stall the vim. 
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " }}}
 " YouCompleteMe {{{
@@ -905,7 +918,9 @@ let g:used_javascript_libs = 'jquery,underscore,angularjs'
 " JSBeautify {{{
 nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
 " }}}
-"
+" GitGutter {{{
+nmap <Leader>gg :GitGutterToggle<CR>
+" }}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
 vmap <Leader>x= :Tabularize /=<CR>
