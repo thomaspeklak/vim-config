@@ -956,3 +956,4 @@ source ~/.vim/vimrc_local
 if filereadable('./.vimrc.project')                                     "load session if existent
   execute "source ./.vimrc.project"
 endif
+
