@@ -556,7 +556,7 @@ inoremap <C-j> [
 inoremap <C-d> {
 inoremap <C-f> }
 
-nmap ,m :next<cr>
+nmap ,mm :next<cr>
 nmap ,,m :prev<cr>
 
 "Reselect visual block after in/outdenting
