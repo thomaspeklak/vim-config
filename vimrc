@@ -844,6 +844,26 @@ nnoremap ;;m :call <SID>ToggleMouse()<cr>
 
 
 " }}}
+" NodeModulesToggle{{{
+fun! s:ToggleNodeModules()
+    if !exists("s:node_ignore")
+        let s:node_ignore = "NM"
+    endif
+
+    if s:node_ignore == ""
+        let s:node_ignore = "NM" 
+        set wildignore+=*node_modules
+        echo "ignoring node_modules"
+    else
+        let s:node_ignore = ""
+        set wildignore-=*node_modules
+        echo "inlcuding node_modules"
+    endif
+endfunction
+
+nnoremap <leader><leader>i :call <SID>ToggleNodeModules()<cr>
+
+" }}}
 " Lucius {{{
 LuciusBlack
 
