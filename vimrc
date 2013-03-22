@@ -665,7 +665,7 @@ let g:rbpt_colorpairs = [
       \ ['darkcyan',    'RoyalBlue3'],
       \ ['darkred',     'SeaGreen3'],
       \ ['darkmagenta', 'DarkOrchid3'],
-      \ ['brown',       'firebrick3'],
+      \ ['brown',       'firebrick4'],
       \ ['gray',        'RoyalBlue3'],
       \ ['black',       'SeaGreen3'],
       \ ['darkmagenta', 'DarkOrchid3'],
@@ -706,7 +706,7 @@ map <leader>p :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_working_path_mode = "ra"
-
+let g:ctrlp_root_markers= ["node_modules"]
 " }}}
 " PIV {{{
 let g:DisableAutoPHPFolding = 1 
