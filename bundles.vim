@@ -59,6 +59,7 @@ Bundle "Arkham/vim-web-indent"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "vim-ruby/vim-ruby"
 Bundle "vim-scripts/Tag-Signature-Balloons"
+Bundle "tpope/vim-tbone"
 
 "JAVASCRIPT
 Bundle 'leshill/vim-json'
@@ -66,7 +67,6 @@ Bundle 'itspriddle/vim-jquery'
 Bundle "myhere/vim-nodejs-complete"
 Bundle "teramako/jscomplete-vim"
 Bundle "walm/jshint.vim"
-"Bundle "sleistner/vim-jshint"
 Bundle "drslump/vim-syntax-js"
 
 "AUTOCOMPLETE
