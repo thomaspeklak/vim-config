@@ -1,5 +1,5 @@
 if filereadable('./Session.vim')                                     "load session if existent
-  execute "source ./Session.vim"
+  execute Session.vim"
 endif
 
 set nocompatible                                                     " be iMproved
@@ -952,6 +952,11 @@ nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
 " }}}
 " GitGutter {{{
 nmap <Leader>gg :GitGutterToggle<CR>
+" }}}
+" Expand Region {{{
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
+
 " }}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>

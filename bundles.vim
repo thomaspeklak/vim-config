@@ -59,6 +59,9 @@ Bundle "Arkham/vim-web-indent"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "vim-ruby/vim-ruby"
 Bundle "vim-scripts/Tag-Signature-Balloons"
+Bundle "yueyoum/vim-linemovement"
+Bundle "terryma/vim-expand-region"
+
 
 "JAVASCRIPT
 Bundle 'leshill/vim-json'
