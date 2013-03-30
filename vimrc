@@ -248,6 +248,8 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.phtml set filetype=php
     autocmd BufRead,BufNewFile *.install set filetype=php
     autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd FileType php setlocal nocursorcolumn
+    autocmd FileType php setlocal nocursorline
   augroup END
 
   autocmd BufRead,BufNewFile *.tmpl set filetype=html
