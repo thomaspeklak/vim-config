@@ -956,8 +956,8 @@ nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
 nmap <Leader>gg :GitGutterToggle<CR>
 " }}}
 " Expand Region {{{
-map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
+map <M-K> <Plug>(expand_region_expand)
+map <M-J> <Plug>(expand_region_shrink)
 
 " }}}
 " Tabularize {
