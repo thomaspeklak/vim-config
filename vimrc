@@ -708,7 +708,7 @@ map <leader>p :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_working_path_mode = "ra"
-let g:ctrlp_root_markers= ["node_modules"]
+let g:ctrlp_root_markers= ["node_modules", ".git", ".hg", ".svn", ".bzr", "_darcs"]
 " }}}
 " PIV {{{
 let g:DisableAutoPHPFolding = 1 
@@ -956,8 +956,8 @@ nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
 nmap <Leader>gg :GitGutterToggle<CR>
 " }}}
 " Expand Region {{{
-map <M-K> <Plug>(expand_region_expand)
-map <M-J> <Plug>(expand_region_shrink)
+map <C-K> <Plug>(expand_region_expand)
+map <C-J> <Plug>(expand_region_shrink)
 
 " }}}
 " Tabularize {
