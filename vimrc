@@ -709,7 +709,7 @@ map <leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_max_files = 30000
 let g:ctrlp_working_path_mode = "ra"
-let g:ctrlp_root_markers= ["node_modules"]
+let g:ctrlp_root_markers= ["node_modules", ".git", ".hg", ".svn", ".bzr", "_darcs"]
 " }}}
 " PIV {{{
 let g:DisableAutoPHPFolding = 1 
