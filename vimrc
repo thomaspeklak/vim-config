@@ -1,5 +1,5 @@
 if filereadable('./Session.vim')                                     "load session if existent
-  execute "source ./Session.vim"
+  execute Session.vim"
 endif
 
 set nocompatible                                                     " be iMproved
@@ -248,6 +248,8 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.phtml set filetype=php
     autocmd BufRead,BufNewFile *.install set filetype=php
     autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd FileType php setlocal nocursorcolumn
+    autocmd FileType php setlocal nocursorline
   augroup END
 
   autocmd BufRead,BufNewFile *.tmpl set filetype=html
@@ -665,7 +667,7 @@ let g:rbpt_colorpairs = [
       \ ['darkcyan',    'RoyalBlue3'],
       \ ['darkred',     'SeaGreen3'],
       \ ['darkmagenta', 'DarkOrchid3'],
-      \ ['brown',       'firebrick3'],
+      \ ['brown',       'firebrick4'],
       \ ['gray',        'RoyalBlue3'],
       \ ['black',       'SeaGreen3'],
       \ ['darkmagenta', 'DarkOrchid3'],
@@ -707,7 +709,7 @@ map <leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_max_files = 30000
 let g:ctrlp_working_path_mode = "ra"
-
+let g:ctrlp_root_markers= ["node_modules"]
 " }}}
 " PIV {{{
 let g:DisableAutoPHPFolding = 1 
@@ -953,6 +955,11 @@ nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
 " }}}
 " GitGutter {{{
 nmap <Leader>gg :GitGutterToggle<CR>
+" }}}
+" Expand Region {{{
+map <C-.> <Plug>(expand_region_expand)
+map <C-,> <Plug>(expand_region_shrink)
+
 " }}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
