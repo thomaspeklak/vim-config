@@ -62,6 +62,7 @@ Bundle "vim-scripts/Tag-Signature-Balloons"
 Bundle "tpope/vim-tbone"
 Bundle "yueyoum/vim-linemovement"
 Bundle "terryma/vim-expand-region"
+Bundle "terryma/vim-multiple-cursors"
 
 "JAVASCRIPT
 Bundle 'leshill/vim-json'

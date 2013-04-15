@@ -961,6 +961,15 @@ map <C-.> <Plug>(expand_region_expand)
 map <C-,> <Plug>(expand_region_shrink)
 
 " }}}
+" YankRing {{{
+let g:yankring_replace_n_nkey = '<m-n>'
+" }}}
+" MultiCursor {{{
+ let g:multi_cursor_next_key="\<C-n>"
+ let g:multi_cursor_prev_key="\<C-p>"
+ let g:multi_cursor_skip_key="\<C-x>"
+ let g:multi_cursor_exit_key="\<Esc>"
+" }}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
 vmap <Leader>x= :Tabularize /=<CR>
