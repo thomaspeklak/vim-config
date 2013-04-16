@@ -548,8 +548,8 @@ nmap <leader>dd a<C-R>=strftime("%Y-%m-%d")<CR><Esc>
 nmap <leader>dt a<C-R>=strftime("%I:%M")<CR><Esc>
 
 "insert brackets from home row
-inoremap <C-j> [
-"inoremap <C-k> ]
+inoremap <C-h> [
+inoremap <C-j> ]
 inoremap <C-d> {
 inoremap <C-f> }
 
@@ -799,7 +799,7 @@ smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" 
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
