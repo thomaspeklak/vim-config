@@ -512,11 +512,6 @@ map <C-M-Up> :cp<CR>
 map <D-M-Left> :bp<CR>
 map <D-M-Right> :bn<CR>
 
-"indent/unindent visual mode selection with tab/shift+tab
-vmap <tab> >gv
-vmap <s-tab> <gv
-
-
 " tag mappings
 nnoremap ü <C-]>
 nnoremap Ü <C-O>
