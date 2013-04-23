@@ -68,9 +68,10 @@ Bundle "terryma/vim-multiple-cursors"
 Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
 Bundle "myhere/vim-nodejs-complete"
-Bundle "teramako/jscomplete-vim"
+"Bundle "teramako/jscomplete-vim" "currently broken with neocomplcache
 Bundle "walm/jshint.vim"
 Bundle "drslump/vim-syntax-js"
+Bundle "pangloss/vim-javascript"
 
 "AUTOCOMPLETE
 Bundle "Shougo/neosnippet"
@@ -83,6 +84,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'groenewege/vim-less'
 Bundle "digitaltoad/vim-jade"
 Bundle "VimClojure"
+Bundle "2072/PHP-Indenting-for-VIm"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'

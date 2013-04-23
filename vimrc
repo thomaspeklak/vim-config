@@ -557,8 +557,8 @@ nmap ,mm :next<cr>
 nmap ,,m :prev<cr>
 
 "Reselect visual block after in/outdenting
-vnoremap < <gv
-vnoremap > >gv
+"vnoremap < <gv
+"vnoremap > >gv
 
 "Keep search pattern at the center of the screen.
  nnoremap <silent> n nzz
