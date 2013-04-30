@@ -72,6 +72,7 @@ Bundle "myhere/vim-nodejs-complete"
 Bundle "walm/jshint.vim"
 Bundle "drslump/vim-syntax-js"
 Bundle "pangloss/vim-javascript"
+Bundle "marijnh/tern_for_vim"
 
 "AUTOCOMPLETE
 Bundle "Shougo/neosnippet"
