@@ -959,6 +959,11 @@ map <C-,> <Plug>(expand_region_shrink)
 " YankRing {{{
 let g:yankring_replace_n_nkey = '<m-n>'
 " }}}
+" Tern {{{
+let g:tern_map_prefix=";"
+let g:tern_map_keys=1
+let g:tern_show_arguments_hints="on_hold"
+" }}}
 " MultiCursor {{{
  let g:multi_cursor_next_key="\<C-n>"
  let g:multi_cursor_prev_key="\<C-p>"
