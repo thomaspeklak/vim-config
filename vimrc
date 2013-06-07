@@ -687,7 +687,7 @@ let g:SuperTabLongestHighlight = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: line %fw}]'
 let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
-let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']`
+let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 
 " }}}
 " POWERLINE {{{
