@@ -687,7 +687,6 @@ let g:SuperTabLongestHighlight = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: line %fw}]'
 let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
-let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 
 " }}}
 " POWERLINE {{{
@@ -962,7 +961,7 @@ let g:yankring_replace_n_nkey = '<m-n>'
 " Tern {{{
 let g:tern_map_prefix=";"
 let g:tern_map_keys=1
-let g:tern_show_arguments_hints="on_hold"
+let g:tern_show_argument_hints="on_hold"
 " }}}
 " MultiCursor {{{
  let g:multi_cursor_next_key="\<C-n>"
