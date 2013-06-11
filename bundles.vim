@@ -53,7 +53,7 @@ Bundle "LanguageTool"
 Bundle 'stephpy/vim-php-cs-fixer'
 Bundle "sudo.vim"
 Bundle "panozzaj/vim-autocorrect"
-Bundle "chreekat/vim-paren-crosshairs"
+"Bundle "chreekat/vim-paren-crosshairs"
 Bundle "majutsushi/tagbar"
 Bundle "Arkham/vim-web-indent"
 Bundle "ecomba/vim-ruby-refactoring"
