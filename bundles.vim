@@ -32,8 +32,8 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-pathogen'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
+"Bundle 'tpope/vim-rails'
+"Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
@@ -63,26 +63,28 @@ Bundle "tpope/vim-tbone"
 Bundle "yueyoum/vim-linemovement"
 Bundle "terryma/vim-expand-region"
 Bundle "terryma/vim-multiple-cursors"
+Bundle "hail2u/vim-css-syntax"
 
 "JAVASCRIPT
 Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
 Bundle "myhere/vim-nodejs-complete"
-"Bundle "teramako/jscomplete-vim" "currently broken with neocomplcache
+"Bundle "teramako/jscomplete-vim" "currently broken with neocomplcach
 Bundle "walm/jshint.vim"
 Bundle "drslump/vim-syntax-js"
 Bundle "pangloss/vim-javascript"
 Bundle "marijnh/tern_for_vim"
 
 "AUTOCOMPLETE
+Bundle "honza/vim-snippets"
 Bundle "Shougo/neosnippet"
-Bundle "Shougo/neocomplcache"
+Bundle "Shougo/neocomplete"
 
 "SYNTAX
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'tpope/vim-haml'
+"Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
-Bundle 'groenewege/vim-less'
+"Bundle 'groenewege/vim-less'
 Bundle "digitaltoad/vim-jade"
 Bundle "VimClojure"
 Bundle "2072/PHP-Indenting-for-VIm"
