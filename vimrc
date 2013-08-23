@@ -254,7 +254,7 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile *.tmpl set filetype=html
   autocmd BufRead,BufNewFile *.less set filetype=css
-  autocmd BufRead,BufNewFile *.spec set filetype=ruby
+  autocmd BufRead,BufNewFile *.hbs setlocal filetype=html
 
   "highlight JSON files as javascript
   autocmd BufRead,BufNewFile *.json set filetype=javascript
