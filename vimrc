@@ -299,8 +299,10 @@ if has("autocmd")
   autocmd FocusLost *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
   autocmd BufWritePre *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
 
-  au FocusLost * :wa                                                   " write file on focus lost
-  au CursorHold * :wa                                                 " write all files when cursor does not move
+  set updatetime=100
+  au BufLeave,FocusLost * silent! wall                                                   " write file on focus lost
+  au CursorHold * silent! wall                                                 " write all files when cursor does not move
+  au InsertLeave * :w
 
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
