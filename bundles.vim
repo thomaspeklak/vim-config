@@ -77,9 +77,11 @@ Bundle "pangloss/vim-javascript"
 Bundle "marijnh/tern_for_vim"
 
 "AUTOCOMPLETE
-Bundle "honza/vim-snippets"
-Bundle "Shougo/neosnippet"
-Bundle "Shougo/neocomplete"
+"Bundle "honza/vim-snippets"
+"Bundle "Shougo/neosnippet"
+"Bundle "Shougo/neocomplete"
+Bundle "Valloric/YouCompleteMe"
+Bundle "SirVer/ultisnips"
 
 "SYNTAX
 Bundle 'cakebaker/scss-syntax.vim'
