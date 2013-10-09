@@ -80,6 +80,7 @@ Bundle "marijnh/tern_for_vim"
 Bundle "honza/vim-snippets"
 Bundle "Shougo/neosnippet"
 Bundle "Shougo/neocomplete"
+Bundle "mattn/emmet-vim"
 
 "SYNTAX
 Bundle 'cakebaker/scss-syntax.vim'
