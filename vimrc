@@ -758,7 +758,15 @@ endfunction
 " {{{ YouCompleteMe
 let g:syntastic_always_populate_loc_list = 1
 " }}}
-"
+" UltiSnips {{{
+  "let g:UltiSnipsExpandTrigger="<c-l>"
+  "let g:UltiSnipsListSnippets="<c-h>"
+  "let g:UltiSnipsJumpForwardTrigger="<c-k>"
+  "let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+" }}}
+" Emmet {{{
+let g:user_emmet_leader_key = '<c-e>'
+" }}}
 " neocomplete {{{
 "
 "" Launches neocomplete automatically on vim startup.
@@ -831,7 +839,7 @@ let g:syntastic_always_populate_loc_list = 1
 "
 "" }}}
 " YouCompleteMe {{{
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+let g:ycm_key_list_select_completion = ['<Down>', '<Enter>']
 
 " }}}
 " MouseToggle{{{

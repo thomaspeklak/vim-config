@@ -21,7 +21,7 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'othree/html5.vim'
 Bundle 'pix/vim-align'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
