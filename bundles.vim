@@ -77,10 +77,12 @@ Bundle "pangloss/vim-javascript"
 Bundle "marijnh/tern_for_vim"
 
 "AUTOCOMPLETE
-Bundle "honza/vim-snippets"
-Bundle "Shougo/neosnippet"
-Bundle "Shougo/neocomplete"
 Bundle "mattn/emmet-vim"
+"Bundle "honza/vim-snippets"
+"Bundle "Shougo/neosnippet"
+"Bundle "Shougo/neocomplete"
+Bundle "Valloric/YouCompleteMe"
+Bundle "SirVer/ultisnips"
 
 "SYNTAX
 Bundle 'cakebaker/scss-syntax.vim'
@@ -96,7 +98,6 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'molokai'
 Bundle "Lucius"
 Bundle "chriskempson/base16-vim"
-Bundle "altercation/vim-colors-solarized"
 
 
 "Experimental
