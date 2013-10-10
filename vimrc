@@ -766,6 +766,7 @@ let g:syntastic_always_populate_loc_list = 1
 " }}}
 " Emmet {{{
 let g:user_emmet_leader_key = '<c-e>'
+let g:use_emmet_complete_tag = 1
 " }}}
 " neocomplete {{{
 "
