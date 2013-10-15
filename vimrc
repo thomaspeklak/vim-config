@@ -757,6 +757,7 @@ endfunction
 " }}}
 " {{{ YouCompleteMe
 let g:syntastic_always_populate_loc_list = 1
+let g:ycm_cache_omnifunc = 0
 " }}}
 " UltiSnips {{{
   "let g:UltiSnipsExpandTrigger="<c-l>"
