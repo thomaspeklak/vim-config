@@ -64,7 +64,7 @@ Bundle "yueyoum/vim-linemovement"
 Bundle "terryma/vim-expand-region"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "hail2u/vim-css-syntax"
-Bundle "csscomb/CSScomb-for-Vim"
+Bundle "csscomb/csscomb-for-vim"
 
 "JAVASCRIPT
 Bundle 'leshill/vim-json'
@@ -86,6 +86,7 @@ Bundle "SirVer/ultisnips"
 Bundle "rstacruz/vim-ultisnips-css"
 
 "SYNTAX
+Bundle "groenewege/vim-less"
 Bundle 'cakebaker/scss-syntax.vim'
 "Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
