@@ -83,6 +83,7 @@ Bundle "mattn/emmet-vim"
 "Bundle "Shougo/neocomplete"
 Bundle "Valloric/YouCompleteMe"
 Bundle "SirVer/ultisnips"
+Bundle "rstacruz/vim-ultisnips-css"
 
 "SYNTAX
 Bundle 'cakebaker/scss-syntax.vim'
