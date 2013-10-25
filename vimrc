@@ -296,8 +296,8 @@ if has("autocmd")
   " }}}
 
   "automatically remove trailing whitespace
-  autocmd FocusLost *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
-  autocmd BufWritePre *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
+  autocmd FocusLost *.py,*.js,*.json,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
+  autocmd BufWritePre *.py,*.js,*.json,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
 
   set updatetime=100
   au BufLeave,FocusLost * silent! wall                                                   " write file on focus lost
@@ -764,6 +764,8 @@ let g:ycm_cache_omnifunc = 0
   "let g:UltiSnipsListSnippets="<c-h>"
   "let g:UltiSnipsJumpForwardTrigger="<c-k>"
   "let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+  let g:UltiSnipsSnippetsDir        = '~/.vim/snippets/'
+  let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
 " }}}
 " Emmet {{{
 let g:user_emmet_leader_key = '<c-e>'
@@ -905,9 +907,9 @@ let g:snips_trigger_key='<c-g>'
 "}}}
 "
 "{{{ NEOCOMPLETE SNIPPETS
-let g:neocomplcache_snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
-imap <C-A> <Plug>(neocomplcache_snippets_expand)
-smap <C-A> <Plug>(neocomplcache_snippets_expand)
+"let g:neocomplcache_snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
+"imap <C-A> <Plug>(neocomplcache_snippets_expand)
+"smap <C-A> <Plug>(neocomplcache_snippets_expand)
 "}}}
 
 " PHP CS FIXER{{{
@@ -1009,7 +1011,7 @@ vmap <Leader>x<Bar> :Tabularize /<Bar><CR>
 " The following function automatically aligns when typing a
 " supported character
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
+ 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
