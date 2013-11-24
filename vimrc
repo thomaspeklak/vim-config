@@ -551,12 +551,16 @@ nmap <leader>dt a<C-R>=strftime("%I:%M")<CR><Esc>
 
 "insert brackets from home row
 inoremap <C-h> [
-inoremap <C-j> ]
-inoremap <C-d> {
-inoremap <C-f> }
+inoremap <C-u> l
+inoremap <C-l> {
+inoremap <C-p> l
+
+
 
 nmap ,mm :next<cr>
 nmap ,,m :prev<cr>
+nmap <C-ä> :lnext<cr>
+nmap <C-ü> :lprev<cr>
 
 "Reselect visual block after in/outdenting
 "vnoremap < <gv
