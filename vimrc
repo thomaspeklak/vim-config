@@ -550,10 +550,10 @@ nmap <leader>dd a<C-R>=strftime("%Y-%m-%d")<CR><Esc>
 nmap <leader>dt a<C-R>=strftime("%I:%M")<CR><Esc>
 
 "insert brackets from home row
-inoremap <C-h> [
-inoremap <C-u> l
-inoremap <C-l> {
-inoremap <C-p> l
+inoremap <C-j> [
+inoremap <C-k> ]
+inoremap <C-h> {
+inoremap <C-l> }
 
 
 
@@ -766,8 +766,8 @@ let g:ycm_cache_omnifunc = 0
 " UltiSnips {{{
   "let g:UltiSnipsExpandTrigger="<c-l>"
   "let g:UltiSnipsListSnippets="<c-h>"
-  "let g:UltiSnipsJumpForwardTrigger="<c-k>"
-  "let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+  let g:UltiSnipsJumpForwardTrigger="<c-q>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-w>"
   let g:UltiSnipsSnippetsDir        = '~/.vim/snippets/'
   let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
 " }}}
