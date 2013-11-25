@@ -992,6 +992,13 @@ let g:tern_map_prefix=";"
 let g:tern_map_keys=1
 let g:tern_show_argument_hints="on_hold"
 " }}}
+"dragvisuals {{{
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+vmap  <expr>  D        DVB_Duplicate()
+"}}}
 " MultiCursor {{{
  let g:multi_cursor_next_key="\<C-n>"
  let g:multi_cursor_prev_key="\<C-p>"

@@ -104,6 +104,7 @@ Bundle "chriskempson/base16-vim"
 
 "Experimental
 Bundle "airblade/vim-gitgutter"
+Bundle "gavinbeatty/dragvisuals.vim"
 "
 "
 " non github repos
