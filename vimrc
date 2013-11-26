@@ -97,8 +97,8 @@ set nolist        " do not show hidden characters
 set sessionoptions="blank,buffers,curdir,folds,resize,tabpages,winpos,winsize"
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:>\ ,eol:$
-"}}}
+set listchars=tab:>\ ,eol:$,trail:.,nbsp:_
+"}}}    
 " FONT {{{
 " As Linux and Mac have different declarations for guifont we need to
 " differentiate between the two
@@ -296,8 +296,8 @@ if has("autocmd")
   " }}}
 
   "automatically remove trailing whitespace
-  autocmd FocusLost *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.less,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
-  autocmd BufWritePre *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.less,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
+  autocmd FocusLost *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
+  autocmd BufWritePre *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
 
   set updatetime=100
   au BufLeave,FocusLost * silent! wall                                                   " write file on focus lost
@@ -551,13 +551,17 @@ nmap <leader>dd a<C-R>=strftime("%Y-%m-%d")<CR><Esc>
 nmap <leader>dt a<C-R>=strftime("%I:%M")<CR><Esc>
 
 "insert brackets from home row
-inoremap <C-h> [
-inoremap <C-j> ]
-inoremap <C-d> {
-inoremap <C-f> }
+inoremap <C-j> [
+inoremap <C-k> ]
+inoremap <C-h> {
+inoremap <C-l> }
+
+
 
 nmap ,mm :next<cr>
 nmap ,,m :prev<cr>
+nmap <C-ä> :lnext<cr>
+nmap <C-ü> :lprev<cr>
 
 "Reselect visual block after in/outdenting
 "vnoremap < <gv
@@ -765,8 +769,10 @@ let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 " UltiSnips {{{
   "let g:UltiSnipsExpandTrigger="<c-l>"
   "let g:UltiSnipsListSnippets="<c-h>"
-  "let g:UltiSnipsJumpForwardTrigger="<c-k>"
-  "let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+  let g:UltiSnipsJumpForwardTrigger="<c-q>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-w>"
+  let g:UltiSnipsSnippetsDir        = '~/.vim/snippets/'
+  let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
 " }}}
 " Emmet {{{
 let g:user_emmet_leader_key = '<c-e>'
@@ -908,9 +914,9 @@ let g:snips_trigger_key='<c-g>'
 "}}}
 "
 "{{{ NEOCOMPLETE SNIPPETS
-let g:neocomplcache_snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
-imap <C-A> <Plug>(neocomplcache_snippets_expand)
-smap <C-A> <Plug>(neocomplcache_snippets_expand)
+"let g:neocomplcache_snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
+"imap <C-A> <Plug>(neocomplcache_snippets_expand)
+"smap <C-A> <Plug>(neocomplcache_snippets_expand)
 "}}}
 
 " PHP CS FIXER{{{
@@ -989,6 +995,13 @@ let g:tern_map_prefix=";"
 let g:tern_map_keys=1
 let g:tern_show_argument_hints="on_hold"
 " }}}
+"dragvisuals {{{
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+vmap  <expr>  D        DVB_Duplicate()
+"}}}
 " MultiCursor {{{
  let g:multi_cursor_next_key="\<C-n>"
  let g:multi_cursor_prev_key="\<C-p>"
@@ -1012,7 +1025,7 @@ vmap <Leader>x<Bar> :Tabularize /<Bar><CR>
 " The following function automatically aligns when typing a
 " supported character
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
+ 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
