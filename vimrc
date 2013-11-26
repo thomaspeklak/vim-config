@@ -264,14 +264,14 @@ if has("autocmd")
 
   " set question mark to be part of a VIM word. in Ruby it is!
   autocmd FileType ruby set iskeyword=@,48-57,_,?,!,192-255
-  autocmd FileType css,scss set iskeyword=@,48-57,_,-,?,!,192-255
+  autocmd FileType css,scss,less set iskeyword=@,48-57,_,-,?,!,192-255
   autocmd FileType javascript set iskeyword=@,48-57,-,192-255
   autocmd FileType clojure,clj set iskeyword=@,48-57,_,-,?,!,192-255
 
   autocmd FileType html,htmldjango,jinjahtml,eruby,mako,ctp let b:closetag_html_style=1
   autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,ctp source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
 
-  autocmd FileType css,scss setlocal ts=4 sts=4 sw=4 et
+  autocmd FileType css,scss,less setlocal ts=4 sts=4 sw=4 et
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 et
   autocmd FileType coffee setlocal ts=2 sts=2 sw=2 et
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
@@ -296,8 +296,8 @@ if has("autocmd")
   " }}}
 
   "automatically remove trailing whitespace
-  autocmd FocusLost *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
-  autocmd BufWritePre *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
+  autocmd FocusLost *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.less,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
+  autocmd BufWritePre *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.less,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
 
   set updatetime=100
   au BufLeave,FocusLost * silent! wall                                                   " write file on focus lost
@@ -338,6 +338,7 @@ augroup ft_css
   au Filetype scss,less,css setlocal omnifunc=csscomplete#CompleteCSS
   au Filetype scss,less,css setlocal iskeyword+=-
   au BufRead,BufNewFile *.scss set filetype=scss
+  au BufRead,BufNewFile *.less set filetype=less
 
   " Use <leader>S to sort properties.  Turns this:
   "
@@ -758,6 +759,8 @@ endfunction
 " {{{ YouCompleteMe
 let g:syntastic_always_populate_loc_list = 1
 let g:ycm_cache_omnifunc = 0
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>'] 
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>'] 
 " }}}
 " UltiSnips {{{
   "let g:UltiSnipsExpandTrigger="<c-l>"
