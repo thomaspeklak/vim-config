@@ -5,7 +5,7 @@
 Bundle 'gmarik/vundle'
 
 " original repos on github
-Bundle 'AutoTag'
+"Bundle 'AutoTag'
 Bundle 'L9'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
@@ -50,7 +50,7 @@ Bundle "Gist.vim"
 Bundle "sjl/threesome.vim"
 Bundle "sjl/vitality.vim"
 Bundle "LanguageTool"
-Bundle 'stephpy/vim-php-cs-fixer'
+"Bundle 'stephpy/vim-php-cs-fixer'
 Bundle "sudo.vim"
 Bundle "panozzaj/vim-autocorrect"
 "Bundle "chreekat/vim-paren-crosshairs"
@@ -58,7 +58,7 @@ Bundle "majutsushi/tagbar"
 Bundle "Arkham/vim-web-indent"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "vim-ruby/vim-ruby"
-Bundle "vim-scripts/Tag-Signature-Balloons"
+"Bundle "vim-scripts/Tag-Signature-Balloons"
 Bundle "tpope/vim-tbone"
 Bundle "yueyoum/vim-linemovement"
 Bundle "terryma/vim-expand-region"
@@ -93,7 +93,7 @@ Bundle 'tpope/vim-markdown'
 "Bundle 'groenewege/vim-less'
 Bundle "digitaltoad/vim-jade"
 Bundle "VimClojure"
-Bundle "2072/PHP-Indenting-for-VIm"
+"Bundle "2072/PHP-Indenting-for-VIm"
 
 "COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
