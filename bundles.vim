@@ -90,7 +90,6 @@ Bundle "groenewege/vim-less"
 Bundle 'cakebaker/scss-syntax.vim'
 "Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
-"Bundle 'groenewege/vim-less'
 Bundle "digitaltoad/vim-jade"
 Bundle "VimClojure"
 "Bundle "2072/PHP-Indenting-for-VIm"

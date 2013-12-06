@@ -57,6 +57,16 @@ set undolevels=1000                                               " use many und
 set pastetoggle=<F2>                                               " enable/disable autoformatting on right mouse paste
 set shiftround
 set autoread                                                       " Autoload files that are modified outside vim
+augroup checktime
+    au!
+    if !has("gui_running")
+        "silent! necessary otherwise throws errors when using command
+        "line window.
+        autocmd BufEnter        * silent! checktime
+        autocmd CursorHold      * silent! checktime
+        autocmd CursorHoldI     * silent! checktime
+    endif
+augroup END
 set autowriteall 
 set hidden                                                           " allow vim to create hidden buffers
 set backspace=indent,eol,start                                       " allow backspacing over everything in insert mode
