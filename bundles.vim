@@ -75,6 +75,7 @@ Bundle "walm/jshint.vim"
 Bundle "drslump/vim-syntax-js"
 Bundle "pangloss/vim-javascript"
 Bundle "marijnh/tern_for_vim"
+Bundle "tpope/vim-jdaddy"
 
 "AUTOCOMPLETE
 Bundle "mattn/emmet-vim"
