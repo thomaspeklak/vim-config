@@ -725,10 +725,6 @@ let g:ctrlp_root_markers= ["node_modules", ".git", ".hg", ".svn", ".bzr", "_darc
 " PIV {{{
 let g:DisableAutoPHPFolding = 1 
 "}}}
-" AUTOTAG {{{
-so ~/.vim/bundle/AutoTag/plugin/autotag.vim
-" }}}
-
 " TURBUX {{{
 
 " }}}
