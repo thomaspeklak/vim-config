@@ -585,6 +585,10 @@ nmap <C-ü> :lprev<cr>
  nnoremap <silent> g* g*zz
 
 
+"jump to next error / location
+
+nnoremap <leader><leader>e :lnext<CR>
+
 "}}}
 " AUTO COMMANDS {{{
 " turn off paste on insert mode leave
