@@ -11,7 +11,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Rename'
 Bundle 'Tabular'
-Bundle 'The-NERD-tree'
+"Bundle 'The-NERD-tree'
 Bundle 'YankRing.vim'
 Bundle 'closetag.vim'
 Bundle 'kana/vim-textobj-user'
@@ -70,11 +70,12 @@ Bundle "csscomb/csscomb-for-vim"
 Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
 Bundle "myhere/vim-nodejs-complete"
-"Bundle "teramako/jscomplete-vim" "currently broken with neocomplcach
 Bundle "walm/jshint.vim"
 Bundle "drslump/vim-syntax-js"
 Bundle "pangloss/vim-javascript"
 Bundle "marijnh/tern_for_vim"
+Bundle "othree/javascript-libraries-syntax.vim"
+Bundle "moll/vim-node"
 
 "AUTOCOMPLETE
 Bundle "mattn/emmet-vim"
@@ -82,8 +83,8 @@ Bundle "mattn/emmet-vim"
 "Bundle "Shougo/neosnippet"
 "Bundle "Shougo/neocomplete"
 Bundle "Valloric/YouCompleteMe"
-Bundle "SirVer/ultisnips"
-Bundle "rstacruz/vim-ultisnips-css"
+"Bundle "SirVer/ultisnips"
+"Bundle "rstacruz/vim-ultisnips-css"
 
 "SYNTAX
 Bundle "groenewege/vim-less"
@@ -104,6 +105,8 @@ Bundle "chriskempson/base16-vim"
 "Experimental
 Bundle "airblade/vim-gitgutter"
 Bundle "gavinbeatty/dragvisuals.vim"
+Bundle "aklt/plantuml-syntax"
+Bundle "tpope/vim-vinegar"
 "
 "
 " non github repos

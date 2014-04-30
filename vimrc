@@ -306,8 +306,8 @@ if has("autocmd")
   " }}}
 
   "automatically remove trailing whitespace
-  autocmd FocusLost *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
-  autocmd BufWritePre *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
+  autocmd FocusLost *.py,*.js,*.json,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
+  autocmd BufWritePre *.py,*.js,*.json,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
 
   set updatetime=100
   au BufLeave,FocusLost * silent! wall                                                   " write file on focus lost
@@ -980,11 +980,11 @@ nmap <C-i> <Space>f
 vmap <C-i> <Space>f
 nmap <S-Tab> <Space>F
 let g:EasyMotion_leader_key = '<Space>'
-let g:EasyMotion_mapping_w = '-'
-let g:EasyMotion_mapping_b = '_'
+"let g:EasyMotion_mapping_w = '-'
+"let g:EasyMotion_mapping_b = '_'
 " }}}
 " JAVASCRIPT LIBRARIES {{{
-let g:used_javascript_libs = 'jquery,underscore,angularjs'
+let g:used_javascript_libs = 'jquery,underscore,angularjs,node'
 " }}}
 " JSBeautify {{{
 nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
