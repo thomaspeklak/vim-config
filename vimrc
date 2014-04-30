@@ -274,7 +274,7 @@ if has("autocmd")
 
   " set question mark to be part of a VIM word. in Ruby it is!
   autocmd FileType ruby set iskeyword=@,48-57,_,?,!,192-255
-  autocmd FileType css,scss,less set iskeyword=@,48-57,_,-,?,!,192-255
+  autocmd FileType css,scss,less,jade set iskeyword=@,48-57,_,-,?,!,192-255
   autocmd FileType javascript set iskeyword=@,48-57,-,192-255
   autocmd FileType clojure,clj set iskeyword=@,48-57,_,-,?,!,192-255
 
@@ -1003,7 +1003,7 @@ let g:yankring_replace_n_nkey = '<m-n>'
 " Tern {{{
 let g:tern_map_prefix=";"
 let g:tern_map_keys=1
-let g:tern_show_argument_hints="on_hold"
+let g:tern_show_argument_hints="no"
 " }}}
 " MultiCursor {{{
  let g:multi_cursor_next_key="\<C-n>"
