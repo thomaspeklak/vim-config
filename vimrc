@@ -293,6 +293,12 @@ if has("autocmd")
   " OMNICOMPLETE {{{
   let g:jscomplete_use = ['dom', 'moz', 'es6th']
   let g:node_usejscomplete = 1
+
+  let g:nodejs_complete_config = {
+\  'js_compl_fn': 'jscomplete#CompleteJS',
+\  'max_node_compl_len': 15
+\}
+
   set ofu=syntaxcomplete#Complete
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
