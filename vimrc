@@ -34,6 +34,7 @@ let $JS_CMD='node'
 
 syntax enable
 
+set cryptmethod=blowfish
 set mouse=nicrh                                                       "enable mouse support in all modes
 set modeline
 set modelines=5
@@ -274,7 +275,7 @@ if has("autocmd")
 
   " set question mark to be part of a VIM word. in Ruby it is!
   autocmd FileType ruby set iskeyword=@,48-57,_,?,!,192-255
-  autocmd FileType css,scss,less set iskeyword=@,48-57,_,-,?,!,192-255
+  autocmd FileType css,scss,less,jade set iskeyword=@,48-57,_,-,?,!,192-255
   autocmd FileType javascript set iskeyword=@,48-57,-,192-255
   autocmd FileType clojure,clj set iskeyword=@,48-57,_,-,?,!,192-255
 
@@ -293,6 +294,12 @@ if has("autocmd")
   " OMNICOMPLETE {{{
   let g:jscomplete_use = ['dom', 'moz', 'es6th']
   let g:node_usejscomplete = 1
+
+  let g:nodejs_complete_config = {
+\  'js_compl_fn': 'jscomplete#CompleteJS',
+\  'max_node_compl_len': 15
+\}
+
   set ofu=syntaxcomplete#Complete
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -585,6 +592,10 @@ nmap <C-ü> :lprev<cr>
  nnoremap <silent> g* g*zz
 
 
+"jump to next error / location
+
+nnoremap <leader><leader>e :lnext<CR>
+
 "}}}
 " AUTO COMMANDS {{{
 " turn off paste on insert mode leave
@@ -719,16 +730,12 @@ map <leader>p :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_max_files = 30000
-let g:ctrlp_working_path_mode = "ra"
-let g:ctrlp_root_markers= ["node_modules", ".git", ".hg", ".svn", ".bzr", "_darcs"]
+"let g:ctrlp_working_path_mode = "ra"
+let g:ctrlp_root_markers= ["node_modules", ".git", ".hg", ".svn", ".bzr", "_darcs", ".approot", "package.json"]
 " }}}
 " PIV {{{
 let g:DisableAutoPHPFolding = 1 
 "}}}
-" AUTOTAG {{{
-so ~/.vim/bundle/AutoTag/plugin/autotag.vim
-" }}}
-
 " TURBUX {{{
 
 " }}}
@@ -782,7 +789,7 @@ let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
   let g:UltiSnipsJumpForwardTrigger="<c-q>"
   let g:UltiSnipsJumpBackwardTrigger="<c-w>"
   let g:UltiSnipsSnippetsDir        = '~/.vim/snippets/'
-  let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
+  let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 " }}}
 " Emmet {{{
 let g:user_emmet_leader_key = '<c-e>'
@@ -1003,15 +1010,8 @@ let g:yankring_replace_n_nkey = '<m-n>'
 " Tern {{{
 let g:tern_map_prefix=";"
 let g:tern_map_keys=1
-let g:tern_show_argument_hints="on_hold"
+let g:tern_show_argument_hints="no"
 " }}}
-"dragvisuals {{{
-vmap  <expr>  <LEFT>   DVB_Drag('left')
-vmap  <expr>  <RIGHT>  DVB_Drag('right')
-vmap  <expr>  <DOWN>   DVB_Drag('down')
-vmap  <expr>  <UP>     DVB_Drag('up')
-vmap  <expr>  D        DVB_Duplicate()
-"}}}
 " MultiCursor {{{
  let g:multi_cursor_next_key="\<C-n>"
  let g:multi_cursor_prev_key="\<C-p>"
