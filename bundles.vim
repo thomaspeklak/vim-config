@@ -69,8 +69,8 @@ Bundle "csscomb/csscomb-for-vim"
 "JAVASCRIPT
 Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
-Bundle "ahayman/vim-nodejs-complete" 
-"fork from myhere/vim-nodejs-complete 
+"Bundle ahayman/vim-nodejs-complete 
+Bundle "myhere/vim-nodejs-complete"
 
 Bundle "mattn/jscomplete-vim" 
 Bundle "walm/jshint.vim"

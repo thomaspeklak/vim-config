@@ -309,7 +309,7 @@ if has("autocmd")
   autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
   autocmd FileType c setlocal omnifunc=ccomplete#Complete
   autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-  autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
+  "autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
   " }}}
 
   "automatically remove trailing whitespace
