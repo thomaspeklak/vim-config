@@ -111,7 +111,7 @@ Bundle "airblade/vim-gitgutter"
 "Bundle "gavinbeatty/dragvisuals.vim"
 Bundle "aklt/plantuml-syntax"
 Bundle "tpope/vim-vinegar"
-Bundle "wellle/tmux-complete.vim"
+Bundle "AndrewRadev/splitjoin.vim"
 "
 "
 " non github repos
