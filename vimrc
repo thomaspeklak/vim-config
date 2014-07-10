@@ -494,6 +494,12 @@ map <C-J> <C-w>j
 map <C-K> <C-w>k
 map <C-L> <C-w>l
 
+nmap <S-h> <C-W><
+nmap <S-l> <C-W>>
+nmap <S-j> <C-W>-
+nnoremap <S-k> <C-W>+
+
+
 nnoremap <leader>1 yypVr=
 nnoremap <leader>2 yypVr-
 nnoremap <leader>3 yypVr
