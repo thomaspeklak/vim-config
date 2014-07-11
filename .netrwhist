@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/var/www/spb/spb-webapi/jsonTestFiles'
-let g:netrw_dirhist_2='/var/www/EventsGoDigital/wwwroot/search/coffee-scripts'
-let g:netrw_dirhist_3='/var/www/spb/spb-web/app'
-let g:netrw_dirhist_4='/home/thomaspeklak/install/jquery-ui/build/build'
-let g:netrw_dirhist_5='/Users/tom/projects/mark.me/specs'

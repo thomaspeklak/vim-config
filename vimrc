@@ -34,6 +34,7 @@ let $JS_CMD='node'
 
 syntax enable
 
+set cryptmethod=blowfish
 set mouse=nicrh                                                       "enable mouse support in all modes
 set modeline
 set modelines=5
@@ -312,8 +313,8 @@ if has("autocmd")
   " }}}
 
   "automatically remove trailing whitespace
-  autocmd FocusLost *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
-  autocmd BufWritePre *.py,*.js,*.json,*.jade,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
+  autocmd FocusLost *.py,*.js,*.json,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
+  autocmd BufWritePre *.py,*.js,*.json,*.rb,*.html,*.module,*.php,*.phtml,*.inc,*.tmpl,*.css,*.less,*.scss,*.ctp,*.coffee :call Preserve("%s/\\s\\+$//e")
 
   set updatetime=100
   au BufLeave,FocusLost * silent! wall                                                   " write file on focus lost
@@ -492,6 +493,12 @@ map <C-H> <C-w>h
 map <C-J> <C-w>j
 map <C-K> <C-w>k
 map <C-L> <C-w>l
+
+nmap <S-h> <C-W><
+nmap <S-l> <C-W>>
+nmap <S-j> <C-W>-
+nnoremap <S-k> <C-W>+
+
 
 nnoremap <leader>1 yypVr=
 nnoremap <leader>2 yypVr-
@@ -729,7 +736,7 @@ map <leader>p :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_max_files = 30000
-let g:ctrlp_working_path_mode = "ra"
+"let g:ctrlp_working_path_mode = "ra"
 let g:ctrlp_root_markers= ["node_modules", ".git", ".hg", ".svn", ".bzr", "_darcs", ".approot", "package.json"]
 " }}}
 " PIV {{{
@@ -986,11 +993,11 @@ nmap <C-i> <Space>f
 vmap <C-i> <Space>f
 nmap <S-Tab> <Space>F
 let g:EasyMotion_leader_key = '<Space>'
-let g:EasyMotion_mapping_w = '-'
-let g:EasyMotion_mapping_b = '_'
+"let g:EasyMotion_mapping_w = '-'
+"let g:EasyMotion_mapping_b = '_'
 " }}}
 " JAVASCRIPT LIBRARIES {{{
-let g:used_javascript_libs = 'jquery,underscore,angularjs'
+let g:used_javascript_libs = 'jquery,underscore,angularjs,node'
 " }}}
 " JSBeautify {{{
 nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>

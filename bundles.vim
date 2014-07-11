@@ -11,7 +11,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Rename'
 Bundle 'Tabular'
-Bundle 'The-NERD-tree'
+"Bundle 'The-NERD-tree'
 Bundle 'YankRing.vim'
 Bundle 'closetag.vim'
 Bundle 'kana/vim-textobj-user'
@@ -27,26 +27,26 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-cucumber'
+"Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-pathogen'
+"Bundle 'tpope/vim-pathogen'
 "Bundle 'tpope/vim-rails'
 "Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'vlmonk/vim-rspec'
+"Bundle 'vlmonk/vim-rspec'
 Bundle 'wzzrd/vim-matchit'
 Bundle 'spf13/PIV'
 Bundle "kana/vim-textobj-entire"
 Bundle "kana/vim-textobj-line"
 Bundle "tpope/vim-ragtag"
 Bundle "nelstrom/vim-visual-star-search"
-Bundle "ZoomWin"
-Bundle "Gist.vim"
+"Bundle "ZoomWin"
+"Bundle "Gist.vim"
 Bundle "sjl/threesome.vim"
 Bundle "sjl/vitality.vim"
 Bundle "LanguageTool"
@@ -56,13 +56,13 @@ Bundle "panozzaj/vim-autocorrect"
 "Bundle "chreekat/vim-paren-crosshairs"
 Bundle "majutsushi/tagbar"
 Bundle "Arkham/vim-web-indent"
-Bundle "ecomba/vim-ruby-refactoring"
+"Bundle "ecomba/vim-ruby-refactoring"
 Bundle "vim-ruby/vim-ruby"
 "Bundle "vim-scripts/Tag-Signature-Balloons"
 Bundle "tpope/vim-tbone"
 Bundle "yueyoum/vim-linemovement"
 Bundle "terryma/vim-expand-region"
-Bundle "terryma/vim-multiple-cursors"
+"Bundle "terryma/vim-multiple-cursors"
 Bundle "hail2u/vim-css-syntax"
 Bundle "csscomb/csscomb-for-vim"
 
@@ -72,11 +72,13 @@ Bundle 'itspriddle/vim-jquery'
 "Bundle ahayman/vim-nodejs-complete 
 Bundle "myhere/vim-nodejs-complete"
 
-"Bundle "teramako/jscomplete-vim" "currently broken with neocomplcach
+Bundle "mattn/jscomplete-vim" 
 Bundle "walm/jshint.vim"
 Bundle "drslump/vim-syntax-js"
 Bundle "pangloss/vim-javascript"
 Bundle "marijnh/tern_for_vim"
+Bundle "othree/javascript-libraries-syntax.vim"
+Bundle "moll/vim-node"
 Bundle "tpope/vim-jdaddy"
 
 "AUTOCOMPLETE
@@ -85,8 +87,8 @@ Bundle "mattn/emmet-vim"
 "Bundle "Shougo/neosnippet"
 "Bundle "Shougo/neocomplete"
 Bundle "Valloric/YouCompleteMe"
-Bundle "SirVer/ultisnips"
-Bundle "rstacruz/vim-ultisnips-css"
+"Bundle "SirVer/ultisnips"
+"Bundle "rstacruz/vim-ultisnips-css"
 
 "SYNTAX
 Bundle "groenewege/vim-less"
@@ -105,8 +107,12 @@ Bundle "chriskempson/base16-vim"
 
 
 "Experimental
-"Bundle "airblade/vim-gitgutter"
 "Bundle "wellle/tmux-complete.vim"
+Bundle "airblade/vim-gitgutter"
+"Bundle "gavinbeatty/dragvisuals.vim"
+Bundle "aklt/plantuml-syntax"
+Bundle "tpope/vim-vinegar"
+Bundle "AndrewRadev/splitjoin.vim"
 "
 "
 " non github repos
