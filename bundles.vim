@@ -107,6 +107,7 @@ Bundle "chriskempson/base16-vim"
 
 
 "Experimental
+"Bundle "wellle/tmux-complete.vim"
 Bundle "airblade/vim-gitgutter"
 "Bundle "gavinbeatty/dragvisuals.vim"
 Bundle "aklt/plantuml-syntax"
