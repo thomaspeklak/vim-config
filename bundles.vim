@@ -112,6 +112,9 @@ Bundle "airblade/vim-gitgutter"
 Bundle "aklt/plantuml-syntax"
 Bundle "tpope/vim-vinegar"
 Bundle "AndrewRadev/splitjoin.vim"
+Bundle "fatih/vim-go"
+Bundle "talek/obvious-resize"
+
 "
 "
 " non github repos

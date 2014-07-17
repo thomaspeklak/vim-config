@@ -494,12 +494,6 @@ map <C-J> <C-w>j
 map <C-K> <C-w>k
 map <C-L> <C-w>l
 
-nmap <S-h> <C-W><
-nmap <S-l> <C-W>>
-nmap <S-j> <C-W>-
-nnoremap <S-k> <C-W>+
-
-
 nnoremap <leader>1 yypVr=
 nnoremap <leader>2 yypVr-
 nnoremap <leader>3 yypVr
@@ -1024,6 +1018,12 @@ let g:tern_show_argument_hints="no"
  let g:multi_cursor_skip_key="\<C-x>"
  let g:multi_cursor_exit_key="\<Esc>"
 " }}}
+"Obvious Resize {{{
+noremap <silent> <C-Up> :ObviousResizeUp<CR>
+noremap <silent> <C-Down> :ObviousResizeDown<CR>
+noremap <silent> <C-Left> :ObviousResizeLeft<CR>
+noremap <silent> <C-Right> :ObviousResizeRight<CR>
+"[}}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
 vmap <Leader>x= :Tabularize /=<CR>
