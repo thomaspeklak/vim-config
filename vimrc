@@ -718,7 +718,11 @@ let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
 
 " }}}
 " POWERLINE {{{
-let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'fancy'
+" }}}
+" AIRLINE {{{
+set laststatus=2
+let g:airline_powerline_fonts = 1
 " }}}
 " CTRLP {{{
 let g:ctrlp_map = '<C-G>' 

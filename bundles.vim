@@ -8,7 +8,6 @@ Bundle 'gmarik/vundle'
 "Bundle 'AutoTag'
 Bundle 'L9'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'Rename'
 Bundle 'Tabular'
 "Bundle 'The-NERD-tree'
@@ -115,7 +114,7 @@ Bundle "AndrewRadev/splitjoin.vim"
 Bundle "fatih/vim-go"
 Bundle "talek/obvious-resize"
 Bundle "amdt/vim-niji"
-Bundle "a_pair"
+Bundle "bling/vim-airline"
 
 "
 "
@@ -137,5 +136,6 @@ endif
 "  Bundle 'juvenn/mustache.vim'
 "  Bundle 'comment.vim'
 "  Bundle 'kien/rainbow_parentheses.vim'
+"  Bundle 'Lokaltog/vim-powerline'
 " }}}
 
