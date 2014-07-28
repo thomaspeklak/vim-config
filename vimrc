@@ -1005,13 +1005,15 @@ nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
 nmap <Leader>gg :GitGutterToggle<CR>
 " }}}
 " Expand Region {{{
-map <C-.> <Plug>(expand_region_expand)
-map <C-,> <Plug>(expand_region_shrink)
+map Ä <Plug>(expand_region_expand)
+map Ö <Plug>(expand_region_shrink)
 
 " }}}
+" 
 " YankRing {{{
 let g:yankring_replace_n_nkey = '<m-n>'
 " }}}
+" 
 " Tern {{{
 let g:tern_map_prefix=";"
 let g:tern_map_keys=1
