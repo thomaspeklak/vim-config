@@ -115,6 +115,7 @@ Bundle "AndrewRadev/splitjoin.vim"
 Bundle "fatih/vim-go"
 Bundle "talek/obvious-resize"
 Bundle "amdt/vim-niji"
+Bundle "a_pair"
 
 "
 "
