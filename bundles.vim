@@ -16,7 +16,6 @@ Bundle 'YankRing.vim'
 Bundle 'closetag.vim'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
-Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'othree/html5.vim'
@@ -115,6 +114,7 @@ Bundle "tpope/vim-vinegar"
 Bundle "AndrewRadev/splitjoin.vim"
 Bundle "fatih/vim-go"
 Bundle "talek/obvious-resize"
+Bundle "amdt/vim-niji"
 
 "
 "
@@ -135,5 +135,6 @@ endif
 "  Bundle 'c9s/cascading.vim'
 "  Bundle 'juvenn/mustache.vim'
 "  Bundle 'comment.vim'
+"  Bundle 'kien/rainbow_parentheses.vim'
 " }}}
 
