@@ -81,11 +81,11 @@ Bundle "tpope/vim-jdaddy"
 
 "AUTOCOMPLETE
 Bundle "mattn/emmet-vim"
-"Bundle "honza/vim-snippets"
+Bundle "honza/vim-snippets"
 "Bundle "Shougo/neosnippet"
 "Bundle "Shougo/neocomplete"
 Bundle "Valloric/YouCompleteMe"
-"Bundle "SirVer/ultisnips"
+Bundle "sirver/ultisnips"
 "Bundle "rstacruz/vim-ultisnips-css"
 
 "SYNTAX

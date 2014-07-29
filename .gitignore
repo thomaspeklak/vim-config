@@ -2,3 +2,4 @@
 vimrc_local
 tmp/*/*
 bundle/*
+.netrwhist

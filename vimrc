@@ -791,10 +791,11 @@ let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 " UltiSnips {{{
   "let g:UltiSnipsExpandTrigger="<c-l>"
   "let g:UltiSnipsListSnippets="<c-h>"
-  let g:UltiSnipsJumpForwardTrigger="<c-q>"
-  let g:UltiSnipsJumpBackwardTrigger="<c-w>"
-  let g:UltiSnipsSnippetsDir        = '~/.vim/snippets/'
-  let g:UltiSnipsSnippetDirectories = ['UltiSnips']
+  "let g:UltiSnipsExpandTrigger="<tab>"
+  "let g:UltiSnipsJumpForwardTrigger="<c-q>"
+  "let g:UltiSnipsJumpBackwardTrigger="<c-w>"
+  "let g:UltiSnipsSnippetsDir        = '~/.vim/snippets/'
+  "let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 " }}}
 " Emmet {{{
 let g:user_emmet_leader_key = '<c-e>'
