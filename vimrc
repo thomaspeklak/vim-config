@@ -108,7 +108,7 @@ set nolist        " do not show hidden characters
 set sessionoptions="blank,buffers,curdir,folds,resize,tabpages,winpos,winsize"
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:>\ ,eol:$,trail:.,nbsp:_
+set listchars=tab:>\ ,eol:$,trail:.,nbsp:_,,extends:❯,precedes:❮
 "}}}    
 " FONT {{{
 " As Linux and Mac have different declarations for guifont we need to
