@@ -586,6 +586,10 @@ inoremap <C-k> ]
 inoremap <C-h> {
 inoremap <C-l> }
 
+" Easier to type, and I never use the default behavior.
+noremap H ^
+noremap L $
+vnoremap L g_
 
 
 nmap ,mm :next<cr>
