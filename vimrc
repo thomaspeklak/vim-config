@@ -119,6 +119,19 @@ elseif has("unix")
   set guifont=Mensch\ 8
 endif
 "}}}
+" Line Return {{{
+
+" Make sure Vim returns to the same line when you reopen a file.
+" Thanks, Amit
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+
+" }}}
 " SET ENCODING {{{"{{{
 if has("multi_byte")
   if &termencoding == ""
