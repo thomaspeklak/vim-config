@@ -604,6 +604,10 @@ nmap <C-ü> :lprev<cr>
 " Easier linewise reselection of what you just pasted.
 nnoremap <leader>V V`]
 
+" Split line (sister to [J]oin lines)
+" The normal use of S is covered by cc, so don't worry about shadowing it.
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+
 "Keep search pattern at the center of the screen.
  nnoremap <silent> n nzz
  nnoremap <silent> N Nzz
