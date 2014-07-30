@@ -222,11 +222,11 @@ set backup                        " enable backups
 " }}}
 " FOLDING ----------------------------------------------------------------- {{{
 
-set foldlevelstart=99999
+set foldlevelstart=0
 
 " Space to toggle folds.
-"nnoremap <Space> za
-"vnoremap <Space> za
+nnoremap <S-Space> za
+vnoremap <S-Space> za
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
@@ -235,7 +235,7 @@ nnoremap zO zCzO
 " Use ,z to "focus" the current fold.
 nnoremap <leader>z zMzvzz
 
-function! MyFoldText() " {{{
+function! MyFoldText() 
   let line = getline(v:foldstart)
 
   let nucolwidth = &fdc + &number * &numberwidth
@@ -249,7 +249,7 @@ function! MyFoldText() " {{{
   let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
   let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
   return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
-endfunction " }}}
+endfunction 
 set foldtext=MyFoldText()
 
 " Don't screw up folds when inserting text that might affect them, until
@@ -600,6 +600,9 @@ nmap <C-ü> :lprev<cr>
 "Reselect visual block after in/outdenting
 "vnoremap < <gv
 "vnoremap > >gv
+
+" Easier linewise reselection of what you just pasted.
+nnoremap <leader>V V`]
 
 "Keep search pattern at the center of the screen.
  nnoremap <silent> n nzz
