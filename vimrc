@@ -1018,7 +1018,25 @@ let g:yankring_replace_n_nkey = '<m-n>'
 " Tern {{{
 let g:tern_map_prefix=";"
 let g:tern_map_keys=1
-let g:tern_show_argument_hints="no"
+let g:tern_show_argument_hints = 'on_hold'
+let g:tern_show_signature_in_pum = 1
+
+nmap <Leader>def :TernDef <CR>
+nmap <Leader>ref :TernRefs <CR>
+nmap <Leader>ren :TernRename <CR>
+nmap <Leader>typ :TernType <CR>
+nmap <Leader>doc :TernDoc <CR>
+
+function! SetupTern()
+  setlocal omnifunc=tern#Complete
+  call tern#Enable()
+  runtime after/ftplugin/javascript_tern.vim
+  
+  autocmd BufEnter * set completeopt-=preview
+
+endfunction
+
+autocmd FileType javascript call SetupTern()
 " }}}
 " MultiCursor {{{
  let g:multi_cursor_next_key="\<C-n>"
