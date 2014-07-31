@@ -225,8 +225,8 @@ set backup                        " enable backups
 set foldlevelstart=0
 
 " Space to toggle folds.
-nnoremap <S-Space> za
-vnoremap <S-Space> za
+nnoremap ß za
+vnoremap ß za
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
