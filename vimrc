@@ -231,6 +231,17 @@ vnoremap ß za
 nnoremap <c-z> za
 vnoremap <c-z> za
 
+nnoremap ;0 :set foldlevel=0<cr>
+nnoremap ;1 :set foldlevel=1<cr>
+nnoremap ;2 :set foldlevel=2<cr>
+nnoremap ;3 :set foldlevel=3<cr>
+nnoremap ;4 :set foldlevel=4<cr>
+nnoremap ;5 :set foldlevel=5<cr>
+nnoremap ;6 :set foldlevel=6<cr>
+nnoremap ;7 :set foldlevel=7<cr>
+nnoremap ;8 :set foldlevel=8<cr>
+nnoremap ;9 :set foldlevel=9<cr>
+
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
 nnoremap zO zCzO
