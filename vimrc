@@ -228,6 +228,9 @@ set foldlevelstart=0
 nnoremap ß za
 vnoremap ß za
 
+nnoremap <c-z> za
+vnoremap <c-z> za
+
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
 nnoremap zO zCzO
