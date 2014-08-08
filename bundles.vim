@@ -81,7 +81,7 @@ Bundle "tpope/vim-jdaddy"
 
 "AUTOCOMPLETE
 Bundle "mattn/emmet-vim"
-Bundle "honza/vim-snippets"
+"Bundle "honza/vim-snippets"
 "Bundle "Shougo/neosnippet"
 "Bundle "Shougo/neocomplete"
 Bundle "Valloric/YouCompleteMe"
@@ -115,6 +115,7 @@ Bundle "fatih/vim-go"
 Bundle "talek/obvious-resize"
 Bundle "amdt/vim-niji"
 Bundle "bling/vim-airline"
+Bundle "jgdavey/tslime.vim"
 
 "
 "

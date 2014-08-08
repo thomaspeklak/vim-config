@@ -329,14 +329,14 @@ if has("autocmd")
 
   set ofu=syntaxcomplete#Complete
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
   autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
   autocmd FileType c setlocal omnifunc=ccomplete#Complete
   autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-  "autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
+  autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
   " }}}
 
   "automatically remove trailing whitespace
@@ -1151,15 +1151,10 @@ endfunction
 
 "}}}
 "TSLIME {{{
-function! SelectionToTmux()
-  try
-    let a_save = @a
-    normal! gv"ay
-    call Send_to_Tmux(@a)
-  finally
-    let @a = a_save
-  endtry
-endfunction
+nnoremap ;;r SetTmuxVars
+vnoremap ;;t "ry :call Send_to_Tmux(@r)<CR>
+nnoremap ;;t vip;;t
+
 "}}}
 " EASY MOTION {{{
 nmap <C-0> <Space>F
@@ -1193,7 +1188,7 @@ let g:yankring_replace_n_nkey = '<m-n>'
 " Tern {{{
 let g:tern_map_prefix=";"
 let g:tern_map_keys=1
-let g:tern_show_argument_hints = 'on_hold'
+let g:tern_show_argument_hints = 'none'
 let g:tern_show_signature_in_pum = 1
 
 nmap <Leader>def :TernDef <CR>
@@ -1202,16 +1197,7 @@ nmap <Leader>ren :TernRename <CR>
 nmap <Leader>typ :TernType <CR>
 nmap <Leader>doc :TernDoc <CR>
 
-function! SetupTern()
-  setlocal omnifunc=tern#Complete
-  call tern#Enable()
-  runtime after/ftplugin/javascript_tern.vim
-  
-  autocmd BufEnter * set completeopt-=preview
-
-endfunction
-
-autocmd FileType javascript call SetupTern()
+autocmd FileType javascript :setl omnifunc=tern#Complete
 " }}}
 " MultiCursor {{{
  let g:multi_cursor_next_key="\<C-n>"
