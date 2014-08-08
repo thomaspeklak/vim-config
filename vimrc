@@ -912,6 +912,7 @@ let g:ctrlp_max_files = 30000
 "let g:ctrlp_working_path_mode = "ra"
 let g:ctrlp_root_markers= ["node_modules", ".git", ".hg", ".svn", ".bzr", "_darcs", ".approot", "package.json"]
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:15'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard']
 " }}}
 " PIV {{{
 let g:DisableAutoPHPFolding = 1 
@@ -1198,6 +1199,22 @@ nmap <Leader>typ :TernType <CR>
 nmap <Leader>doc :TernDoc <CR>
 
 autocmd FileType javascript :setl omnifunc=tern#Complete
+
+" TernHintToggle{{{
+fun! s:ToggleTernHints()
+    if g:tern_show_argument_hints == "none"
+        let g:tern_show_argument_hints = "on_hold"
+        echo "TernHints ON"
+    else
+        let g:tern_show_argument_hints="none"
+        echo "TernHints OFF"
+    endif
+endfunction
+
+nnoremap ;;j :call <SID>ToggleTernHints()<cr>
+
+" }}}
+
 " }}}
 " MultiCursor {{{
  let g:multi_cursor_next_key="\<C-n>"
