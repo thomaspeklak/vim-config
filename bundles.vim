@@ -11,7 +11,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Rename'
 Bundle 'Tabular'
 "Bundle 'The-NERD-tree'
-Bundle 'YankRing.vim'
 Bundle 'closetag.vim'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
@@ -116,9 +115,7 @@ Bundle "talek/obvious-resize"
 Bundle "amdt/vim-niji"
 Bundle "bling/vim-airline"
 Bundle "jgdavey/tslime.vim"
-
-"
-"
+Bundle "jaxbot/browserlink.vim"
 " non github repos
 
 if has("gui_running")
@@ -138,5 +135,7 @@ endif
 "  Bundle 'comment.vim'
 "  Bundle 'kien/rainbow_parentheses.vim'
 "  Bundle 'Lokaltog/vim-powerline'
+"  Bundle 'YankRing.vim'  This currently completly broken c-p does not work,
+"  overwrites @...
 " }}}
 

@@ -1181,11 +1181,6 @@ map Ä <Plug>(expand_region_expand)
 map Ö <Plug>(expand_region_shrink)
 
 " }}}
-" 
-" YankRing {{{
-let g:yankring_replace_n_nkey = '<m-n>'
-" }}}
-" 
 " Tern {{{
 let g:tern_map_prefix=";"
 let g:tern_map_keys=1
