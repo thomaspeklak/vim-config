@@ -1177,8 +1177,8 @@ nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
 nmap <Leader>gg :GitGutterToggle<CR>
 " }}}
 " Expand Region {{{
-map Ä <Plug>(expand_region_expand)
-map Ö <Plug>(expand_region_shrink)
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 " }}}
 " Tern {{{
