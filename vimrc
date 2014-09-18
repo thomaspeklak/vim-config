@@ -1218,10 +1218,10 @@ nnoremap ;;j :call <SID>ToggleTernHints()<cr>
  let g:multi_cursor_exit_key="\<Esc>"
 " }}}
 "Obvious Resize {{{
-noremap <silent> <C-Up> :ObviousResizeUp<CR>
-noremap <silent> <C-Down> :ObviousResizeDown<CR>
-noremap <silent> <C-Left> :ObviousResizeLeft<CR>
-noremap <silent> <C-Right> :ObviousResizeRight<CR>
+noremap <silent> <S-Up> :ObviousResizeUp 8<CR>
+noremap <silent> <S-Down> :ObviousResizeDown 8<CR>
+noremap <silent> <S-Left> :ObviousResizeLeft 15<CR>
+noremap <silent> <S-Right> :ObviousResizeRight 15<CR>
 "[}}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
