@@ -108,7 +108,9 @@ set nolist        " do not show hidden characters
 set sessionoptions="blank,buffers,curdir,folds,resize,tabpages,winpos,winsize"
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:>\ ,eol:$,trail:.,nbsp:_,extends:❯,precedes:❮
+"set listchars=tab:>\ ,eol:$,trail:.,nbsp:_,extends:❯,precedes:❮  "This has
+"some terminal problems with ascii confusion art
+set listchars=tab:>\ ,eol:$,trail:.,nbsp:_
 "}}}    
 " FONT {{{
 " As Linux and Mac have different declarations for guifont we need to
@@ -302,7 +304,7 @@ if has("autocmd")
 
   " set question mark to be part of a VIM word. in Ruby it is!
   autocmd FileType ruby set iskeyword=@,48-57,_,?,!,192-255
-  autocmd FileType css,scss,less,jade set iskeyword=@,48-57,_,-,?,!,192-255
+  autocmd FileType css,scss,less,jade set iskeyword=@,49-57,_,-,?,!,192-255
   autocmd FileType javascript set iskeyword=@,48-57,-,192-255
   autocmd FileType clojure,clj set iskeyword=@,48-57,_,-,?,!,192-255
 
