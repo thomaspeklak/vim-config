@@ -331,14 +331,14 @@ if has("autocmd")
 
   set ofu=syntaxcomplete#Complete
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
   autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
   autocmd FileType c setlocal omnifunc=ccomplete#Complete
   autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-  "autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
+  autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
   " }}}
 
   "automatically remove trailing whitespace
@@ -914,6 +914,7 @@ let g:ctrlp_max_files = 30000
 "let g:ctrlp_working_path_mode = "ra"
 let g:ctrlp_root_markers= ["node_modules", ".git", ".hg", ".svn", ".bzr", "_darcs", ".approot", "package.json"]
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:15'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard']
 " }}}
 " PIV {{{
 let g:DisableAutoPHPFolding = 1 
@@ -1153,15 +1154,10 @@ endfunction
 
 "}}}
 "TSLIME {{{
-function! SelectionToTmux()
-  try
-    let a_save = @a
-    normal! gv"ay
-    call Send_to_Tmux(@a)
-  finally
-    let @a = a_save
-  endtry
-endfunction
+nnoremap ;;r SetTmuxVars
+vnoremap ;;t "ry :call Send_to_Tmux(@r)<CR>
+nnoremap ;;t vip;;t
+
 "}}}
 " EASY MOTION {{{
 nmap <C-0> <Space>F
@@ -1183,19 +1179,14 @@ nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
 nmap <Leader>gg :GitGutterToggle<CR>
 " }}}
 " Expand Region {{{
-map Ä <Plug>(expand_region_expand)
-map Ö <Plug>(expand_region_shrink)
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 " }}}
-" 
-" YankRing {{{
-let g:yankring_replace_n_nkey = '<m-n>'
-" }}}
-" 
 " Tern {{{
 let g:tern_map_prefix=";"
 let g:tern_map_keys=1
-let g:tern_show_argument_hints = 'on_hold'
+let g:tern_show_argument_hints = 'none'
 let g:tern_show_signature_in_pum = 1
 
 nmap <Leader>def :TernDef <CR>
@@ -1204,16 +1195,23 @@ nmap <Leader>ren :TernRename <CR>
 nmap <Leader>typ :TernType <CR>
 nmap <Leader>doc :TernDoc <CR>
 
-function! SetupTern()
-  setlocal omnifunc=tern#Complete
-  call tern#Enable()
-  runtime after/ftplugin/javascript_tern.vim
-  
-  autocmd BufEnter * set completeopt-=preview
+autocmd FileType javascript :setl omnifunc=tern#Complete
 
+" TernHintToggle{{{
+fun! s:ToggleTernHints()
+    if g:tern_show_argument_hints == "none"
+        let g:tern_show_argument_hints = "on_hold"
+        echo "TernHints ON"
+    else
+        let g:tern_show_argument_hints="none"
+        echo "TernHints OFF"
+    endif
 endfunction
 
-autocmd FileType javascript call SetupTern()
+nnoremap ;;j :call <SID>ToggleTernHints()<cr>
+
+" }}}
+
 " }}}
 " MultiCursor {{{
  let g:multi_cursor_next_key="\<C-n>"
@@ -1222,10 +1220,10 @@ autocmd FileType javascript call SetupTern()
  let g:multi_cursor_exit_key="\<Esc>"
 " }}}
 "Obvious Resize {{{
-noremap <silent> <C-Up> :ObviousResizeUp<CR>
-noremap <silent> <C-Down> :ObviousResizeDown<CR>
-noremap <silent> <C-Left> :ObviousResizeLeft<CR>
-noremap <silent> <C-Right> :ObviousResizeRight<CR>
+noremap <silent> <S-Up> :ObviousResizeUp 8<CR>
+noremap <silent> <S-Down> :ObviousResizeDown 8<CR>
+noremap <silent> <S-Left> :ObviousResizeLeft 15<CR>
+noremap <silent> <S-Right> :ObviousResizeRight 15<CR>
 "[}}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
