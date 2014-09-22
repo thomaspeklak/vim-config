@@ -116,7 +116,6 @@ Bundle "amdt/vim-niji"
 Bundle "bling/vim-airline"
 Bundle "jgdavey/tslime.vim"
 Bundle "jaxbot/browserlink.vim"
-Bundle "calebsmith/vim-lambdify"
 " non github repos
 
 if has("gui_running")
