@@ -418,7 +418,7 @@ augroup ft_javascript
   au FileType javascript setlocal foldmethod=marker
   au FileType javascript setlocal foldmarker={,}
   au FileType javascript setl foldmethod=syntax
-  au FileType javascript setl conceallevel=2 concealcursor=nc
+  au FileType javascript setl conceallevel=1 concealcursor=c
 augroup END
 
 " }}}
@@ -1224,7 +1224,11 @@ noremap <silent> <S-Up> :ObviousResizeUp 8<CR>
 noremap <silent> <S-Down> :ObviousResizeDown 8<CR>
 noremap <silent> <S-Left> :ObviousResizeLeft 15<CR>
 noremap <silent> <S-Right> :ObviousResizeRight 15<CR>
-"[}}}
+"}}}
+"JSDoc {{{
+g:jsdoc_default_mapping=0
+nmap <silent> <Leader>jd <Plug>(jsdoc)
+"}}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
 vmap <Leader>x= :Tabularize /=<CR>
