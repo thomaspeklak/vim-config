@@ -1226,7 +1226,7 @@ noremap <silent> <S-Left> :ObviousResizeLeft 15<CR>
 noremap <silent> <S-Right> :ObviousResizeRight 15<CR>
 "}}}
 "JSDoc {{{
-g:jsdoc_default_mapping=0
+let g:jsdoc_default_mapping=0
 nmap <silent> <Leader>jd <Plug>(jsdoc)
 "}}}
 " Tabularize {
