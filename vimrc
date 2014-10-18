@@ -52,10 +52,12 @@ set nonumber
 set guioptions-=T  "remove toolbar
 set showmatch                                                      " Show matching brackets.
 set mat=5                                                          " Bracket blinking.
-set history=1000                                                  " large history
+set history=1000                                                   " large history
 set undofile
-set undolevels=1000                                               " use many undos
+set undolevels=1000                                                " use many undos
 set pastetoggle=<F2>                                               " enable/disable autoformatting on right mouse paste
+set breakindent                                                    " indent wrapped lines and prefix with +
+set showbreak=+\ 
 set shiftround
 set autoread                                                       " Autoload files that are modified outside vim
 augroup checktime
