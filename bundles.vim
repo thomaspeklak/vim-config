@@ -123,7 +123,11 @@ Bundle "ryanoasis/vim-webdevicons"
 Bundle "VimClojure"
 Bundle "tpope/vim-fireplace"
 Bundle "venantius/vim-cljfmt"
-Bundle "venantius/vim-eastwood"
+"Bundle "venantius/vim-eastwood"
+Bundle "tpope/vim-leiningen"
+Bundle "tpope/vim-projectionist"
+Bundle "tpope/vim-dispatch"
+
 
 " non github repos
 
