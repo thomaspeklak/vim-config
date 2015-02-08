@@ -118,6 +118,8 @@ Bundle "jaxbot/browserlink.vim"
 Bundle "heavenshell/vim-jsdoc"
 Bundle "editorconfig/editorconfig-vim"
 Bundle "ryanoasis/vim-webdevicons"
+Bundle "junegunn/vim-peekaboo"
+Bundle "guns/vim-sexp"
 
 "Clojure
 Bundle "VimClojure"
