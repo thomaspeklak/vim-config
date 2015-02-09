@@ -93,7 +93,6 @@ Bundle 'cakebaker/scss-syntax.vim'
 "Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle "digitaltoad/vim-jade"
-Bundle "VimClojure"
 "Bundle "2072/PHP-Indenting-for-VIm"
 
 "COLORSCHEMES
@@ -119,6 +118,20 @@ Bundle "jaxbot/browserlink.vim"
 Bundle "heavenshell/vim-jsdoc"
 Bundle "editorconfig/editorconfig-vim"
 Bundle "jsx/jsx.vim"
+Bundle "ryanoasis/vim-webdevicons"
+Bundle "junegunn/vim-peekaboo"
+Bundle "guns/vim-sexp"
+
+"Clojure
+Bundle "VimClojure"
+Bundle "tpope/vim-fireplace"
+Bundle "venantius/vim-cljfmt"
+"Bundle "venantius/vim-eastwood"
+Bundle "tpope/vim-leiningen"
+Bundle "tpope/vim-projectionist"
+Bundle "tpope/vim-dispatch"
+
+
 " non github repos
 
 if has("gui_running")
