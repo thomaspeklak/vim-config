@@ -1233,6 +1233,9 @@ noremap <silent> <S-Right> :ObviousResizeRight 15<CR>
 let g:jsdoc_default_mapping=0
 nmap <silent> <Leader>jd <Plug>(jsdoc)
 "}}}
+"{{{
+let g:webdevicons_enable_nerdtree = 0
+"}}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
 vmap <Leader>x= :Tabularize /=<CR>
