@@ -34,7 +34,9 @@ let $JS_CMD='node'
 
 syntax enable
 
-set cryptmethod=blowfish
+if (!has('nvim')) 
+  set cryptmethod=blowfish
+endif
 set mouse=nicrh                                                       "enable mouse support in all modes
 set modeline
 set modelines=5
@@ -148,47 +150,47 @@ endif
 " }}}"}}}
 " STATUSLINE {{{
 
-set statusline=%f
-set statusline+=%m
-set statusline+=%r
-set statusline+=%h
-set statusline+=%w
-
-set statusline+=\ 
-
-set statusline+=[%{&ff}]
-
-set statusline+=\  
-
-set statusline+=%y
-
-set statusline+=\ 
-
-set statusline+=[\%03.3b]
-
-set statusline+=\ 
-
-set statusline+=%#redbar#                " Highlight the following as a warning.
-set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
-set statusline+=%*                           " Reset highlighting.
-
-set statusline+=%=
-
-set statusline+=%{fugitive#statusline()}
-
-set statusline+=\ 
-
-set statusline+=%-14.(%l,%c%V%)
-
-set statusline+=\ 
-
-set statusline+=%P
-
-set statusline+=\ 
-
-set statusline+=%L
-set statusline+=
-set statusline+=
+"set statusline=%f
+"set statusline+=%m
+"set statusline+=%r
+"set statusline+=%h
+"set statusline+=%w
+"
+"set statusline+=\ 
+"
+"set statusline+=[%{&ff}]
+"
+"set statusline+=\  
+"
+"set statusline+=%y
+"
+"set statusline+=\ 
+"
+"set statusline+=[\%03.3b]
+"
+"set statusline+=\ 
+"
+"set statusline+=%#redbar#                " Highlight the following as a warning.
+"set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
+"set statusline+=%*                           " Reset highlighting.
+"
+"set statusline+=%=
+"
+"set statusline+=%{fugitive#statusline()}
+"
+"set statusline+=\ 
+"
+"set statusline+=%-14.(%l,%c%V%)
+"
+"set statusline+=\ 
+"
+"set statusline+=%P
+"
+"set statusline+=\ 
+"
+"set statusline+=%L
+"set statusline+=
+"set statusline+=
 " }}}
 " WILDMENU COMPLETION {{{
 
@@ -1235,6 +1237,16 @@ nmap <silent> <Leader>jd <Plug>(jsdoc)
 "}}}
 "{{{
 let g:webdevicons_enable_nerdtree = 0
+"}}}
+"VIM GO {{{
+au FileType go nmap <space>r <Plug>(go-run)
+au FileType go nmap <space>b <Plug>(go-build)
+au FileType go nmap <space>t <Plug>(go-test)
+au FileType go nmap <space>c <Plug>(go-coverage)
+au FileType go nmap <space>ds <Plug>(go-def-split)
+au FileType go nmap <space>dv <Plug>(go-def-vertical)
+au FileType go nmap <space>gd <Plug>(go-doc)
+au FileType go nmap <space>gv <Plug>(go-doc-vertical)
 "}}}
 " Tabularize {
 nmap <Leader>x= :Tabularize /=<CR>
