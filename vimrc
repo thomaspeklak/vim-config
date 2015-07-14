@@ -920,7 +920,8 @@ let g:ctrlp_max_files = 30000
 "let g:ctrlp_working_path_mode = "ra"
 let g:ctrlp_root_markers= ["node_modules", ".git", ".hg", ".svn", ".bzr", "_darcs", ".approot", "package.json"]
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:15'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard']
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard']
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 " }}}
 " PIV {{{
 let g:DisableAutoPHPFolding = 1 
