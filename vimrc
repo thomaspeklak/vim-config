@@ -640,6 +640,8 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
 nnoremap <leader><leader>e :lnext<CR>
 
+inoremap ;fl (╯°□°）╯︵ ┻━┻"
+
 "}}}
 " Next and Last {{{
 "
@@ -1184,6 +1186,9 @@ nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
 " }}}
 " GitGutter {{{
 nmap <Leader>gg :GitGutterToggle<CR>
+noremap ggp :GitGutterPrevHunk<CR>
+noremap ggn :GitGutterNextHunk<CR>
+nmap gg+ :GitGutterStageHunk<CR>
 " }}}
 " Expand Region {{{
 vmap v <Plug>(expand_region_expand)
