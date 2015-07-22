@@ -1279,6 +1279,32 @@ function! s:align()
 endfunction
 
 " }
+
+" OpenChangedFiles (<Leader>O)---------------------- {{{
+function! OpenChangedFiles()
+  only " Close all windows, unless they're modified
+  let status = system('git status -s | grep "^[ \?]\(M\|A\|?\)" | cut -c 4-')
+  let filenames = split(status, "\n")
+
+  if len(filenames) < 1
+    let status = system('git show --pretty="format:" --name-only')
+    let filenames = split(status, "\n")
+  endif
+
+  exec "edit " . filenames[0]
+
+  for filename in filenames[1:]
+    if len(filenames) > 3
+      exec "e " . filename
+    else
+      exec "vsp " . filename
+    endif
+  endfor
+endfunction
+command! OpenChangedFiles :call OpenChangedFiles()
+noremap<Leader>O :OpenChangedFiles <CR>
+" }}}
+
 source ~/.vim/vimrc_local
 
 if filereadable('./.vimrc.project')                                     "load session if existent
