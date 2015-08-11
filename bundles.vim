@@ -94,9 +94,9 @@ Bundle "jaxbot/browserlink.vim"
 Bundle "heavenshell/vim-jsdoc"
 Bundle "editorconfig/editorconfig-vim"
 Bundle "jsx/jsx.vim"
-"Bundle "ryanoasis/vim-devicons"
 Bundle "junegunn/vim-peekaboo"
 Bundle "guns/vim-sexp"
+Bundle "unblevable/quick-scope"
 
 "Clojure
 Bundle "VimClojure"
@@ -115,6 +115,7 @@ if has("gui_running")
 endif
 
 " BUNDLES ARCHIVE {{{
+"Bundle "ryanoasis/vim-devicons"
 "  Bundle 'ervandew/supertab'
 "  Bundle "kana/vim-smartinput"
 "  Bundle 'ervandew/supertab'
