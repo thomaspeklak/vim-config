@@ -58,6 +58,8 @@ Bundle "walm/jshint.vim"
 Bundle "drslump/vim-syntax-js"
 Bundle "pangloss/vim-javascript"
 Bundle "marijnh/tern_for_vim"
+Bundle "othree/yajs.vim"
+Bundle "othree/es.next.syntax.vim"
 Bundle "othree/javascript-libraries-syntax.vim"
 Bundle "moll/vim-node"
 Bundle "tpope/vim-jdaddy"
@@ -68,6 +70,7 @@ Bundle "Valloric/YouCompleteMe"
 Bundle "sirver/ultisnips"
 
 "SYNTAX
+Bundle "SyntaxComplete"
 Bundle "groenewege/vim-less"
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'tpope/vim-markdown'
@@ -93,7 +96,7 @@ Bundle "jgdavey/tslime.vim"
 Bundle "jaxbot/browserlink.vim"
 Bundle "heavenshell/vim-jsdoc"
 Bundle "editorconfig/editorconfig-vim"
-Bundle "jsx/jsx.vim"
+Bundle "mxw/vim-jsx"
 Bundle "junegunn/vim-peekaboo"
 Bundle "guns/vim-sexp"
 Bundle "unblevable/quick-scope"
@@ -105,6 +108,13 @@ Bundle "venantius/vim-cljfmt"
 Bundle "tpope/vim-leiningen"
 Bundle "tpope/vim-projectionist"
 Bundle "tpope/vim-dispatch"
+
+Bundle "Shougo/vimproc.vim"
+
+"Typescript
+Bundle "leafgarland/typescript-vim"
+Bundle "Quramy/tsuquyomi"
+"Bundle "clausreinke/typescript-tools.vim"
 
 
 " non github repos

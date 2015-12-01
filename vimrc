@@ -78,7 +78,7 @@ set backspace=indent,eol,start                                       " allow bac
 set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
 set autochdir
 
-set suffixesadd=.js,.json,.jade,.coffee
+set suffixesadd=.ts,.js,.json,.jade,.coffee
 
 set completeopt=longest,menuone,preview                              " Better Completion
 
@@ -343,6 +343,7 @@ if has("autocmd")
   autocmd FileType c setlocal omnifunc=ccomplete#Complete
   autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
   autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
+  autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
   " }}}
 
   "automatically remove trailing whitespace
@@ -899,7 +900,7 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: line %fw}]'
 let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
 let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint', 'jshint', 'jscs']
 
 " }}}
 " POWERLINE {{{
@@ -1309,6 +1310,10 @@ endfunction
 command! OpenChangedFiles :call OpenChangedFiles()
 noremap<Leader>O :OpenChangedFiles <CR>
 " }}}
+" JSX {{{
+let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 1
+" }}}
 
 " QuickScopeSelective {{{
 function! Quick_scope_selective(movement)
@@ -1338,6 +1343,12 @@ vnoremap <expr> <silent> f Quick_scope_selective('f')
 vnoremap <expr> <silent> F Quick_scope_selective('F')
 vnoremap <expr> <silent> t Quick_scope_selective('t')
 vnoremap <expr> <silent> T Quick_scope_selective('T')
+" }}}
+" Typescript Tools {{{
+if !exists("g:ycm_semantic_triggers")
+   let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
 " }}}
 
 source ~/.vim/vimrc_local
