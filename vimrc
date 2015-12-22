@@ -424,6 +424,7 @@ augroup ft_javascript
   au FileType javascript setlocal foldmarker={,}
   au FileType javascript setl foldmethod=syntax
   au FileType javascript setl conceallevel=1 concealcursor=c
+  au FileType javascript setl javascript_enable_domhtmlcss=1
 augroup END
 
 " }}}
