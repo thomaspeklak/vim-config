@@ -82,6 +82,8 @@ Bundle 'molokai'
 Bundle "Lucius"
 Bundle "chriskempson/base16-vim"
 
+"ELM
+Bundle "lambdatoast/elm.vim"
 
 "Experimental
 Bundle "airblade/vim-gitgutter"
