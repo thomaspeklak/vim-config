@@ -18,6 +18,8 @@ Bundle 'othree/html5.vim'
 Bundle 'pix/vim-align'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
+Bundle 'mtscout6/syntastic-local-eslint.vim'
+Bundle 'gcorne/vim-sass-lint'
 Bundle 'sickill/vim-pasta'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
@@ -100,6 +102,7 @@ Bundle "mxw/vim-jsx"
 Bundle "junegunn/vim-peekaboo"
 Bundle "guns/vim-sexp"
 Bundle "unblevable/quick-scope"
+Bundle "christoomey/vim-sort-motion"
 
 "Clojure
 Bundle "VimClojure"

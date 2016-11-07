@@ -228,7 +228,7 @@ set backup                        " enable backups
 " }}}
 " FOLDING ----------------------------------------------------------------- {{{
 
-set foldlevelstart=5
+set foldlevelstart=9
 
 " Space to toggle folds.
 nnoremap ß za
@@ -246,7 +246,7 @@ nnoremap ;5 :set foldlevel=5<cr>
 nnoremap ;6 :set foldlevel=6<cr>
 nnoremap ;7 :set foldlevel=7<cr>
 nnoremap ;8 :set foldlevel=8<cr>
-nnoremap ;9 :set foldlevel=9<cr>
+nnoremap ;9 :set foldlevel=9999<cr>
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
@@ -424,7 +424,7 @@ augroup ft_javascript
   au FileType javascript setlocal foldmarker={,}
   au FileType javascript setl foldmethod=syntax
   au FileType javascript setl conceallevel=1 concealcursor=c
-  au FileType javascript setl javascript_enable_domhtmlcss=1
+  au FileType javascript let javascript_enable_domhtmlcss=1
 augroup END
 
 " }}}
@@ -896,12 +896,17 @@ let g:SuperTabLongestHighlight = 1
 
 "}}}
 " SYNTASTIC {{{
+function! StrTrim(txt)
+  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+endfunction
 
 let g:syntastic_enable_signs = 1
 let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: line %fw}]'
 let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
-let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_javascript_checkers = ['eslint', 'jshint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_sass_checkers=["sasslint"]
+let g:syntastic_scss_checkers=["sasslint", "scss_lint"]
+
 
 " }}}
 " POWERLINE {{{
@@ -1313,7 +1318,7 @@ noremap<Leader>O :OpenChangedFiles <CR>
 " }}}
 " JSX {{{
 let g:jsx_ext_required = 0
-let g:jsx_pragma_required = 1
+let g:jsx_pragma_required = 0
 " }}}
 
 " QuickScopeSelective {{{
