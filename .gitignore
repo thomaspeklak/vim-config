@@ -3,3 +3,5 @@ vimrc_local
 tmp/*/*
 bundle/*
 .netrwhist
+plugged
+autoload/plug.vim

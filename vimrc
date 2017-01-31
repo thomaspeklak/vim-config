@@ -1,12 +1,15 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 if filereadable('./Session.vim')                                     "load session if existent
   execute Session.vim"
 endif
 
 set nocompatible                                                     " be iMproved
 filetype off                                                         " required!
-
-set rtp+=~/.vim/bundle/vundle/                                       " add vundle to the path
-call vundle#rc()                                                     " initialize vundle
 
 source ~/.vim/bundles.vim                                            " load external bundle file
 
@@ -148,50 +151,6 @@ if has("multi_byte")
   set fileencodings=ucs-bom,utf-8,latin1
 endif
 " }}}"}}}
-" STATUSLINE {{{
-
-"set statusline=%f
-"set statusline+=%m
-"set statusline+=%r
-"set statusline+=%h
-"set statusline+=%w
-"
-"set statusline+=\ 
-"
-"set statusline+=[%{&ff}]
-"
-"set statusline+=\  
-"
-"set statusline+=%y
-"
-"set statusline+=\ 
-"
-"set statusline+=[\%03.3b]
-"
-"set statusline+=\ 
-"
-"set statusline+=%#redbar#                " Highlight the following as a warning.
-"set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
-"set statusline+=%*                           " Reset highlighting.
-"
-"set statusline+=%=
-"
-"set statusline+=%{fugitive#statusline()}
-"
-"set statusline+=\ 
-"
-"set statusline+=%-14.(%l,%c%V%)
-"
-"set statusline+=\ 
-"
-"set statusline+=%P
-"
-"set statusline+=\ 
-"
-"set statusline+=%L
-"set statusline+=
-"set statusline+=
-" }}}
 " WILDMENU COMPLETION {{{
 
 set wildignore+=*.sass-cache                     " SASS
@@ -858,37 +817,6 @@ let g:microdata_attributes_complete = 0
 let g:atia_attributes_complete = 0
 
 " }}}
-" RAINBOX PARENTHESES {{{
-
-"au VimEnter * RainbowParenthesesToggle  "has problems with vimclojure's
-"indenting, @TODO needs fixing
-"au Syntax * RainbowParenthesesLoadRound
-"au Syntax * RainbowParenthesesLoadSquare
-"au Syntax * RainbowParenthesesLoadBraces
-
-"nnoremap <leader>rb :RainbowParenthesesToggle<cr>
-"let g:rbpt_colorpairs = [
-      "\ ['brown',       'RoyalBlue3'],
-      "\ ['Darkblue',    'SeaGreen3'],
-      "\ ['darkgray',    'DarkOrchid3'],
-      "\ ['darkgreen',   'firebrick3'],
-      "\ ['darkcyan',    'RoyalBlue3'],
-      "\ ['darkred',     'SeaGreen3'],
-      "\ ['darkmagenta', 'DarkOrchid3'],
-      "\ ['brown',       'firebrick4'],
-      "\ ['gray',        'RoyalBlue3'],
-      "\ ['black',       'SeaGreen3'],
-      "\ ['darkmagenta', 'DarkOrchid3'],
-      "\ ['Darkblue',    'firebrick3'],
-      "\ ['darkgreen',   'RoyalBlue3'],
-      "\ ['darkcyan',    'SeaGreen3'],
-      "\ ['darkred',     'DarkOrchid3'],
-      "\ ['red',         'firebrick3'],
-      "\ ]
-"let g:rbpt_max = 16
-
-
-" }}}
 " SUPERTAB {{{
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -908,6 +836,17 @@ let g:syntastic_sass_checkers=["sasslint"]
 let g:syntastic_scss_checkers=["sasslint", "scss_lint"]
 
 
+" }}}
+" ALE {{{
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+
+let g:ale_statusline_format = ['⨉%d', '⚠ %d', '⬥ ok']
+let g:ale_echo_msg_error_str = '⨉'
+let g:ale_echo_msg_warning_str = '⚠'
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " }}}
 " POWERLINE {{{
 "let g:Powerline_symbols = 'fancy'
@@ -1189,7 +1128,9 @@ let g:EasyMotion_leader_key = '<Space>'
 let g:used_javascript_libs = 'jquery,underscore,angularjs,node'
 " }}}
 " JSBeautify {{{
-nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
+"nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
+nnoremap <leader>ff :call system(b:syntastic_javascript_eslint_exec . " --fix " . expand('%'))<CR>
+
 " }}}
 " GitGutter {{{
 nmap <Leader>gg :GitGutterToggle<CR>

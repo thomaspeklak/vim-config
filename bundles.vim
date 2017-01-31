@@ -1,173 +1,175 @@
 " let Vundle manage Vundle
 " required! 
-" Bundle 'gmarik/vundle' "This does not work yet with submodules
+" Plug 'gmarik/vundle' "This does not work yet with submodules
 
-Bundle 'gmarik/vundle'
+call plug#begin('~/.vim/plugged')
 
 " original repos on github
-Bundle 'L9'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Rename'
-Bundle 'Tabular'
-Bundle 'closetag.vim'
-Bundle 'kana/vim-textobj-user'
-Bundle 'kien/ctrlp.vim'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'othree/html5.vim'
-Bundle 'pix/vim-align'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-Bundle 'mtscout6/syntastic-local-eslint.vim'
-Bundle 'gcorne/vim-sass-lint'
-Bundle 'sickill/vim-pasta'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'wzzrd/vim-matchit'
-Bundle 'spf13/PIV'
-Bundle "kana/vim-textobj-entire"
-Bundle "kana/vim-textobj-line"
-Bundle "tpope/vim-ragtag"
-Bundle "nelstrom/vim-visual-star-search"
-Bundle "sjl/threesome.vim"
-Bundle "sjl/vitality.vim"
-Bundle "LanguageTool"
-Bundle "sudo.vim"
-Bundle "panozzaj/vim-autocorrect"
-Bundle "majutsushi/tagbar"
-"Bundle "Arkham/vim-web-indent"
-Bundle "vim-ruby/vim-ruby"
-Bundle "tpope/vim-tbone"
-Bundle "yueyoum/vim-linemovement"
-Bundle "terryma/vim-expand-region"
-Bundle "hail2u/vim-css-syntax"
-Bundle "csscomb/csscomb-for-vim"
+Plug 'L9'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'Rename'
+Plug 'Tabular'
+Plug 'closetag.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'kien/ctrlp.vim'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'othree/html5.vim'
+Plug 'pix/vim-align'
+Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
+Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'gcorne/vim-sass-lint'
+Plug 'sickill/vim-pasta'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'wzzrd/vim-matchit'
+Plug 'spf13/PIV'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-line'
+Plug 'tpope/vim-ragtag'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'sjl/threesome.vim'
+Plug 'sjl/vitality.vim'
+Plug 'LanguageTool'
+Plug 'sudo.vim'
+Plug 'panozzaj/vim-autocorrect'
+Plug 'majutsushi/tagbar'
+"Plug 'Arkham/vim-web-indent'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-tbone'
+Plug 'yueyoum/vim-linemovement'
+Plug 'terryma/vim-expand-region'
+Plug 'hail2u/vim-css-syntax'
+Plug 'csscomb/csscomb-for-vim'
 
 "JAVASCRIPT
-Bundle 'leshill/vim-json'
-Bundle 'itspriddle/vim-jquery'
-Bundle "myhere/vim-nodejs-complete"
+Plug 'leshill/vim-json'
+Plug 'itspriddle/vim-jquery'
+Plug 'myhere/vim-nodejs-complete'
 
-Bundle "mattn/jscomplete-vim" 
-Bundle "walm/jshint.vim"
-"Bundle "drslump/vim-syntax-js"
-Bundle "pangloss/vim-javascript"
-Bundle "marijnh/tern_for_vim"
-Bundle "othree/yajs.vim"
-Bundle "othree/es.next.syntax.vim"
-Bundle "othree/javascript-libraries-syntax.vim"
-Bundle "moll/vim-node"
-Bundle "tpope/vim-jdaddy"
+Plug 'mattn/jscomplete-vim' 
+Plug 'walm/jshint.vim'
+"Plug 'drslump/vim-syntax-js'
+Plug 'pangloss/vim-javascript'
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'moll/vim-node'
+Plug 'tpope/vim-jdaddy'
 
 "AUTOCOMPLETE
-Bundle "mattn/emmet-vim"
-Bundle "Valloric/YouCompleteMe"
-Bundle "sirver/ultisnips"
+Plug 'mattn/emmet-vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'sirver/ultisnips'
 
 "SYNTAX
-Bundle "SyntaxComplete"
-Bundle "groenewege/vim-less"
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'tpope/vim-markdown'
-Bundle "digitaltoad/vim-jade"
+Plug 'SyntaxComplete'
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 
 "COLORSCHEMES
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'molokai'
-Bundle "Lucius"
-Bundle "chriskempson/base16-vim"
+Plug 'altercation/vim-colors-solarized'
+Plug 'molokai'
+Plug 'Lucius'
+Plug 'chriskempson/base16-vim'
 
 "ELM
-Bundle "lambdatoast/elm.vim"
+Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 
 "Experimental
-Bundle "airblade/vim-gitgutter"
-Bundle "aklt/plantuml-syntax"
-Bundle "tpope/vim-vinegar"
-Bundle "AndrewRadev/splitjoin.vim"
-Bundle "fatih/vim-go"
-Bundle "talek/obvious-resize"
-Bundle "losingkeys/vim-niji"
-Bundle "bling/vim-airline"
-Bundle "jgdavey/tslime.vim"
-Bundle "jaxbot/browserlink.vim"
-Bundle "heavenshell/vim-jsdoc"
-Bundle "editorconfig/editorconfig-vim"
-Bundle "mxw/vim-jsx"
-Bundle "junegunn/vim-peekaboo"
-Bundle "guns/vim-sexp"
-Bundle "unblevable/quick-scope"
-Bundle "christoomey/vim-sort-motion"
+Plug 'airblade/vim-gitgutter'
+Plug 'aklt/plantuml-syntax'
+Plug 'tpope/vim-vinegar'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'fatih/vim-go'
+Plug 'talek/obvious-resize'
+Plug 'losingkeys/vim-niji'
+Plug 'bling/vim-airline'
+Plug 'jgdavey/tslime.vim'
+Plug 'jaxbot/browserlink.vim'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'mxw/vim-jsx'
+Plug 'junegunn/vim-peekaboo'
+Plug 'guns/vim-sexp'
+Plug 'unblevable/quick-scope'
+Plug 'christoomey/vim-sort-motion'
 
 "Clojure
-Bundle "VimClojure"
-Bundle "tpope/vim-fireplace"
-Bundle "venantius/vim-cljfmt"
-Bundle "tpope/vim-leiningen"
-Bundle "tpope/vim-projectionist"
-Bundle "tpope/vim-dispatch"
+Plug 'VimClojure', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+Plug 'tpope/vim-leiningen', { 'for': 'clojure' }
+Plug 'tpope/vim-projectionist', { 'for': 'clojure' }
+Plug 'tpope/vim-dispatch', { 'for': 'clojure' }
 
-Bundle "Shougo/vimproc.vim"
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 "Typescript
-Bundle "leafgarland/typescript-vim"
-Bundle "Quramy/tsuquyomi"
-"Bundle "clausreinke/typescript-tools.vim"
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+"Plug 'clausreinke/typescript-tools.vim'
 
 
 " non github repos
 
-if has("gui_running")
-  Bundle "matthias-guenther/hammer.vim"
-  Bundle "XDebug-DBGp-client-for-PHP"
+if has('gui_running')
+  Plug 'matthias-guenther/hammer.vim'
+  Plug 'XDebug-DBGp-client-for-PHP'
 endif
 
 " BUNDLES ARCHIVE {{{
-"Bundle "ryanoasis/vim-devicons"
-"  Bundle 'ervandew/supertab'
-"  Bundle "kana/vim-smartinput"
-"  Bundle 'ervandew/supertab'
-"  Bundle 'vim-stylus'
-"  Bundle 'css_color.vim'
-"  Bundle 'git://git.wincent.com/command-t.git'
-"  Bundle 'c9s/cascading.vim'
-"  Bundle 'juvenn/mustache.vim'
-"  Bundle 'comment.vim'
-"  Bundle 'kien/rainbow_parentheses.vim'
-"  Bundle 'Lokaltog/vim-powerline'
-"  Bundle 'YankRing.vim'  This currently completly broken c-p does not work,
-"Bundle 'AutoTag'
-"Bundle 'The-NERD-tree'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-cucumber'
-"Bundle 'tpope/vim-pathogen'
-"Bundle 'tpope/vim-rails'
-"Bundle 'tpope/vim-rake'
-"Bundle 'vlmonk/vim-rspec'
-"Bundle "ZoomWin"
-"Bundle "Gist.vim"
-"Bundle 'stephpy/vim-php-cs-fixer'
-"Bundle "chreekat/vim-paren-crosshairs"
-"Bundle "ecomba/vim-ruby-refactoring"
-"Bundle "vim-scripts/Tag-Signature-Balloons"
-"Bundle ahayman/vim-nodejs-complete 
-"Bundle "venantius/vim-eastwood"
-"Bundle "wellle/tmux-complete.vim"
-"Bundle "gavinbeatty/dragvisuals.vim"
-"Bundle 'tpope/vim-haml'
-"Bundle "honza/vim-snippets"
-"Bundle "Shougo/neosnippet"
-"Bundle "Shougo/neocomplete"
-"Bundle "rstacruz/vim-ultisnips-css"
-"Bundle "terryma/vim-multiple-cursors"
-"Bundle "2072/PHP-Indenting-for-VIm"
+"Plug 'ryanoasis/vim-devicons'
+"  Plug 'ervandew/supertab'
+"  Plug 'kana/vim-smartinput'
+"  Plug 'ervandew/supertab'
+"  Plug 'vim-stylus'
+"  Plug 'css_color.vim'
+"  Plug 'git://git.wincent.com/command-t.git'
+"  Plug 'c9s/cascading.vim'
+"  Plug 'juvenn/mustache.vim'
+"  Plug 'comment.vim'
+"  Plug 'kien/rainbow_parentheses.vim'
+"  Plug 'Lokaltog/vim-powerline'
+"  Plug 'YankRing.vim'  This currently completly broken c-p does not work,
+"Plug 'AutoTag'
+"Plug 'The-NERD-tree'
+"Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plug 'tpope/vim-cucumber'
+"Plug 'tpope/vim-pathogen'
+"Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-rake'
+"Plug 'vlmonk/vim-rspec'
+"Plug 'ZoomWin'
+"Plug 'Gist.vim'
+"Plug 'stephpy/vim-php-cs-fixer'
+"Plug 'chreekat/vim-paren-crosshairs'
+"Plug 'ecomba/vim-ruby-refactoring'
+"Plug 'vim-scripts/Tag-Signature-Balloons'
+"Plug ahayman/vim-nodejs-complete 
+"Plug 'venantius/vim-eastwood'
+"Plug 'wellle/tmux-complete.vim'
+"Plug 'gavinbeatty/dragvisuals.vim'
+"Plug 'tpope/vim-haml'
+"Plug 'honza/vim-snippets'
+"Plug 'Shougo/neosnippet'
+"Plug 'Shougo/neocomplete'
+"Plug 'rstacruz/vim-ultisnips-css'
+"Plug 'terryma/vim-multiple-cursors'
+"Plug '2072/PHP-Indenting-for-VIm'
 "  overwrites @...
 " }}}
 
+call plug#end()
