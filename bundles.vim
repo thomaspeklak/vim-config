@@ -5,11 +5,11 @@
 call plug#begin('~/.vim/plugged')
 
 " original repos on github
-Plug 'L9'
+Plug 'vim-scripts/L9'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'Rename'
-Plug 'Tabular'
-Plug 'closetag.vim'
+Plug 'vim-scripts/Rename'
+Plug 'vim-scripts/Tabular'
+Plug 'vim-scripts/closetag.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kien/ctrlp.vim'
 Plug 'michaeljsmith/vim-indent-object'
@@ -39,8 +39,8 @@ Plug 'tpope/vim-ragtag'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'sjl/threesome.vim'
 Plug 'sjl/vitality.vim'
-Plug 'LanguageTool'
-Plug 'sudo.vim'
+Plug 'vim-scripts/LanguageTool'
+Plug 'vim-scripts/sudo.vim'
 Plug 'panozzaj/vim-autocorrect'
 Plug 'majutsushi/tagbar'
 "Plug 'Arkham/vim-web-indent'
@@ -65,7 +65,7 @@ Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'moll/vim-node'
-Plug 'tpope/vim-jdaddy'
+"Plug 'tpope/vim-jdaddy'
 
 "AUTOCOMPLETE
 Plug 'mattn/emmet-vim'
@@ -73,7 +73,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'sirver/ultisnips'
 
 "SYNTAX
-Plug 'SyntaxComplete'
+Plug 'vim-scripts/SyntaxComplete'
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
@@ -81,8 +81,8 @@ Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 
 "COLORSCHEMES
 Plug 'altercation/vim-colors-solarized'
-Plug 'molokai'
-Plug 'Lucius'
+Plug 'vim-scripts/molokai'
+Plug 'vim-scripts/Lucius'
 Plug 'chriskempson/base16-vim'
 
 "ELM
@@ -108,7 +108,7 @@ Plug 'unblevable/quick-scope'
 Plug 'christoomey/vim-sort-motion'
 
 "Clojure
-Plug 'VimClojure', { 'for': 'clojure' }
+Plug 'vim-scripts/VimClojure', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'tpope/vim-leiningen', { 'for': 'clojure' }
