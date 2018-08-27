@@ -143,9 +143,9 @@ augroup END
 " }}}
 " SET ENCODING {{{"{{{
 if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
+  "if &termencoding == ""
+    "let &termencoding = &encoding
+  "endif
   set encoding=utf-8 nobomb
   setglobal fileencoding=utf-8 nobomb
   set fileencodings=ucs-bom,utf-8,latin1
@@ -168,7 +168,6 @@ set wildignore+=*.DS_Store                       " OSX bullshit
 
 set wildignore+=*.luac                           " Lua byte code
 
-set wildignore+=migrations                       " Django migrations
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=tmp 
 set wildignore+=*.class                            " Java class files"
@@ -260,7 +259,7 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.hbs setlocal filetype=html
 
   "highlight JSON files as javascript
-  autocmd BufRead,BufNewFile *.json set filetype=javascript
+  autocmd BufRead,BufNewFile *.json set filetype=json
   "highlight jasmine_fixture files as HTML
   autocmd BufRead,BufNewFile *.jasmine_fixture set filetype=html
   au BufRead,BufNewFile Gemfile* set filetype=ruby 
@@ -847,6 +846,18 @@ let g:ale_echo_msg_error_str = '⨉'
 let g:ale_echo_msg_warning_str = '⚠'
 nmap <silent> <C-u> <Plug>(ale_previous_wrap)
 nmap <silent> <S-u> <Plug>(ale_next_wrap)
+
+" After this is configured, :ALEFix will try and fix your JS code with ESLint.
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint'],
+\}
+
+let g:ale_javascript_prettier_options = '--tab-width 4 --single-quote --trailing-comma es5'
+
+" Set this setting in vimrc if you want to fix files automatically on save.
+" This is off by default.
+let g:ale_fix_on_save = 1
+
 " }}}
 " POWERLINE {{{
 "let g:Powerline_symbols = 'fancy'
@@ -1260,6 +1271,14 @@ noremap<Leader>O :OpenChangedFiles <CR>
 " JSX {{{
 let g:jsx_ext_required = 0
 let g:jsx_pragma_required = 0
+" }}}
+
+" Rainbowlevels {{{
+nmap <space>r :RainbowLevelsToggle<cr>
+" }}}
+
+" vim-json {{{
+let g:vim_json_syntax_conceal = 0
 " }}}
 
 " QuickScopeSelective {{{

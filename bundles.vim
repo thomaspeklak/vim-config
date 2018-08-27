@@ -17,7 +17,6 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'othree/html5.vim'
 Plug 'pix/vim-align'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'gcorne/vim-sass-lint'
@@ -43,21 +42,18 @@ Plug 'vim-scripts/LanguageTool'
 Plug 'vim-scripts/sudo.vim'
 Plug 'panozzaj/vim-autocorrect'
 Plug 'majutsushi/tagbar'
-"Plug 'Arkham/vim-web-indent'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-tbone'
 Plug 'yueyoum/vim-linemovement'
 Plug 'terryma/vim-expand-region'
-Plug 'hail2u/vim-css-syntax'
-Plug 'csscomb/csscomb-for-vim'
+Plug 'hail2u/vim-css-syntax', { 'for': ['css', 'less', 'scss'] }
+Plug 'csscomb/csscomb-for-vim', { 'for': ['css', 'less', 'scss'] }
 
 "JAVASCRIPT
-Plug 'leshill/vim-json'
-Plug 'itspriddle/vim-jquery'
+Plug 'elzr/vim-json'
 Plug 'myhere/vim-nodejs-complete'
 
 Plug 'mattn/jscomplete-vim' 
-Plug 'walm/jshint.vim'
 "Plug 'drslump/vim-syntax-js'
 Plug 'pangloss/vim-javascript'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
@@ -65,7 +61,11 @@ Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'moll/vim-node'
+Plug 'heavenshell/vim-jsdoc'
 "Plug 'tpope/vim-jdaddy'
+
+"REACT
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 "AUTOCOMPLETE
 Plug 'mattn/emmet-vim'
@@ -93,19 +93,20 @@ Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
 Plug 'tpope/vim-vinegar'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'talek/obvious-resize'
 Plug 'losingkeys/vim-niji'
 Plug 'bling/vim-airline'
 Plug 'jgdavey/tslime.vim'
 Plug 'jaxbot/browserlink.vim'
-Plug 'heavenshell/vim-jsdoc'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx'
 Plug 'junegunn/vim-peekaboo'
 Plug 'guns/vim-sexp'
 Plug 'unblevable/quick-scope'
 Plug 'christoomey/vim-sort-motion'
+
+Plug 'thiagoalessio/rainbow_levels.vim'
 
 "Clojure
 Plug 'vim-scripts/VimClojure', { 'for': 'clojure' }
@@ -122,13 +123,6 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 "Plug 'clausreinke/typescript-tools.vim'
 
-
-" non github repos
-
-if has('gui_running')
-  Plug 'matthias-guenther/hammer.vim'
-  Plug 'XDebug-DBGp-client-for-PHP'
-endif
 
 " BUNDLES ARCHIVE {{{
 "Plug 'ryanoasis/vim-devicons'
