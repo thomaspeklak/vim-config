@@ -5,3 +5,6 @@ bundle/*
 .netrwhist
 plugged
 autoload/plug.vim
+tags
+autoload/plug.vim.20170501
+autoload/plug.vim.old

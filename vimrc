@@ -65,6 +65,7 @@ set breakindent                                                    " indent wrap
 set showbreak=+\ 
 set shiftround
 set autoread                                                       " Autoload files that are modified outside vim
+set lazyredraw
 augroup checktime
     au!
     if !has("gui_running")
@@ -79,7 +80,7 @@ set autowriteall
 set hidden                                                           " allow vim to create hidden buffers
 set backspace=indent,eol,start                                       " allow backspacing over everything in insert mode
 set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
-set autochdir
+"set autochdir
 
 set suffixesadd=.ts,.js,.json,.jade,.coffee
 
@@ -283,25 +284,17 @@ if has("autocmd")
   autocmd FileType xml,html setlocal ts=4 sts=4 sw=4 et
 
   " OMNICOMPLETE {{{
-  let g:jscomplete_use = ['dom', 'moz', 'es6th']
-  let g:node_usejscomplete = 1
-
-  let g:nodejs_complete_config = {
-\  'js_compl_fn': 'jscomplete#CompleteJS',
-\  'max_node_compl_len': 15
-\}
-
-  set ofu=syntaxcomplete#Complete
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-  autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-  autocmd FileType c setlocal omnifunc=ccomplete#Complete
-  autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-  autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
-  autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
+  "set ofu=syntaxcomplete#Complete
+  "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  "autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  "autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  "autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  "autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+  "autocmd FileType c setlocal omnifunc=ccomplete#Complete
+  "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+  "autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
+  "autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
   " }}}
 
   "automatically remove trailing whitespace
@@ -344,7 +337,7 @@ augroup ft_css
 
   au Filetype scss,less,css setlocal foldmethod=marker
   au Filetype scss,less,css setlocal foldmarker={,}
-  au Filetype scss,less,css setlocal omnifunc=csscomplete#CompleteCSS
+  "au Filetype scss,less,css setlocal omnifunc=csscomplete#CompleteCSS
   au Filetype scss,less,css setlocal iskeyword+=-
   au BufRead,BufNewFile *.scss set filetype=scss
   au BufRead,BufNewFile *.less set filetype=less
@@ -503,6 +496,7 @@ imap <F1> <Esc>:wa<CR>
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <leader>ö :nohl<CR>
+nnoremap <silent> <leader><space> :nohl<CR>
 nnoremap <leader>ft Vatzf                                            " fold tag
 
 
@@ -804,8 +798,10 @@ augroup END
 
 nnoremap <F5> :GundoToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
-let g:gundo_debug = 1
 let g:gundo_preview_bottom = 1
+if has('python3')
+  let g:gundo_prefer_python3 = 1          " anything else breaks on Ubuntu 16.04+
+endif
 
 " }}}
 " HTML5 {{{
@@ -822,22 +818,12 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabLongestHighlight = 1
 
 "}}}
-" SYNTASTIC {{{
-function! StrTrim(txt)
-  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-endfunction
-
-let g:syntastic_enable_signs = 1
-let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: line %fw}]'
-let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_sass_checkers=["sasslint"]
-let g:syntastic_scss_checkers=["sasslint", "scss_lint"]
-
-
-" }}}
 " ALE {{{
 let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+" After this is configured, :ALEFix will try and fix your JS code with ESLint.
+let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
 
@@ -847,16 +833,19 @@ let g:ale_echo_msg_warning_str = '⚠'
 nmap <silent> <C-u> <Plug>(ale_previous_wrap)
 nmap <silent> <S-u> <Plug>(ale_next_wrap)
 
-" After this is configured, :ALEFix will try and fix your JS code with ESLint.
-let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint'],
-\}
-
-let g:ale_javascript_prettier_options = '--tab-width 4 --single-quote --trailing-comma es5'
-
 " Set this setting in vimrc if you want to fix files automatically on save.
 " This is off by default.
 let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_lint_delay = 750
+
+highlight link ALEErrorLine error
+highlight link ALEWarningLine warn
+
+nmap <leader>af :ALEFix<CR>
+nmap <leader>ah :ALEHover<CR>
+nmap <leader>ah :ALEHover<CR>
+nmap <leader>ar :ALEFindReferences<CR>
 
 " }}}
 " POWERLINE {{{
@@ -865,6 +854,15 @@ let g:ale_fix_on_save = 1
 " AIRLINE {{{
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#default#section_truncate_width = {
+    \ 'b': 110,
+    \ 'x': 40,
+    \ 'y': 111,
+    \ 'z': 45,
+    \ 'warning': 81,
+    \ 'error': 80,
+    \ }
+let g:airline#extensions#branch#displayed_head_limit = 16
 " }}}
 " CTRLP {{{
 let g:ctrlp_map = '<C-G>' 
@@ -928,9 +926,12 @@ endfunction
 " }}}
 " {{{ YouCompleteMe
 let g:syntastic_always_populate_loc_list = 1
-let g:ycm_cache_omnifunc = 0
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>'] 
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>'] 
+let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_complete_in_strings = 1
 " }}}
 " UltiSnips {{{
   "let g:UltiSnipsExpandTrigger="<c-l>"
@@ -944,6 +945,11 @@ let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 " Emmet {{{
 let g:user_emmet_leader_key = '<c-e>'
 let g:use_emmet_complete_tag = 1
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
 " }}}
 " neocomplete {{{
 "
@@ -1166,7 +1172,7 @@ nmap <Leader>ren :TernRename <CR>
 nmap <Leader>typ :TernType <CR>
 nmap <Leader>doc :TernDoc <CR>
 
-autocmd FileType javascript :setl omnifunc=tern#Complete
+"autocmd FileType javascript :setl omnifunc=tern#Complete
 
 " TernHintToggle{{{
 fun! s:ToggleTernHints()
@@ -1281,6 +1287,15 @@ nmap <space>r :RainbowLevelsToggle<cr>
 let g:vim_json_syntax_conceal = 0
 " }}}
 
+" vim-ack {{{
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+" }}}
+
 " QuickScopeSelective {{{
 function! Quick_scope_selective(movement)
     let needs_disabling = 0
@@ -1309,12 +1324,6 @@ vnoremap <expr> <silent> f Quick_scope_selective('f')
 vnoremap <expr> <silent> F Quick_scope_selective('F')
 vnoremap <expr> <silent> t Quick_scope_selective('t')
 vnoremap <expr> <silent> T Quick_scope_selective('T')
-" }}}
-" Typescript Tools {{{
-if !exists("g:ycm_semantic_triggers")
-   let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
 " }}}
 
 source ~/.vim/vimrc_local
