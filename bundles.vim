@@ -39,6 +39,7 @@ Plug 'vim-scripts/LanguageTool'
 Plug 'vim-scripts/sudo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'terryma/vim-expand-region'
+Plug 'terryma/vim-multiple-cursors'
 
 "JAVASCRIPT
 "Plug 'myhere/vim-nodejs-complete'
@@ -142,7 +143,6 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 "Plug 'Shougo/neosnippet'
 "Plug 'Shougo/neocomplete'
 "Plug 'rstacruz/vim-ultisnips-css'
-"Plug 'terryma/vim-multiple-cursors'
 "Plug '2072/PHP-Indenting-for-VIm'
 "Plug 'vim-scripts/VimClojure', { 'for': 'clojure' }
 "Typescript

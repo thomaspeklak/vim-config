@@ -48,7 +48,6 @@ set showmode
 set showcmd
 set visualbell
 set cursorline
-" set cursorcolumn                 " currently disabled due to performance impacts
 set ttyfast
 set ruler
 set laststatus=2
@@ -80,9 +79,9 @@ set autowriteall
 set hidden                                                           " allow vim to create hidden buffers
 set backspace=indent,eol,start                                       " allow backspacing over everything in insert mode
 set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
-"set autochdir
+set autochdir
 
-set suffixesadd=.ts,.js,.json,.jade,.coffee
+set suffixesadd=.ts,.js,.json,.jade,.jsx
 
 set completeopt=longest,menuone,preview                              " Better Completion
 
@@ -115,20 +114,9 @@ match OverLength /\%81v.\+/
 set nolist        " do not show hidden characters
 set sessionoptions="blank,buffers,curdir,folds,resize,tabpages,winpos,winsize"
 
-" Use the same symbols as TextMate for tabstops and EOLs
-"set listchars=tab:>\ ,eol:$,trail:.,nbsp:_,extends:❯,precedes:❮  "This has
 "some terminal problems with ascii confusion art
 set listchars=tab:>\ ,eol:$,trail:.,nbsp:_
 "}}}    
-" FONT {{{
-" As Linux and Mac have different declarations for guifont we need to
-" differentiate between the two
-if has('mac')
-  set guifont=Mensch:h10
-elseif has("unix")
-  set guifont=Mensch\ 8
-endif
-"}}}
 " Line Return {{{
 
 " Make sure Vim returns to the same line when you reopen a file.
@@ -174,25 +162,17 @@ set wildignore+=tmp
 set wildignore+=*.class                            " Java class files"
 set wildignore+=*.jar                            " Java jar files"
 set wildignore+=*node_modules                     " Node modules dir
-
-
 " }}}
 " BACKUPS {{{
-
 set undodir=~/.vim/tmp/undo//     " undo files
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup                        " enable backups
-
 " }}}
 " FOLDING ----------------------------------------------------------------- {{{
-
 set foldlevelstart=9
 
 " Space to toggle folds.
-nnoremap ß za
-vnoremap ß za
-
 nnoremap <c-z> za
 vnoremap <c-z> za
 
@@ -238,11 +218,6 @@ autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | se
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
 " }}}
-" TEXTWRAPPING {{{
-"these lines seem to have some kind of side effects, needs investigation
-"command! -nargs=* Wrapmode set tw=60 formatoptions+=ta               " autowrap text on insert @ 60 chars
-"command! -nargs=* Nowrapmode set tw=0 formatoptions-=ta              " restore to previouse state
-"}}} 
 " AUTOCOMMANDS AND FILETYPE ASSOCIATIONS {{{
 if has("autocmd")
   " Drupal *.module and *.install files.
@@ -261,7 +236,6 @@ if has("autocmd")
 
   "highlight JSON files as javascript
   autocmd BufRead,BufNewFile *.json set filetype=json
-  "highlight jasmine_fixture files as HTML
   autocmd BufRead,BufNewFile *.jasmine_fixture set filetype=html
   au BufRead,BufNewFile Gemfile* set filetype=ruby 
 
@@ -282,19 +256,6 @@ if has("autocmd")
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 et
   autocmd FileType jade setlocal ts=4 sts=4 sw=4 et
   autocmd FileType xml,html setlocal ts=4 sts=4 sw=4 et
-
-  " OMNICOMPLETE {{{
-  "set ofu=syntaxcomplete#Complete
-  "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  "autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  "autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  "autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-  "autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-  "autocmd FileType c setlocal omnifunc=ccomplete#Complete
-  "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-  "autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
-  "autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
   " }}}
 
   "automatically remove trailing whitespace
@@ -325,70 +286,17 @@ if has("autocmd")
 endif
 
 " }}}
-" INITIALIZE MATCHIT {{{
-runtime macros/matchit.vim
-" }}}
 " CSS, SCSS and LessCSS {{{
 
 augroup ft_css
   au!
 
   au BufNewFile,BufRead *.less setlocal filetype=less
-
   au Filetype scss,less,css setlocal foldmethod=marker
   au Filetype scss,less,css setlocal foldmarker={,}
-  "au Filetype scss,less,css setlocal omnifunc=csscomplete#CompleteCSS
   au Filetype scss,less,css setlocal iskeyword+=-
   au BufRead,BufNewFile *.scss set filetype=scss
   au BufRead,BufNewFile *.less set filetype=less
-
-  " Use <leader>S to sort properties.  Turns this:
-  "
-  "     p {
-  "         width: 200px;
-  "         height: 100px;
-  "         background: red;
-  "
-  "         ...
-  "     }
-  "
-  " into this:
-
-  "     p {
-  "         background: red;
-  "         height: 100px;
-  "         width: 200px;
-  "
-  "         ...
-  "     }
-  au BufNewFile,BufRead *.less,*.css,*.scss nnoremap <buffer> <localleader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
-augroup END
-
-" }}}
-" JAVASCRIPT {{{
-
-let g:syntax_js=['function', 'return', "proto"]
-
-augroup ft_javascript
-  au!
-  au FileType javascript setlocal foldmethod=marker
-  au FileType javascript setlocal foldmarker={,}
-  au FileType javascript setl foldmethod=syntax
-  au FileType javascript setl conceallevel=1 concealcursor=c
-  au FileType javascript let javascript_enable_domhtmlcss=1
-augroup END
-
-" }}}
-" RUBY {{{
-
-augroup ft_ruby
-  au!
-  " FOldmethod switched to manual, because of plugin problems (slow response
-  " times)
-  au Filetype ruby setlocal foldmethod=manual
-  let g:rubycomplete_buffer_loading = 1
-  let g:rubycomplete_classes_in_global = 1
-  let g:rubycomplete_rails = 1
 augroup END
 
 " }}}
@@ -445,30 +353,19 @@ endfunction
 " Substitute
 nnoremap <leader>s :%s//<left>
 
-" Preview Files
-nnoremap <F6> :w<cr>:Hammer<cr>
-
 nnoremap <F4> :TagbarToggle<cr>
 
 " HTML tag closing
 inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
 
-nnoremap <F3> :NERDTreeToggle<cr>
-
 vmap Q gq                                                          " us Q to format current paragraph
 nmap Q gqap
 
-
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
-
 nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>                    " remove trailing white space
-
 nmap <leader>= :call Preserve("normal gg=G")<CR>                      " indent lines
 nmap <leader>0 gg=G
-" F7 reformats the whole file and leaves you where you were (unlike gg)
-"map <silent> <F7> mzgg=G'z :delmarks z<CR>:echo "Reformatted."<CR>
-
 
 "Quickly edit and reload vimrc
 nmap <slient> <leader>eV :e $MYVIMRC<CR>
@@ -483,24 +380,18 @@ map <C-L> <C-w>l
 nnoremap <leader>1 yypVr=
 nnoremap <leader>2 yypVr-
 nnoremap <leader>3 yypVr
-nnoremap / /\v
 
+nnoremap / /\v
 vnoremap / /\v
-"nmap j gj                                                        " go down instead of jump per line
-"nnoremap j gj                                                        " go down instead of jump per line
-"nnoremap k gk                                                        " go up
 vnoremap <F1> <ESC>:wa<cr>
 map <F1> :wa<CR>
 imap <F1> <Esc>:wa<CR>
 
-
-" <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <leader>ö :nohl<CR>
 nnoremap <silent> <leader><space> :nohl<CR>
 nnoremap <leader>ft Vatzf                                            " fold tag
 
-
-" map esc to jj in insert mode to provide a way around photoshop bug blocking esc key
+" map esc to kj in insert mode to provide a way around photoshop bug blocking esc key
 imap kj <ESC>
 imap KJ <ESC>:wa<CR>
 
@@ -523,11 +414,9 @@ map <D-M-Right> :bn<CR>
 nnoremap ü <C-]>
 nnoremap Ü <C-O>
 
-
 " double percentage sign in command mode is expanded
 " to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-
 
 "provide mappings to use clipboard
 nnoremap <S-INSERT> "+gP
@@ -537,13 +426,7 @@ vmap <C-C> "+y
 " if you forgot to open a file with sudo you can write it with w!!
 cmap w!! w !sudo tee % >/dev/null
 
-"generate rails ctags
-map <Leader>cr :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
-map <Leader>cp :!ctags --extra=+f --exclude=.git --exclude=log --langmap=php:.php.module.inc --php-kinds=cdfi --languages=php --recurse * <CR><CR>
-map <Leader>cj :!jsctags .<CR><CR>
-map <Leader>ct :!ctags --extra=+f --exclude=.git --exclude=log -R * <CR><CR>
-
-"yank to the reset of the line
+"yank to the rest of the line
 map Y y$
 
 "find merge conflicts
@@ -559,21 +442,22 @@ inoremap <C-j> [
 inoremap <C-k> ]
 inoremap <C-h> {
 inoremap <C-l> }
+inoremap <C-g> (
+inoremap <C-;> )
 
 " Easier to type, and I never use the default behavior.
 noremap H ^
 noremap L $
 vnoremap L g_
 
-
+" duplicate mapping chec k @TODO
 nmap ,mm :next<cr>
 nmap ,,m :prev<cr>
 nmap <C-ä> :lnext<cr>
 nmap <C-ü> :lprev<cr>
 
-"Reselect visual block after in/outdenting
-"vnoremap < <gv
-"vnoremap > >gv
+"jump to next error / location
+nnoremap <leader><leader>e :lnext<CR>
 
 " Easier linewise reselection of what you just pasted.
 nnoremap <leader>V V`]
@@ -589,13 +473,7 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
  nnoremap <silent> # #zz
  nnoremap <silent> g* g*zz
 
-
-"jump to next error / location
-
-nnoremap <leader><leader>e :lnext<CR>
-
 inoremap ;fl (╯°□°）╯︵ ┻━┻"
-
 "}}}
 " Next and Last {{{
 "
@@ -761,16 +639,6 @@ vmap <leader>} ys}
 vmap <leader>< ys<
 vmap <leader>> ys>
 " }}}
-" COMMANDT {{{
-if has("CommandT")
-  nmap <leader>r :CommandTFlush<CR>
-  nmap <leader>t :CommandT<CR>
-  nmap <leader>T :CommandT %%<CR>
-  nmap <leader>b :CommandTBuffer<CR>
-  nmap <leader>B :CommandTJump<CR>
-  let g:CommandTMaxFiles=15000
-endif
-" }}}
 " NERDCommenter {{{
 " Comment/uncomment lines.
 map <leader>/ <plug>NERDCommenterToggle
@@ -789,28 +657,15 @@ nnoremap <leader>gr :Gremove<cr>
 
 augroup ft_fugitive
   au!
-
   au BufNewFile,BufRead .git/index setlocal nolist
 augroup END
-
 " }}}
 " GUNDO {{{
-
 nnoremap <F5> :GundoToggle<CR>
-nnoremap <leader>u :GundoToggle<CR>
 let g:gundo_preview_bottom = 1
 if has('python3')
   let g:gundo_prefer_python3 = 1          " anything else breaks on Ubuntu 16.04+
 endif
-
-" }}}
-" HTML5 {{{
-
-let g:event_handler_attributes_complete = 0
-let g:rdfa_attributes_complete = 0
-let g:microdata_attributes_complete = 0
-let g:atia_attributes_complete = 0
-
 " }}}
 " SUPERTAB {{{
 
@@ -836,7 +691,7 @@ nmap <silent> <S-u> <Plug>(ale_next_wrap)
 " Set this setting in vimrc if you want to fix files automatically on save.
 " This is off by default.
 let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 let g:ale_lint_delay = 750
 
 highlight link ALEErrorLine error
@@ -844,12 +699,8 @@ highlight link ALEWarningLine warn
 
 nmap <leader>af :ALEFix<CR>
 nmap <leader>ah :ALEHover<CR>
-nmap <leader>ah :ALEHover<CR>
 nmap <leader>ar :ALEFindReferences<CR>
 
-" }}}
-" POWERLINE {{{
-"let g:Powerline_symbols = 'fancy'
 " }}}
 " AIRLINE {{{
 set laststatus=2
@@ -880,18 +731,6 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:15'
 "let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard']
 "let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 " }}}
-" PIV {{{
-let g:DisableAutoPHPFolding = 1 
-"}}}
-" TURBUX {{{
-
-" }}}
-" XDEBUG Client{{{
-"enable debug client in gvim
-if has("gui_running")
-  let g:debuggerMapDefaultKeys = 7
-endif
-" }}}
 " CLOJURE {{{
 augroup ft_clojure
   au!
@@ -907,7 +746,6 @@ let vimclojure#ParenRainbow = 1      " Rainbow parentheses'!
 " }}}
 " SHEBANG {{{
 map <leader>X :w<CR>:call SetExecutable()<CR>
-
 " }}}
 
 " CONVERT SECTION OF BOOKMARKS FILE TO LINKS
@@ -926,12 +764,14 @@ endfunction
 " }}}
 " {{{ YouCompleteMe
 let g:syntastic_always_populate_loc_list = 1
-let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>'] 
+let g:ycm_key_list_select_completion = ['<Down>', '<Enter>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>'] 
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_complete_in_strings = 1
+
+let g:ycm_rust_src_path = '/Users/tom/install/rust/src'
 " }}}
 " UltiSnips {{{
   "let g:UltiSnipsExpandTrigger="<c-l>"
@@ -951,81 +791,6 @@ let g:user_emmet_settings = {
     \  },
   \}
 " }}}
-" neocomplete {{{
-"
-"" Launches neocomplete automatically on vim startup.
-"let g:neocomplete#enable_at_startup = 1
-"" Use smartcase.
-"let g:neocomplete#enable_smart_case = 1
-"" Use camel case completion.
-"let g:neocomplete#enable_camel_case_completion = 1
-"" Use underscore completion.
-"let g:neocomplete#enable_underbar_completion = 1
-"" Sets minimum char length of syntax keyword.
-"let g:neocomplete#min_syntax_length = 3
-"" buffer file name pattern that locks neocomplete. e.g. ku.vim or fuzzyfinder 
-"let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-"
-"" Define file-type dependent dictionaries.
-"let g:neocomplete#dictionary_filetype_lists = {
-"    \ 'default' : '',
-"    \ 'vimshell' : $HOME.'/.vimshell_hist',
-"    \ 'scheme' : $HOME.'/.gosh_completions'
-"    \ }
-"
-"" Define keyword, for minor languages
-"if !exists('g:neocomplete#keyword_patterns')
-"  let g:neocomplete#keyword_patterns = {}
-"endif
-"let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-"
-"" Plugin key-mappings.
-"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"xmap <C-k>     <Plug>(neosnippet_expand_target)
-"" For snippet_complete marker.
-"if has('conceal')
-"  set conceallevel=2 concealcursor=i
-"endif
-"
-"
-"inoremap <expr><C-g>     neocomplete#undo_completion()
-"inoremap <expr><C-l>     neocomplete#complete_common_string()
-"
-"" SuperTab like snippets behavior.
-""imap <expr><TAB> neocomplete#sources#snippets_complete#expandable() ? "\<Plug>(neocomplete_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-"imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-"smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"
-"" Recommended key-mappings.
-"" <CR>: close popup and save indent.
-""inoremap <expr><CR>  neocomplete#smart_close_popup() . "\<CR>"
-"" <TAB>: completion.
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"" <C-h>, <BS>: close popup and delete backword char.
-""inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-"inoremap <expr><C-y>  neocomplete#close_popup()
-"inoremap <expr><C-e>  neocomplete#cancel_popup()
-"
-"" AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
-"
-"" Enable heavy omni completion, which require computational power and may stall the vim. 
-"if !exists('g:neocomplete#omni_patterns')
-"  let g:neocomplete#omni_patterns = {}
-"endif
-"let g:neocomplete#omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-""autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-""let g:neocomplete#omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#omni_patterns.c = '\%(\.\|->\)\h\w*'
-"let g:neocomplete#omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-"
-"" }}}
-" YouCompleteMe {{{
-let g:ycm_key_list_select_completion = ['<Down>', '<Enter>']
-
-" }}}
 " MouseToggle{{{
 fun! s:ToggleMouse()
     if !exists("s:old_mouse")
@@ -1043,8 +808,6 @@ fun! s:ToggleMouse()
 endfunction
 
 nnoremap ;;m :call <SID>ToggleMouse()<cr>
-
-
 " }}}
 " NodeModulesToggle{{{
 fun! s:ToggleNodeModules()
@@ -1064,7 +827,6 @@ fun! s:ToggleNodeModules()
 endfunction
 
 nnoremap <leader><leader>i :call <SID>ToggleNodeModules()<cr>
-
 " }}}
 " Lucius {{{
 LuciusBlack
@@ -1086,26 +848,6 @@ nnoremap <F8> :ToggleLuciusStyle<cr>
 let g:snips_trigger_key='<c-g>'
 "}}}
 "
-"{{{ NEOCOMPLETE SNIPPETS
-"let g:neocomplcache_snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
-"imap <C-A> <Plug>(neocomplcache_snippets_expand)
-"smap <C-A> <Plug>(neocomplcache_snippets_expand)
-"}}}
-
-" PHP CS FIXER{{{
-let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer"        " define the path to the php-cs-fixer.phar
-let g:php_cs_fixer_level = "all"                " which level ?
-let g:php_cs_fixer_config = "default"           " configuration
-let g:php_cs_fixer_php_path = "php"             " Path to PHP
-let g:php_cs_fixer_fixers_list = "all"             " List of fixers
-let g:php_cs_fixer_enable_default_mapping = 1   " Enable the mapping by default (<leader>pcd)
-let g:php_cs_fixer_dry_run = 0                  " Call command with dry-run option
-let g:php_cs_fixer_verbose = 0                  " Return the output of command if 1, else an inline information.
-
-nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
-nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
-" }}}
-
 "{{{ wrap visual selection in tag
 
 vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
@@ -1125,12 +867,6 @@ function! VisualHTMLTagWrap()
 endfunction
 
 "}}}
-"TSLIME {{{
-nnoremap ;;r SetTmuxVars
-vnoremap ;;t "ry :call Send_to_Tmux(@r)<CR>
-nnoremap ;;t vip;;t
-
-"}}}
 " EASY MOTION {{{
 nmap <C-0> <Space>F
 vmap <C-0> <Space>F
@@ -1138,16 +874,9 @@ nmap <C-i> <Space>f
 vmap <C-i> <Space>f
 nmap <S-Tab> <Space>F
 let g:EasyMotion_leader_key = '<Space>'
-"let g:EasyMotion_mapping_w = '-'
-"let g:EasyMotion_mapping_b = '_'
 " }}}
 " JAVASCRIPT LIBRARIES {{{
 let g:used_javascript_libs = 'jquery,underscore,angularjs,node'
-" }}}
-" JSBeautify {{{
-"nnoremap <leader>ff :%!js-beautify -j -q -f -<CR>
-nnoremap <leader>ff :call system(b:syntastic_javascript_eslint_exec . " --fix " . expand('%'))<CR>
-
 " }}}
 " GitGutter {{{
 nmap <Leader>gg :GitGutterToggle<CR>
@@ -1158,7 +887,6 @@ nmap gg+ :GitGutterStageHunk<CR>
 " Expand Region {{{
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
-
 " }}}
 " Tern {{{
 let g:tern_map_prefix=";"
@@ -1172,8 +900,6 @@ nmap <Leader>ren :TernRename <CR>
 nmap <Leader>typ :TernType <CR>
 nmap <Leader>doc :TernDoc <CR>
 
-"autocmd FileType javascript :setl omnifunc=tern#Complete
-
 " TernHintToggle{{{
 fun! s:ToggleTernHints()
     if g:tern_show_argument_hints == "none"
@@ -1186,15 +912,6 @@ fun! s:ToggleTernHints()
 endfunction
 
 nnoremap ;;j :call <SID>ToggleTernHints()<cr>
-
-" }}}
-
-" }}}
-" MultiCursor {{{
- let g:multi_cursor_next_key="\<C-n>"
- let g:multi_cursor_prev_key="\<C-p>"
- let g:multi_cursor_skip_key="\<C-x>"
- let g:multi_cursor_exit_key="\<Esc>"
 " }}}
 "Obvious Resize {{{
 noremap <silent> <S-Up> :ObviousResizeUp 8<CR>
@@ -1205,9 +922,6 @@ noremap <silent> <S-Right> :ObviousResizeRight 15<CR>
 "JSDoc {{{
 let g:jsdoc_default_mapping=0
 nmap <silent> <Leader>jd <Plug>(jsdoc)
-"}}}
-"{{{
-let g:webdevicons_enable_nerdtree = 0
 "}}}
 "VIM GO {{{
 au FileType go nmap <space>r <Plug>(go-run)
