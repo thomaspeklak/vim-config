@@ -68,10 +68,11 @@ Plug 'sirver/ultisnips'
 "Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 
 "COLORSCHEMES
-Plug 'altercation/vim-colors-solarized'
-Plug 'vim-scripts/molokai'
 Plug 'vim-scripts/Lucius'
 Plug 'chriskempson/base16-vim'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'jacoborus/tender.vim'
+
 
 "ELM
 "Plug 'lambdatoast/elm.vim', { 'for': 'elm' }

@@ -104,8 +104,6 @@ set showmatch
 
 " Colors **********************************************************************
 syntax on " syntax highlighting
-colorscheme lucius
-set background=dark
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
@@ -170,7 +168,7 @@ set directory=~/.vim/tmp/swap//   " swap files
 set backup                        " enable backups
 " }}}
 " FOLDING ----------------------------------------------------------------- {{{
-set foldlevelstart=9
+set foldlevelstart=999
 
 " Space to toggle folds.
 nnoremap <c-z> za
@@ -829,6 +827,16 @@ endfunction
 nnoremap <leader><leader>i :call <SID>ToggleNodeModules()<cr>
 " }}}
 " Lucius {{{
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+hi LineNr ctermbg=NONE guibg=NONE
+hi Comment cterm=italic
+
+colorscheme lucius
+set background=dark
 LuciusBlack
 
 function! ToggleLuciusStyle()
