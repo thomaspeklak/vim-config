@@ -35,7 +35,7 @@ let g:miniBufExplModSelTarget = 1
 " Use Node.js for JavaScript interpretation
 let $JS_CMD='node'
 
-syntax enable
+syntax on
 
 if (!has('nvim')) 
   set cryptmethod=blowfish
@@ -81,9 +81,9 @@ set backspace=indent,eol,start                                       " allow bac
 set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
 set autochdir
 
-set suffixesadd=.ts,.js,.json,.jade,.jsx
+set suffixesadd=.js,.json,.jade,.jsx,.ts,.d.ts,.tsx
 
-set completeopt=longest,menuone,preview                              " Better Completion
+"set completeopt=longest,menuone,preview                              " Better Completion
 
 "  set nobackup                                                       " no backup file
 "  set noswapfile                                                     " no swap file
@@ -103,8 +103,6 @@ set incsearch
 set showmatch
 
 " Colors **********************************************************************
-syntax on " syntax highlighting
-
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 "call togglebg#map("<F8>") "Toggle Solarized
@@ -243,9 +241,6 @@ if has("autocmd")
   autocmd FileType javascript set iskeyword=@,48-57,-,192-255
   autocmd FileType clojure,clj set iskeyword=@,48-57,_,-,?,!,192-255
 
-  autocmd FileType html,htmldjango,jinjahtml,eruby,mako,ctp let b:closetag_html_style=1
-  autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,ctp source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
-
   autocmd FileType css,scss,less setlocal ts=4 sts=4 sw=4 et
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 et
   autocmd FileType coffee setlocal ts=2 sts=2 sw=2 et
@@ -254,6 +249,8 @@ if has("autocmd")
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 et
   autocmd FileType jade setlocal ts=4 sts=4 sw=4 et
   autocmd FileType xml,html setlocal ts=4 sts=4 sw=4 et
+
+  autocmd FileType qf setlocal wrap
   " }}}
 
   "automatically remove trailing whitespace
@@ -270,8 +267,8 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin on
-  filetype plugin indent on
-  set ofu=syntaxcomplete#Complete
+  "filetype plugin indent on
+  "set ofu=syntaxcomplete#Complete
 
   "Resize splits when the window is resized
   au VimResized * exe "normal! \<c-w>="
@@ -280,7 +277,7 @@ if has("autocmd")
   autocmd BufRead COMMIT_EDITMSG setlocal spell!
 
   "Fix drawing issues
-  au BufWritePost * :silent! :syntax sync fromstart<cr>:redraw!<cr>
+  "au BufWritePost * :silent! :syntax sync fromstart<cr>:redraw!<cr>
 endif
 
 " }}}
@@ -674,10 +671,12 @@ let g:SuperTabLongestHighlight = 1
 " ALE {{{
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
 \}
 " After this is configured, :ALEFix will try and fix your JS code with ESLint.
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
 \}
 
 let g:ale_statusline_format = ['⨉%d', '⚠ %d', '⬥ ok']
@@ -692,7 +691,7 @@ let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 0
 let g:ale_lint_delay = 750
 
-highlight link ALEErrorLine error
+"highlight link ALEErrorLine error
 highlight link ALEWarningLine warn
 
 nmap <leader>af :ALEFix<CR>
@@ -767,7 +766,9 @@ let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_complete_in_strings = 1
+let g:ycm_filepath_completion_use_working_dir = 1
 
 let g:ycm_rust_src_path = '/Users/tom/install/rust/src'
 " }}}
@@ -779,6 +780,9 @@ let g:ycm_rust_src_path = '/Users/tom/install/rust/src'
   "let g:UltiSnipsJumpBackwardTrigger="<c-w>"
   "let g:UltiSnipsSnippetsDir        = '~/.vim/snippets/'
   "let g:UltiSnipsSnippetDirectories = ['UltiSnips']
+" }}}
+" Gutentags {{{
+let g:gutentags_cache_dir="~/.vim/tmp/tags/"
 " }}}
 " Emmet {{{
 let g:user_emmet_leader_key = '<c-e>'
@@ -1047,6 +1051,13 @@ vnoremap <expr> <silent> F Quick_scope_selective('F')
 vnoremap <expr> <silent> t Quick_scope_selective('t')
 vnoremap <expr> <silent> T Quick_scope_selective('T')
 " }}}
+
+"{{{ ELM VIM
+let g:elm_setup_keybindings = 0
+let g:ycm_semantic_triggers = {
+     \ 'elm' : ['.'],
+     \}
+"}}}
 
 source ~/.vim/vimrc_local
 

@@ -19,7 +19,6 @@ Plug 'pix/vim-align'
 Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
 Plug 'mtscout6/syntastic-local-eslint.vim'
-Plug 'gcorne/vim-sass-lint'
 Plug 'sickill/vim-pasta'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-abolish'
@@ -40,32 +39,29 @@ Plug 'vim-scripts/sudo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'jremmen/vim-ripgrep'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 "JAVASCRIPT
-"Plug 'myhere/vim-nodejs-complete'
-
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-"Plug 'othree/yajs.vim'
-"Plug 'othree/es.next.syntax.vim'
-"Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'moll/vim-node'
 Plug 'heavenshell/vim-jsdoc'
-"Plug 'tpope/vim-jdaddy'
 Plug 'kristijanhusak/vim-js-file-import'
 
 "REACT
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
+"ELM
+Plug 'elmcast/elm-vim'
+
 "AUTOCOMPLETE
-Plug 'mattn/emmet-vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
-Plug 'sirver/ultisnips'
+"Plug 'mattn/emmet-vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'sirver/ultisnips'
+"
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
 "SYNTAX
-"Plug 'groenewege/vim-less', { 'for': 'less' }
-"Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-"Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-"Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 
 "COLORSCHEMES
 Plug 'vim-scripts/Lucius'
@@ -73,21 +69,13 @@ Plug 'chriskempson/base16-vim'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'jacoborus/tender.vim'
 
-
-"ELM
-"Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
-
 "Experimental
 Plug 'airblade/vim-gitgutter'
-"Plug 'aklt/plantuml-syntax'
 Plug 'tpope/vim-vinegar'
 Plug 'AndrewRadev/splitjoin.vim'
-"Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'talek/obvious-resize'
 Plug 'bling/vim-airline'
-Plug 'jgdavey/tslime.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'mxw/vim-jsx'
 Plug 'junegunn/vim-peekaboo'
 Plug 'guns/vim-sexp'
 Plug 'unblevable/quick-scope'
